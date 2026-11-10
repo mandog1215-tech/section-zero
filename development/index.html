@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The Development Center dashboard: every Section Zero project as it stands — one in development, one delayed, one shelved, one cancelled.">
+<meta name="description" content="The Development Center dashboard: every Section Zero project as it stands — AirportSim in development, LONGSHOT deferred, WorldForge shelved, Blacksite cancelled.">
 <title>Development Center — Section Zero Interactive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
   <a href="evidence.html">Evidence</a>
   <a href="versions.html">Versions</a>
   <a href="releases.html">Releases</a>
-  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill delayed">AS 0.6.0-alpha.2 · Delayed</span><span class="pill shelved">WF · Shelved</span></span>
+  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill dev">AS 0.6.0-alpha.2 · Alpha</span><span class="pill shelved">WF · Shelved</span><span class="pill delayed">LS · Deferred</span></span>
 </nav>
 <main id="main">
   <div class="projhero gold slim">
@@ -41,7 +41,7 @@
   <p class="tag">One dashboard for the studio — every status below traces to a project record, dated.</p>
   </div>
 
-  <h2>Status dashboard (as of 2026-11-07)</h2>
+  <h2>Status dashboard (as of 2026-11-10)</h2>
   <table>
     <tr><th>Project</th><th>Version</th><th>Status</th><th>Latest verified evidence</th></tr>
     <tr>
@@ -53,27 +53,39 @@
     <tr>
       <td><a href="../projects/airportsim/index.html"><strong>AirportSim</strong></a></td>
       <td>0.6.0-alpha.2</td>
-      <td><span class="pill delayed">Delayed</span> Delayed by the owner's decision, 2026-11-10. Development Mode (WP-09) is <strong>complete</strong> — all eight increments merged, each verified by a full post-merge battery — and the build advanced to 0.6.0-alpha.2 “Threshold”, an internal development identity, not a release (0.5.3 remains the last public build). The 2026-11-03 issues pass closed or classified every open item; the reckoning audited all ten major systems; and the ATC rework is <strong>complete</strong> — all five steps merged and battery-verified. <em>Update, 2026-11-07:</em> the continuous-world phase followed; the full geography pack is wired into the game, and the owner approved the far view and closed the geography set on 2026-11-06. The interface overhaul is under way (status board merged; in-game frame in progress), a clean-sheet save system is in design, and the next major milestone — a closed dev beta, 7.0 “Latitude”, internal testing only — is in development. The save-format fragility is carried openly as register entry K8 on the project's testing page. Beta gates: two of three satisfied (native Windows verification; the save/reload fix); the full end-to-end matrix rerun remains, last before the owner's Beta decision. No release is authorized.</td>
-      <td>2026-11-07 — local gates on the current code: zero-warning build; full suite <strong>168,613 checks, 0 failed</strong>. The long test lanes now run on GitHub-hosted machines, dispatched only when a gate calls for them (settled 2026-11-07); Windows verification stays in the local gates. Earlier: 2026-11-03 — every merge of the day (PRs #39–#47) landed only on a green fast lane on the owner's self-hosted rig with the commit-identity check, and each post-merge full battery — both sanitizer lanes included — verified green. Suite: over 163,000 checks, 0 failed. The Development Mode branch's earlier exit-2 gate remains in the record as failed, its two UI failure signatures attributed as pre-existing.</td>
+      <td><span class="pill dev">In development</span> Development Mode complete; the ATC rework complete; the planet geography in and its far view approved; HL-SAVE 1 landed; the fleet at 58 types; 246 real airport layouts in. Parked by the owner's decision on the morning of 2026-11-10 — status “delayed” for under an hour — then <strong>resumed the same morning</strong>; the road continues at collision, with the interface overhaul's frame and the closed dev beta 7.0 “Latitude” ahead of it. A complete overhaul design, finished the same week, is banked unstarted. No release is authorized.</td>
+      <td>Latest recorded full run: <strong>192,063 checks, 0 failed</strong> (tally of 2026-11-09; the 2026-11-08 master battery ran 192,032 / 0, fully green on all seven rig jobs of that era). Checking has since moved: by the owner's ruling of 2026-11-10 the lanes are now the four Linux lanes on GitHub-hosted machines, dispatched automatically, and the game is Linux-only — the owner's rig and all Windows verification are out of the route.</td>
     </tr>
     <tr>
       <td><a href="../projects/worldforge/index.html"><strong>WorldForge</strong></a></td>
       <td>0.5.0-dev</td>
       <td><span class="pill shelved">Shelved</span> Shelved by the owner 2026-10-31 after M5. Not in active development.</td>
-      <td>2026-10-31 — M5 gate: suite 1,060 / 0 on a fresh build; Observatory Phase A merged (1,143 / 0) the same day, before the shelve.</td>
+      <td>2026-10-31 — M5 gate: suite 1,060 / 0 on a fresh build; Observatory Phase A merged (1,143 / 0) the same day, before the shelve. A fresh survey of the whole project was written and banked on 2026-11-10, the night the owner briefly revived and re-parked it.</td>
+    </tr>
+  <tr>
+      <td><a href="../projects/longshot/index.html"><strong>LONGSHOT</strong></a> <span class="mono">(codename)</span></td>
+      <td>—</td>
+      <td><span class="pill delayed">Deferred</span> Announced 2026-11-10: research and a full engine-first design completed, the math bench ported and verified, a private repository created, and the first engine milestone begun — then deferred by the owner the same day, “for another time”. Banked, not cancelled.</td>
+      <td>2026-11-10 — the ported design bench reproduced <strong>12 of 12 published reference values</strong> from its own laws (orbit periods, transfer times, fuel prices) before game code existed. No game build exists; there is nothing else to verify yet.</td>
     </tr>
   </table>
-  <p>AirportSim's programme runs as one chained queue. <strong>Done:</strong> the controlled integration (2026-11-02); the save/reload fix (PR #24; issue #15 closed); the move of every check to the owner's self-hosted rig, where a native Windows battery runs on every merge (PR #29); Development Mode completed in eight increments (WP-09, PRs #27–#38); the 2026-11-03 issues pass — every open item closed or classified; and the reckoning, a full audit of all ten major systems. <strong>Just landed:</strong> the ATC rework — all five steps merged (PRs #44–#49), each closed by a full post-merge battery. <strong>Behind it:</strong> the visuals pass; the big updates the reckoning chose (passenger demand, money reconciliation, staff that matter); the full end-to-end matrix; and the Beta decision, which is the owner's. The build is 0.6.0-alpha.2 “Threshold” (internal identity; 0.5.3 remains the last public build), suite over 163,000 checks. The owner's release-path plan: a private test version around 0.7.5 and open betas on this site around 0.8.0 — both conditional on the game genuinely being ready — and public builds will carry copy protection in binaries-and-data-only packages (owner's policy, 2026-11-03). Merges are autonomous only on a green battery with the commit-identity check verified (owner's decision, 2026-11-03). No release is authorized. Blacksite's development is cancelled (1.5.0 held); WorldForge stays shelved (1.0.0 candidate held).</p>
-  <p><strong>Update, 2026-11-07.</strong> Since the dashboard above was written: the ATC rework completed and the continuous-world phase ran — world frame, the camera leaving the fence, live hand-offs between airports, a Development Mode skeleton view, and airfield markings all merged — and the full planet geography pack (1.46 GB, built from licence-clean sources) is wired into the game. On 2026-11-06 the owner approved the far view and closed the geography set. The interface overhaul is under way: the full status board is merged and the in-game frame is in progress. The suite stands at <strong>168,613 checks, 0 failed</strong>. A clean-sheet save system is in design (register entry K8), and development's next major milestone is a closed dev beta, <strong>7.0 “Latitude”</strong> — a private test build for the owner's hands-on, internal testing only. The game is not planned for public sale or release; the earlier 0.7.5/0.8.0 path above is superseded by this. The testing lanes moved the same day: the long Linux lanes run on GitHub-hosted machines, dispatched only when a gate calls for them; the owner's rig is retired from routine testing, and Windows verification lives in the local gates until the native-Windows gate of the test build itself. Blacksite's development stays cancelled (1.5.0 held); WorldForge stays shelved.</p>
-  <p><strong>Update, 2026-11-10.</strong> AirportSim's development status changes to <strong>delayed</strong> — the programme is parked by the owner's decision, and the dashboard above stands as the record of it as it was left. Blacksite's development stays cancelled (1.5.0 held); WorldForge stays shelved.</p>
-
+  <p><strong>Where the studio stands tonight.</strong> One game is in
+  development — AirportSim, resumed this morning after a delay that lasted
+  under an hour, its road continuing at collision on its way to the closed dev
+  beta 7.0 “Latitude” (internal testing only, never a public release; the
+  owner's 2026-11-03 policy stands: copy protection in place, packages of
+  binaries and game data only). One game is deferred — LONGSHOT, announced
+  today and banked the same day with its design, its bench and an engine start
+  intact. WorldForge stays shelved, surveyed afresh tonight; Blacksite stays
+  cancelled, its 1.5.0 held. Nothing the studio has made is published. That is
+  the whole of it.</p>
   <h2>The rooms</h2>
   <div class="card"><h3><a href="evidence.html">Evidence</a></h3>
     <p>The verified build and test record across the studio — what was run, on
     which commit, with what result, and what has explicitly <em>not</em> been
     verified.</p></div>
   <div class="card"><h3><a href="versions.html">Versions</a></h3>
-    <p>Version and codename records for all three projects, in one place — drawn
+    <p>Version and codename records for all four projects, in one place — drawn
     from each project's own registry.</p></div>
   <div class="card"><h3><a href="releases.html">Releases</a></h3>
     <p>Release status, kept blunt: what has been published (nothing), and the two

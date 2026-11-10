@@ -33,12 +33,12 @@
   <a href="evidence.html">Evidence</a>
   <a class="here" href="versions.html">Versions</a>
   <a href="releases.html">Releases</a>
-  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill delayed">AS 0.6.0-alpha.2 · Delayed</span><span class="pill shelved">WF · Shelved</span></span>
+  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill dev">AS 0.6.0-alpha.2 · Alpha</span><span class="pill shelved">WF · Shelved</span><span class="pill delayed">LS · Deferred</span></span>
 </nav>
 <main id="main">
   <div class="projhero gold slim">
     <h1>Version records</h1>
-  <p class="tag">Three projects, three registries, one page — each project's own registry governs.</p>
+  <p class="tag">Four projects, four registries, one page — each project's own registry governs.</p>
   </div>
 
   <h2>Blacksite</h2>
@@ -58,7 +58,7 @@
     <tr><td>Version history</td><td>15 tagged versions, <em>v0.1.0</em> → <em>v0.5.3</em> (2026-10-29 → 30), plus the <em>v0.5.2-handoff</em> marker tag — full table on the project's <a href="../projects/airportsim/versions.html">versions page</a></td></tr>
     <tr><td>Codenames</td><td>None assigned to any tagged version (changelog descriptive titles are not codenames). One codename now exists for an untagged build: <strong>“Threshold”</strong>, the integrated build's codename (integration completed 2026-11-02; developer's choice, delegated by the owner). The owner approved its number the same day: <strong>0.6.0-alpha.1</strong>, the project's first Alpha.</td></tr>
     <tr><td>Engine</td><td>“Halcyon 2.5D”, <em>HALCYON_VERSION "2.5.0"</em> — no recorded lineage (see the <a href="../engine-lab/index.html">Engine Laboratory</a>)</td></tr>
-    <tr><td>Save format</td><td>Version 13 on the default branch (migration fixtures cover v4 → v13, all loading cleanly)</td></tr>
+    <tr><td>Save format</td><td><strong>HL-SAVE 1</strong> — save version 13, the named-section format landed 2026-11-07 (migration fixtures cover v4 → v13, all loading cleanly)</td></tr>
     <tr><td>Registry</td><td>RELEASES.md, established 2026-11-01 from the repository's tags and changelog; the pull request that carried it (PR #2) was closed unmerged by the owner's decision on 2026-11-02; the registry contents are derived from tags and changelog either way</td></tr>
   </table>
 
@@ -71,6 +71,15 @@
     <tr><td>Save format</td><td>Version 5</td></tr>
     <tr><td>Held candidate</td><td>1.0.0 candidate, tag → <em>48cedd9</em>, codename <strong>none assigned</strong> — status HELD (see <a href="releases.html">release records</a>)</td></tr>
     <tr><td>Registry</td><td>RELEASES.md + versioning policy on the development line — the studio's reference implementation of versioning practice</td></tr>
+  </table>
+
+  <h2>LONGSHOT</h2>
+  <table>
+    <tr><th>Item</th><th>Record</th></tr>
+    <tr><td>Name</td><td><strong>LONGSHOT</strong> — a codename, set 2026-11-10; the real title is the owner's to give, later. Status: <strong>deferred</strong> the day it was announced, work banked.</td></tr>
+    <tr><td>Versioning</td><td>Set 2026-11-10: milestones carry development versions (the first will be <strong>0.1.0</strong>); test builds are stamped by date + commit; pre-1.0 until the owner names and judges a version. No version exists yet.</td></tr>
+    <tr><td>Engine</td><td>New — Diesel's, built for this game on SDL3. No registry entry yet; the Engine Laboratory records engines from evidence, at closeout.</td></tr>
+    <tr><td>Registry</td><td>To live in the project's repository from its first milestone closeout; none exists yet, and none is backfilled.</td></tr>
   </table>
 
   <h2>Conventions</h2>
