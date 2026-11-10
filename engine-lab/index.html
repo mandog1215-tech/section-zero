@@ -56,7 +56,8 @@
   <p>Sharing the Halcyon name does <strong>not</strong> establish shared code,
   shared ancestry of code, portability of fixes, or comparability of version
   numbers: a version number in one game implies nothing about any other game.
-  What the games genuinely share is conventions — C11 + SDL2 only, procedural
+  What the games genuinely share is conventions — C11 throughout (SDL2 in
+  these three; the newest game, LONGSHOT, builds on SDL3), procedural
   assets only, and the Section Zero boot card — each implemented
   independently, three times.</p>
 
@@ -66,7 +67,16 @@
     <tr><td><a href="../projects/blacksite/index.html">Blacksite</a></td><td>Halcyon Engine</td><td>3.0 — <em>HALCYON_VERSION</em> in <em>src/engine.h</em></td><td>Threaded DDA raycaster, floor/ceiling casting, baked lightmaps</td></tr>
     <tr><td>AirportSim</td><td>Halcyon 2.5D</td><td>2.5.0 — <em>HALCYON_VERSION</em> in <em>src/engine/halcyon.h</em></td><td>SDL triangle batcher, isometric projection (the "engine" directory itself is a boot/branding layer)</td></tr>
     <tr><td>WorldForge</td><td><em>none — unnamed</em></td><td>— (versions with the game)</td><td>Tile renderer in flat <em>src/</em>, written for that game</td></tr>
+    <tr><td><a href="../projects/longshot/index.html">LONGSHOT</a></td><td><em>new — no registry entry yet</em></td><td>— (in development; deferred 2026-11-10)</td><td>Analytic orbital propagator at the core; one continuous-zoom 2.5D scene (SDL3)</td></tr>
   </table>
+  <p><strong>A note on the fourth row.</strong> LONGSHOT's engine is Diesel's,
+  new, and unfinished: its first milestone was begun on 2026-11-10 and
+  deferred the same day. This Lab records engines from evidence — constants
+  in code, closeout verdicts — and there is not yet enough of either. Its
+  registry entry will be established from its first milestone closeout, not
+  backfilled from its design. The design's own claim for it is recorded on
+  the <a href="../projects/longshot/index.html">project page</a>, labelled as
+  a claim.</p>
 
   <h2>Per-engine records</h2>
   <div class="card"><p class="st ok">Lineage — documented</p>
@@ -119,7 +129,7 @@
     <tr><td><strong>Linux tests</strong></td><td>The code's behaviour under the full test suites on the development platform — the everyday gate every change passes.</td></tr>
     <tr><td><strong>MinGW cross-compile</strong></td><td>Producibility only: the Windows binary can be built from the source. It says nothing about how the game runs.</td></tr>
     <tr><td><strong>Wine</strong></td><td>Preliminary runtime evidence under a compatibility layer. It is never called Windows verification, on this site or anywhere else.</td></tr>
-    <tr><td><strong>Native Windows runtime</strong></td><td>The product running on its actual platform. This is a <strong>release gate</strong> — for AirportSim it is exercised today by the native Windows battery on the owner's test rig, on every merge.</td></tr>
+    <tr><td><strong>Native Windows runtime</strong></td><td>The product running on its actual platform. This is a <strong>release gate</strong> — for AirportSim it was exercised by the native Windows battery on the owner's test rig, on every merge, until 2026-11-10, when the owner made the game Linux-only and retired the gate; its checks now run on GitHub-hosted Linux machines. (LONGSHOT is a Linux product from its first day, so for it the native-runtime class is Linux itself.)</td></tr>
   </table>
   <p>The grading discipline is the point: a claim is only ever stated at the
   class its evidence earned. The studio's five engineering principles —
