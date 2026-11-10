@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AirportSim: an airport management simulation in a living world — 4,531 real airports, eight playable roles, and a development record kept in the open. Delayed as of 2026-11-10.">
+<meta name="description" content="AirportSim: an airport management simulation in a living world — 4,531 real airports, eight playable roles, and a development record kept in the open. In active development.">
 <title>AirportSim — Section Zero Interactive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
   <a href="testing.html">Engineering &amp; testing</a>
   <a href="versions.html">Versions</a>
   <a href="roadmap.html">Roadmap</a>
-  <span class="pill delayed status-chip">0.6.0-alpha.2 · Delayed</span>
+  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
 </nav>
 <main id="main">
   <div class="projhero as">
@@ -97,7 +97,7 @@
   </div>
 
   <div class="status">
-    <strong>Development status:</strong> delayed (adopted for continued
+    <strong>Development status:</strong> in active development (adopted for continued
     development on 2026-10-31; current build 0.6.0-alpha.2 “Threshold” (first Alpha; last public build 0.5.3), C11 + SDL2, in-house
     Halcyon 2.5D engine). No public release is recorded in the available repository
     release records, and no downloads are offered from this page. Current status
@@ -105,8 +105,8 @@
   </div>
 
   <p>This section keeps three things separate, on purpose:
-  <a href="#today">the game today</a> (verified), <a href="#building">what was being built</a>
-  (the work, as it stands), and <a href="#vision">the long-term vision</a> (intent, not inventory).</p>
+  <a href="#today">the game today</a> (verified), <a href="#building">what is being built</a>
+  (active work), and <a href="#vision">the long-term vision</a> (intent, not inventory).</p>
 
   <h2 id="dream">The dream — in the owner's words</h2>
   <div class="callout">
@@ -199,7 +199,7 @@
   come — a second airport spinning up, the background law for far
   airports, continuous pilot flight, the owner in the world — with the
   Pilot, Passenger and ATC roles growing inside them. They are banked
-  with the delayed programme. The queue from here is on the
+  with the rest of the road. The queue from here is on the
   <a href="roadmap.html">roadmap</a>.</p>
   <p><strong>Update, 2026-11-08 — the aircraft fleet expansion is
   closed.</strong> The roster grew from 36 to 58 aircraft types,
@@ -240,17 +240,19 @@
   copies: the next copy he takes is the finished 7.0.)</em>
   Next on the road was collision — work that began, and was
   diagnosed, before the pause.</p>
-  <p><strong>Update, 2026-11-10 — development delayed.</strong>
-  By the owner's decision the programme is parked, and
-  AirportSim's development status changes to delayed. The last
-  work before the pause was diagnostic: the collision finding —
-  aircraft overlapping terminal roofs at some stands — was
-  measured and traced to three stacked causes (stand geometry,
-  a flat draw order, and aircraft drawn at 1.4× true size), with
-  the fix designed. A complete overhaul design, re-founding the
-  game's mathematics on four primitives, was finished and
-  banked the same day. The record on this page stands as it
-  was left.</p>
+  <p><strong>Update, 2026-11-10 — delayed, then resumed.</strong>
+  By the owner's decision the programme was parked this morning
+  and its status changed to delayed; within the hour he resumed
+  it, and development is active again — the shortest delay in
+  the studio's short history, recorded because it happened. The
+  last work before the pause was diagnostic: the collision
+  finding — aircraft overlapping terminal roofs at some stands —
+  was measured and traced to three stacked causes (stand
+  geometry, a flat draw order, and aircraft drawn at 1.4× true
+  size), with the fix designed. A complete overhaul design,
+  re-founding the game's mathematics on four primitives, was
+  finished and banked the same day. The road continues from
+  exactly where it stopped.</p>
 
   <h2>About — two scales, one simulation</h2>
   <p><strong>Global scale:</strong> a living aviation network runs across a real-Earth
@@ -357,15 +359,15 @@
     headless, dated 2026-11-02.</figcaption>
   </figure>
 
-  <h2 id="building">What was being built — and where it stopped</h2>
-  <p>When the owner delayed the programme on 2026-11-10, the queue stood like
-  this: the collision fix first (diagnosed, designed, partly built), then ground
-  markings, three small investigations (pilot recentring, a remapped key, cargo
-  scarcity in the demo world), a hardening of the game's randomness, the
-  interface renewal, and finally the full replay proof and the 7.0 “Latitude”
-  handover. All of it is banked — the designs and evidence stand in the project
-  records — and none of it is in progress tonight. What follows is how the work
-  got here.</p>
+  <h2 id="building">What is being built</h2>
+  <p>The queue stands like this: the collision fix first (diagnosed, designed,
+  under construction), then ground markings, three small investigations
+  (pilot recentring, a remapped key, cargo scarcity in the demo world), a
+  hardening of the game's randomness, the interface renewal, and finally the
+  full replay proof and the 7.0 “Latitude” handover. The programme was
+  delayed on the morning of 2026-11-10 and resumed within the hour; nothing
+  in the queue changed, and a complete overhaul design sits banked beside it
+  — designed, not started. What follows is how the work got here.</p>
   <p><strong>M1 — “Green gate &amp; safe repository” — is complete and accepted</strong>
   (2026-11-01): a fresh clone of the default branch passed the strict gate, the
   repository trap was closed, and the adoption documentation was reconciled. Since
@@ -409,9 +411,10 @@
   reloaded game byte-identical to one that never stopped (PR #24). The Windows
   verification harness followed, and then moved — with every other check — to a
   self-hosted rig on the owner's PC, where a native Windows battery ran on
-  every merge while the programme was active. (When work resumes, the checks
-  run on Linux lanes only — the owner's ruling of 2026-11-10; he plays the
-  game through Ubuntu on WSL.) WP-09 then grew Development Mode into the full diagnostic
+  every merge through the rig era. (The checks have since moved for good:
+  since 2026-11-10 they run on the four GitHub-hosted Linux lanes, each run
+  approved by the owner, and the game is Linux-only — he plays it through
+  Ubuntu on WSL.) WP-09 then grew Development Mode into the full diagnostic
   environment described above. Where the programme stands now is summarized in
   <a href="#dream">the programme today</a>; the forward queue is on the
   <a href="roadmap.html">roadmap</a>. M1's original criteria remain:</p>
@@ -425,9 +428,10 @@
   </ul>
   <p>All eight were satisfied with evidence — the details live on the
   <a href="testing.html">engineering &amp; testing page</a>. The register has
-  moved since: of the three Beta gates, two were satisfied while the programme
-  was active — native Windows verification (the owner's PC was the test rig,
-  and a native Windows battery ran on every merge; K3) and the save/reload fix (FND-002, PR #24). The
+  moved since: of the three Beta gates, two were satisfied in their era —
+  native Windows verification (the owner's PC was the test rig, and a native
+  Windows battery ran on every merge; K3 — the gate was retired on 2026-11-10
+  when the game went Linux-only) and the save/reload fix (FND-002, PR #24). The
   owner's 2026-11-02 hands-on with a pre-adoption Windows build (0.5.4, by the
   original author) — about an hour at Detroit, launched and played correctly,
   saves not tested — stands as the provisional gameplay record for that older
