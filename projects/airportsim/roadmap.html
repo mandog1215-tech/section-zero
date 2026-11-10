@@ -36,7 +36,7 @@
   <a href="testing.html">Engineering &amp; testing</a>
   <a href="versions.html">Versions</a>
   <a class="here" href="roadmap.html">Roadmap</a>
-  <span class="pill delayed status-chip">0.6.0-alpha.2 · Delayed</span>
+  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
 </nav>
 <main id="main">
   <div class="projhero as slim">
@@ -273,6 +273,27 @@
   begins, and each merge waits for its green battery. What has landed, what is
   landing, and what stands behind it:</p>
 
+  <div class="stage now">
+    <p class="st">Where the road stands — 2026-11-10</p>
+    <h3>The short version, before the long one</h3>
+    <p>Since this queue was drawn: the world phase finished (the planet pack
+    wired in, the far view approved on 2026-11-06); the new save system below
+    landed as HL-SAVE 1 (2026-11-07); the fleet grew to 58 types (2026-11-08);
+    and real airport layouts landed — 246 airports (2026-11-09). The current
+    work is <strong>collision</strong>: the finding that aircraft can overlap
+    terminal roofs was measured and traced to three stacked causes — stand
+    geometry, a flat draw order, and aircraft drawn at 1.4× true size — and
+    its fix is designed and under construction. Behind it: ground markings,
+    three small investigations, the interface renewal, and the final replay
+    proof before the 7.0 “Latitude” handover. The programme was delayed on
+    the morning of 2026-11-10 and resumed within the hour; a complete
+    overhaul design was banked the same week, unstarted. Checking now runs
+    on the four GitHub-hosted Linux lanes, each run approved by the owner
+    first; the game is Linux-only.</p>
+    <p><span class="pill prog">In development</span></p>
+  </div>
+  <div class="arrow">↓</div>
+
   <div class="stage done">
     <p class="st">Completed 2026-11-03</p>
     <h3>The reckoning — every system audited</h3>
@@ -368,16 +389,18 @@
     the approved look is real geography, smooth and clean at distance,
     computed from the real data. The interface overhaul followed inside
     the same phase: the full status board is merged, and the in-game
-    frame is in progress. The suite stands at 168,613 checks, 0 failed.
-    The test lanes themselves moved on 2026-11-07: the long Linux lanes
-    now run on GitHub-hosted machines, dispatched only when a gate calls
-    for them, while Windows verification stays in the local gates.</p>
+    frame is in progress. The suite's latest recorded full run stands at
+    192,063 checks, 0 failed. The test lanes moved twice more after this
+    was written — briefly to GitHub-hosted machines, then back to the
+    owner's rig in full — before settling on 2026-11-10: the four Linux
+    lanes on GitHub-hosted machines, each run approved by the owner, and
+    the game Linux-only.</p>
     <p><span class="pill done">W1</span> <span class="pill done">W2</span> <span class="pill done">W3</span> <span class="pill queue">W4</span> <span class="pill queue">W5</span> <span class="pill queue">W6</span> <span class="pill queue">W7</span></p>
   </div>
   <div class="arrow">↓</div>
 
-  <div class="stage now">
-    <p class="st">In design — commissioned 2026-11-07</p>
+  <div class="stage done">
+    <p class="st">Completed 2026-11-07 — HL-SAVE 1</p>
     <h3>The new save system</h3>
     <p>The current save format is one raw memory dump: it has no field
     encoding, so almost every major update has broken it, and one old
@@ -387,10 +410,11 @@
     field; a loader that cannot crash — a damaged section resets with
     a warning and the rest of the save loads; and exactly one one-way
     importer that converts old saves (versions 4–13) a single time,
-    after which the old format is retired. It is in design now; the
-    build follows the in-game frame. After it: real airport layouts,
-    then collision physics.</p>
-    <p><span class="pill prog">In design</span></p>
+    after which the old format is retired. <strong>It landed on
+    2026-11-07 as HL-SAVE 1, as designed here.</strong> After it came real
+    airport layouts (landed 2026-11-09); collision physics is the current
+    work.</p>
+    <p><span class="pill done">Done</span></p>
   </div>
   <div class="arrow">↓</div>
 
@@ -401,7 +425,10 @@
     stream, so buildings occlude aircraft correctly instead of aircraft
     painting over terminal roofs — and jet-bridge readability (FND-013: the
     bridges engage at all 135 Detroit gate stands; they need to be seen to
-    engage).</p>
+    engage). <em>Update, 2026-11-10:</em> the diagnosis widened — draw order
+    is one of three stacked causes (stand geometry and the 1.4× sprite scale
+    are the others) — and the work now runs as the collision item at the head
+    of the queue; this stage's drawing fix is one of its four parts.</p>
     <p><span class="pill queue">Queued</span></p>
   </div>
   <div class="arrow">↓</div>
@@ -421,9 +448,10 @@
   <div class="stage gate">
     <p class="st">Decision gate — the owner's</p>
     <h3>The Beta gates, then the release path</h3>
-    <p>Two of the three Beta gates are satisfied: native Windows verification
-    (a native Windows battery runs on the owner's rig on every merge) and the
-    save/reload fix (FND-002). The third — the full 14-scenario × 3-seed
+    <p>Two of the three Beta gates were satisfied in their era: native Windows
+    verification (the rig's native battery, on every merge — the gate itself
+    was retired on 2026-11-10, when the owner made the game Linux-only) and
+    the save/reload fix (FND-002). The third — the full 14-scenario × 3-seed
     end-to-end matrix rerun — is deliberately the last step, run immediately
     before the Beta decision, which is the owner's. Beyond it, the
     release path (conditional on the game genuinely being ready): the
@@ -434,7 +462,7 @@
     with copy protection, in packages containing compiled binaries and game
     data only — no source code — with the contents verified before anything
     goes out (the owner's policy, 2026-11-03).</p>
-    <p><span class="pill done">Gate 1 · Windows</span> <span class="pill done">Gate 2 · Save/reload</span> <span class="pill queue">Gate 3 · Full matrix</span> <span class="pill intent">Beta decision · owner</span></p>
+    <p><span class="pill done">Gate 1 · Windows (retired 2026-11-10)</span> <span class="pill done">Gate 2 · Save/reload</span> <span class="pill queue">Gate 3 · Full matrix</span> <span class="pill intent">Beta decision · owner</span></p>
   </div>
   <div class="arrow">↓</div>
 
