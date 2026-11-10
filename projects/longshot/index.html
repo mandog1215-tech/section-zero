@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="LONGSHOT (codename): a space journey sim in development at Section Zero Interactive — an inherited ship, a generated star system, real gravity.">
+<title>LONGSHOT (codename) — Section Zero Interactive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" aria-label="Studio">
+  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
+  <a href="../../index.html">Home</a>
+  <a href="../../studio.html">Studio</a>
+  <a href="../blacksite/index.html">Blacksite</a>
+  <a href="../airportsim/index.html">AirportSim</a>
+  <a href="../worldforge/index.html">WorldForge</a>
+  <a class="here" href="index.html">Longshot</a>
+  <a href="../../engine-lab/index.html">Engine Lab</a>
+  <a href="../../development/index.html">Development</a>
+</nav>
+<nav class="sub" aria-label="LONGSHOT">
+  <span class="sect">LONGSHOT</span>
+  <a class="here" href="index.html">Overview</a>
+  <span class="pill dev status-chip">Codename · In development</span>
+</nav>
+<main id="main">
+  <div class="projhero">
+    <p class="kicker">Project · Space journey simulation</p>
+    <h1>LONGSHOT</h1>
+    <p class="tag">You don't build the ship. You inherit it — and then you have to get her home.</p>
+    <div class="record-strip" aria-label="LONGSHOT record">
+      <div><span>Name</span><b>LONGSHOT — a codename</b></div>
+      <div><span>Status</span><b>In development — engine first</b></div>
+      <div><span>Platform</span><b>C11 + SDL3 · Linux</b></div>
+      <div><span>Design bench</span><b>12 of 12 published values reproduced</b></div>
+    </div>
+  </div>
+
+  <div class="status">
+    <strong>Development status:</strong> in development (announced 2026-11-10).
+    The engine is being built first; its first milestone is under way. There is
+    no game to show yet, no release date, and nothing to download. This page
+    records what exists — and says plainly what doesn't.
+  </div>
+
+  <h2>The game, as designed</h2>
+  <p>You don't build a spaceship — you inherit someone else's used one, quirks,
+  biography and all. A whole star system is rolled fresh: its planets priced in
+  fuel and timing, with somebody waiting at the far end. You fly real orbital
+  mechanics with every number shown in plain words — what a burn costs, when a
+  window opens, why the ship is complaining. Things break at the worst moments,
+  with readable causes and usually a stupid, heroic way to save it. Stranding
+  is common; death is rare. And you push one planet further because it's
+  <em>right there</em> and cheap this spring.</p>
+  <p>The design's rule, set by the owner: <strong>addictive first</strong> —
+  then different, detailed, innovative. Randomness is the content engine, chaos
+  is a tuned system with a budget and a cap, and the mathematics underneath is
+  the real thing: orbits are computed analytically, never stepped, so they
+  cannot drift; the price the game quotes you for a burn is the price you pay,
+  by construction, because the planner and the physics read the same world
+  model. The whole journey is drawn in the studio's 2.5D style — one continuous
+  scene you can zoom from a valve on the hull to the whole system.</p>
+
+  <h2>What exists today</h2>
+  <p>Honestly inventoried, in the order it was made:</p>
+  <ul>
+    <li><strong>A research file</strong> (2026-11-10): real fuel prices for real
+      manoeuvres, transfer windows as price curves, what Kerbal Space Program
+      left undone (systems depth; information it hid), and what The Long Drive
+      does to be addictive — random vehicle, far destination, loot that knows
+      where it is.</li>
+    <li><strong>A completed design</strong>: engine first, with 24 named
+      inventions, each written down with the prototype that could kill it. The
+      engine's claim in one line: one world model, read by the physics, the
+      planner, the generator and the renderer alike.</li>
+    <li><strong>A working math bench</strong> — the studio's math tool, ported
+      to orbital mechanics before a line of game code existed. Its self-check
+      reproduced <strong>12 of 12 published reference values</strong> from its
+      own laws: a 400&nbsp;km orbit's period (92.41 against 92.6 minutes), the
+      Earth–Mars transfer time (258.9 against 259 days), the synodic rhythm
+      (779.9 against 780 days), the fuel price of leaving for the Moon (3.084
+      against 3.1 km/s). Its Earth–Mars scanner, told nothing, found its
+      cheapest crossing at 261 days and 3.57 km/s — the textbook answer,
+      rediscovered.</li>
+    <li><strong>A private repository</strong>, created 2026-11-10.</li>
+    <li><strong>The first engine milestone, E1 “The Gravity Toy”, under
+      construction</strong>: star, planet, moons and one ship in a single
+      zoomable scene, with transfer prices quoted before you burn — and a
+      self-check harness whose whole job is trying to falsify the design's
+      claims.</li>
+  </ul>
+  <p>What does <em>not</em> exist yet: screenshots. There is no game to
+  screenshot. The two charts below are the design bench's own output — real
+  artefacts of the project, captioned as what they are.</p>
+
+  <figure>
+    <img src="img/porkchop-earth-mars.png" alt="Porkchop chart from LONGSHOT's design bench: Earth to Mars transfer cost over departure date and flight time">
+    <figcaption><strong>The bench's Earth–Mars transfer map.</strong> Every
+    crossing has its season and its price: leave on the wrong day and the same
+    trip costs twice the fuel. This weather — prices that move with the planets
+    — is the game's central tension, computed before the game exists.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/ladder-dv.png" alt="Chart from LONGSHOT's design bench: delta-v prices of destinations from low Earth orbit">
+    <figcaption><strong>The price of everywhere.</strong> From low Earth orbit:
+    the Moon's orbit at 3.10 km/s, Mars departure at 3.60, the Moon's surface at
+    5.70. The ladder a journey climbs, one affordable rung at a time — the
+    game's true price list.</figcaption>
+  </figure>
+
+  <h2>The road</h2>
+  <p>Engine milestones first, then the game: <strong>E1</strong> The Gravity
+  Toy (the falsifier arena) → <strong>E2</strong> The World Machine (a whole
+  generated system) → <strong>E3</strong> The Continuum (the calendar that
+  computes its own future) → <strong>E4</strong> The Living Ship (power, heat,
+  air, damage — one conserving stock system) → <strong>0.1.0 “First
+  Light”</strong>, the smallest living version of the journey: a four-stop
+  ladder and the far light beyond it, three ship archetypes, trade in mass, and
+  a chronicle card worth sharing. Sizes are estimates and carry the design's
+  own ±50%: the engine and First Light together run to roughly a season of
+  work. The contract's exclusions, in one line: no ship-building editor, ever;
+  no colonies or logistics webs; no second star system until the first one is
+  fun.</p>
+
+  <footer>
+    <p>LONGSHOT is a codename, not a title — the game's real name is the
+    owner's to give. Statuses here derive from the project's records; if the
+    two ever disagree, the record is right and this site gets corrected.</p>
+  </footer>
+</main>
+</body>
+</html>
