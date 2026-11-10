@@ -32,6 +32,7 @@
   --acc-bs: #d98d54;
   --acc-as: #93bde8;
   --acc-wf: #b3cc8d;
+  --acc-ls: #a794d8;
   --radius: 10px;
   --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 10px 32px rgba(0,0,0,0.28);
 }
@@ -145,6 +146,8 @@ nav.sub .sect { color: var(--gold); margin-right: 0.3rem; text-transform: upperc
 .band.bs::before { background: var(--acc-bs); }
 .band.as::before { background: var(--acc-as); }
 .band.wf::before { background: var(--acc-wf); }
+.band.ls::before { background: var(--acc-ls); }
+.band.solo { grid-template-columns: 1fr; }
 .band .shot img { width: 100%; display: block; border: 1px solid var(--line); border-radius: 8px; }
 .band figure.shot { margin: 0; }
 .band figure.shot figcaption { margin-top: 0.6rem; }
