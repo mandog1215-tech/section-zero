@@ -120,7 +120,7 @@ nav.sub .sect { color: var(--gold); margin-right: 0.3rem; text-transform: upperc
 .pill.cancelled { border-color: rgba(176,64,47,0.65); color: var(--bad); background: rgba(176,64,47,0.1); }
 .pill.dev, .pill.prog { border-color: rgba(74,127,181,0.6); color: var(--acc-as); background: rgba(74,127,181,0.1); }
 .pill.done, .pill.closed, .pill.verified { border-color: rgba(63,125,70,0.65); color: var(--ok); background: rgba(63,125,70,0.12); }
-.pill.shelved, .pill.queue { border-style: dashed; border-color: #4d5468; color: var(--faint); background: transparent; }
+.pill.shelved, .pill.queue, .pill.delayed { border-style: dashed; border-color: #4d5468; color: var(--faint); background: transparent; }
 .pill.intent { border-color: var(--gold-dim); color: var(--gold); background: rgba(201,162,39,0.08); }
 
 /* Status notice — a calm bulletin panel with a gold rail. */
