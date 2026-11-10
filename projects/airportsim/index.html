@@ -88,9 +88,9 @@
     <p class="tag">Run an airport — inside a world that flies whether you watch it or not.</p>
     <div class="record-strip" aria-label="AirportSim record">
       <div><span>Version</span><b>0.6.0-alpha.2 “Threshold” · Alpha</b></div>
-      <div><span>World</span><b>4,531 airports · 26 real layouts</b></div>
+      <div><span>World</span><b>4,531 airports · 246 real layouts (pack) · 26 built in</b></div>
       <div><span>Save format</span><b>HL-SAVE 1</b></div>
-      <div><span>Simulation suite</span><b>170,159 checks · 0 failed</b></div>
+      <div><span>Simulation suite</span><b>192,063 checks · 0 failed</b></div>
     </div>
   </div>
 
@@ -103,8 +103,8 @@
   </div>
 
   <p>This section keeps three things separate, on purpose:
-  <a href="#today">the game today</a> (verified), <a href="#building">what is being built</a>
-  (active work), and <a href="#vision">the long-term vision</a> (intent, not inventory).</p>
+  <a href="#today">the game today</a> (verified), <a href="#building">what was being built</a>
+  (the work, as it stands), and <a href="#vision">the long-term vision</a> (intent, not inventory).</p>
 
   <h2 id="dream">The dream — in the owner's words</h2>
   <div class="callout">
@@ -131,13 +131,12 @@
   Development Mode is strictly read-only: it shows what tests establish, what
   remains untested, where behaviour first deviates, and possible mechanisms —
   it never invents a cause beyond recorded evidence. On its completion the
-  build advanced to <strong>0.6.0-alpha.2 “Threshold”</strong> (PR #39;
-  master at <span class="mono">d8bb3c8</span>).</p>
+  build advanced to <strong>0.6.0-alpha.2 “Threshold”</strong> (2026-11-03).</p>
   <p><strong>The issues pass is done.</strong> Every open item was closed or
   classified with its evidence on 2026-11-03: test processes that shared one
-  save folder (fixed, PR #41); long airline names cut off in the Business
-  window (fixed with a self-sizing column, PR #42); three memory-recovery
-  paths that could crash (fixed, PR #43); three sibling sites judged guarded,
+  save folder (fixed); long airline names cut off in the Business
+  window (fixed with a self-sizing column); three memory-recovery
+  paths that could crash (fixed); three sibling sites judged guarded,
   no change; departures starving behind arrival streams, traced to runway
   assignment with no load term (classified — its remedy is the departure
   queue in the rework below); aircraft drawn over terminal roofs (a real
@@ -149,13 +148,12 @@
   the owner's hands-on test version. The day also enforced the owner's brand
   rule: no real commercial brand names in the game — the terminal
   inspector's flavour names were replaced with invented ones, and the test
-  suite now fails permanently if a real brand appears in terminal text
-  (PR #40). The owner has since extended the same rule to airline names:
+  suite now fails permanently if a real brand appears in terminal text.
+  The owner has since extended the same rule to airline names:
   the generator can no longer produce a real carrier — six roots were
   replaced with invented names chosen to keep the roster's random stream
   bit-identical — and a blocklist test now guards the whole roster
-  permanently. It landed as the opening change of the world update below
-  (PR #51).</p>
+  permanently. It landed as the opening change of the world update below.</p>
   <p><strong>The reckoning is written.</strong> Every major system was
   audited — the creator's design notes checked against the code and its
   mathematics — and ranked, healthiest first: simulation core, weather,
@@ -167,88 +165,40 @@
   <p><strong>The ATC rework is complete.</strong> On the owner's direction —
   “We need to completely rework the ATC system, it's very crude” — the
   weakest system was rebuilt in five steps, all merged and verified by a
-  full post-merge battery: controller-assigned speeds on final (PR #44),
-  one separation law everywhere (PR #45), a real departure queue (PR #46),
-  arrival sequencing (PR #47), and ground separation by aircraft size with
-  separation measured live in Development Mode (PRs #48, #49). Detail on
+  full post-merge battery: controller-assigned speeds on final,
+  one separation law everywhere, a real departure queue,
+  arrival sequencing, and ground separation by aircraft size with
+  separation measured live in Development Mode. Detail on
   the <a href="systems.html">systems page</a>.</p>
-  <p><strong>The continuous world is underway.</strong> The owner's
+  <p><strong>The continuous world landed.</strong> The owner's
   direction, 2026-11-03: the airport's 9&nbsp;km tile with its hard edge —
-  never his original scope — becomes one continuous world you can scroll
+  never his original scope — became one continuous world you can scroll
   or fly across, airport to airport, with one fully simulated airport at
-  a time and the rest living statistical lives until you arrive. The
-  first three steps are merged (PRs #51, #52,
-  #61–#64, #66 and #67; master at <span
-  class="mono">1687670</span>): a double-precision world frame (worst
-  measured round-trip error 0.00001&nbsp;m), a geography pack format with
-  real terrain data (Detroit and Denver areas built from ETOPO 2022 and
-  Natural Earth), and a Development Mode world inspector — landed with
-  the full test suite green (163,643 checks, 0 failed) and every soak
-  hash byte-identical to the pre-world game, so the world stands on the
-  simulation exactly as verified. The second step opens the view itself:
-  the camera leaves the 9&nbsp;km fence for a 150&nbsp;km envelope, and
-  the real geography — the Detroit River, Lake Erie, neighbouring
-  airfields — renders to the horizon, with the full post-merge test
-  battery green. The third step: its first part (PR #61) gives
-  every arriving flight an identity worked out when it is scheduled —
-  airline, aircraft, callsign, origin — and hands departing flights off
-  into onward tracks instead of letting them vanish at the fence; it ran
-  in shadow first, proven to change nothing by a bit-for-bit comparison
-  run against the old code. The switch has now landed (PR #62):
-  arrivals are born from those identities, entering on the real bearing
-  from their real origin — and the step's own test gate caught an older
-  bug (the tower forgot its speed assignments across a save and reload)
-  and it was fixed inside the step, with the full suite at 166,812
-  checks, 0 failed and the post-merge battery fully green. The step's
-  third part (PR #63) then judged the new traffic against the pre-world
-  baseline at the firm standard — the measuring instrument first
-  calibrated to reproduce the old system's day exactly, the pass line
-  frozen in writing before the sample ran — and the verdict is a FIRM
-  PASS on all nine measures, with every created flight accounted for;
-  one movement margin narrowed and is now watched by name at every
-  future judgement. Full suite 166,821 checks, 0 failed; post-merge
-  battery fully green. The
-  geography was measured before it was promised, and the full planet
-  pack is now built and verified: 1.46&nbsp;GB of terrain, land cover
-  and shorelines against a 2.5–3.0&nbsp;GB working budget, with wiring
-  it into the game as its own step, judged by screenshots.
-  The phase has also gained its X-ray: a Development Mode skeleton view
-  that strips the running simulation to its structure — airfield
-  geometry, stands, the movement grid, separation bubbles drawn from
-  the separation law itself, the world's fences and onward tracks —
-  merged as PR #64 after its own test lane caught, and the build fixed,
-  a Windows defect in the new code. Full suite 167,140 checks,
-  0 failed; post-merge battery fully green. Airfield markings —
-  painted stand numbers at every stand and runway numbers at every
-  threshold, drawn to read correctly on approach — have since merged
-  as PR #66. The testing underneath it all was then rebuilt as
-  PR #67: every run is now one bundled battery — the full suite,
-  both memory-safety lanes covering all 97 test groups between
-  them, and a summary posted on every run — with the second
-  safety lane joining the required checks. Next, the full
-  geography pack is wired into the game: its first style study
-  was judged too blocky, so the far view is de-blocked before
-  the look is picked from real renders.
-  <strong>That step has now landed:</strong> the full pack is wired into
-  the game, and on 2026-11-06 the owner approved the far view and closed
-  the geography set — the approved look is real geography, smooth and
-  clean at distance. The interface overhaul followed: its full status
-  board is merged, and the in-game frame is in progress. The suite
-  stands at <strong>170,159 checks, 0 failed</strong> in the full gate
-  (the two sanitiser lanes passed separately on the same run). The clean-sheet
-  save system has landed (2026-11-07): a named-section format with a
-  verified directory, a one-way importer for every older version, and
-  a full-battery verification including native Windows. Next in the
-  queue: a repository records pass (see the
-  <a href="roadmap.html">roadmap</a>); then real airport layouts and
-  collision physics. The programme's next major milestone is a closed
-  dev beta, <strong>7.0 “Latitude”</strong> — internal testing only,
-  in development.
-  Four steps follow — a second airport spins up; the background law
-  for far airports; continuous pilot flight; the owner in the world —
-  with the
-  Pilot, Passenger and ATC roles growing inside them. The queue from
-  here is on the <a href="roadmap.html">roadmap</a>.</p>
+  a time and the rest living statistical lives until you arrive. It was
+  built in measured steps: a double-precision world frame (worst measured
+  round-trip error 0.00001&nbsp;m); arriving flights born with real
+  identities — airline, aircraft, callsign, origin — entering on the real
+  bearing from their real origin, and departing flights handed off into
+  onward tracks instead of vanishing at the fence; the new traffic then
+  judged against the pre-world baseline at a pass line frozen in writing
+  before the sample ran — a firm pass on all nine measures. A Development
+  Mode skeleton view strips the running simulation to its structure, and
+  airfield markings paint stand and runway numbers at every airport. The
+  geography was measured before it was promised: the full planet pack —
+  1.46&nbsp;GB of terrain, land cover and shorelines against a
+  2.5–3.0&nbsp;GB working budget — is wired into the game, and on
+  2026-11-06 the owner approved the far view and closed the geography
+  set: the approved look is real geography, smooth and clean at distance.
+  The clean-sheet save system landed on 2026-11-07 as <strong>HL-SAVE
+  1</strong>: a file of named, individually versioned sections, a loader
+  that cannot crash, and a one-way importer for every older save. The
+  interface overhaul's status board is merged; its in-game frame was in
+  progress when the programme paused. Four world steps were still to
+  come — a second airport spinning up, the background law for far
+  airports, continuous pilot flight, the owner in the world — with the
+  Pilot, Passenger and ATC roles growing inside them. They are banked
+  with the delayed programme. The queue from here is on the
+  <a href="roadmap.html">roadmap</a>.</p>
   <p><strong>Update, 2026-11-08 — the aircraft fleet expansion is
   closed.</strong> The roster grew from 36 to 58 aircraft types,
   including the classic trijets (727-200, DC-10-30, MD-11) with
@@ -283,13 +233,22 @@
   catalogue keeps growing in the background beyond the proven
   246. This evening the owner received a snapshot of the game
   as it stands for hands-on testing — a development snapshot,
-  not a release; the 7.0 “Latitude” copy remains the
-  handover's. Next on the road: collision, so aircraft can
-  never overlap a building.</p>
+  not a release. <em>(On 2026-11-10 he ordered that snapshot
+  deleted, unplayed, and ruled there would be no more interim
+  copies: the next copy he takes is the finished 7.0.)</em>
+  Next on the road was collision — work that began, and was
+  diagnosed, before the pause.</p>
   <p><strong>Update, 2026-11-10 — development delayed.</strong>
   By the owner's decision the programme is parked, and
-  AirportSim's development status changes to delayed. The
-  record on this page stands as it was left.</p>
+  AirportSim's development status changes to delayed. The last
+  work before the pause was diagnostic: the collision finding —
+  aircraft overlapping terminal roofs at some stands — was
+  measured and traced to three stacked causes (stand geometry,
+  a flat draw order, and aircraft drawn at 1.4× true size), with
+  the fix designed. A complete overhaul design, re-founding the
+  game's mathematics on four primitives, was finished and
+  banked the same day. The record on this page stands as it
+  was left.</p>
 
   <h2>About — two scales, one simulation</h2>
   <p><strong>Global scale:</strong> a living aviation network runs across a real-Earth
@@ -311,8 +270,9 @@
       observation, not a guaranteed constant</li>
     <li>Airport ownership play: construction, gates, economy, airline deals, a home
       airport that can start half-broken and be built up</li>
-    <li>Ground operations and air traffic control at 26 real layouts (Boston,
-      Heathrow, Kelowna and 23 more)</li>
+    <li>Ground operations and air traffic control at real layouts — 26 built in
+      at this baseline (Boston, Heathrow, Kelowna and 23 more); a pack of 246
+      more landed on 2026-11-09</li>
     <li>Eight playable roles in the same simulation</li>
     <li>Weather with real METAR data; country and locale data for 232 territories</li>
     <li>Saves that migrate forward across versions — save fixtures spanning
@@ -320,16 +280,16 @@
   </ul>
 
   <div class="nums">
-    <div><b>168,613</b><span>simulation checks, 0 failed</span></div>
+    <div><b>192,063</b><span>simulation checks, 0 failed — latest recorded full run</span></div>
     <div><b>9,676</b><span>interface checks, 0 failed</span></div>
     <div><b>4,531</b><span>airports in the world data</span></div>
-    <div><b>26</b><span>real airport layouts</span></div>
+    <div><b>246 + 26</b><span>real airport layouts (pack + built in)</span></div>
     <div><b>~31,500</b><span>lines of C11 — no asset files</span></div>
   </div>
-  <p>The suite now runs 168,613 checks (2026-11-07); the figure before it was
-  over 163,000 (2026-11-03), and before that
-  the final integrated gate's measured result (2026-11-02, on the merged code —
-  72 test groups; the adoption baseline was 162,315 simulation checks).
+  <p>The suite's recorded full runs: 162,315 checks at adoption (2026-11-01),
+  162,701 at the final integrated gate (2026-11-02, on the merged code —
+  72 test groups), 192,032 on 2026-11-08, and 192,063 in the latest
+  recorded tally — 0 failed at every point.
   They show the tested behaviour holds; they are not, by themselves, proof that
   every feature works — the per-system grades live on the
   <a href="systems.html">systems page</a>.</p>
@@ -340,6 +300,21 @@
     weather systems across the real Earth, with the day/night terminator sweeping
     through. This is the world your one airport lives in. (Refreshed 2026-11-04
     from the current build: 1,439 flights airborne at capture time.)</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/trijet-close.jpg" alt="Close view of a trijet at the gate, from the official close-view set on master">
+    <figcaption><strong>Close view, from the official set on master (2026-11-09).</strong>
+    The trijets up close — tail engine, fin livery and gate branding board. Frames like
+    this one, inspected image by image, are what caught the fleet expansion's three
+    painting defects before it closed.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/apron-wide.jpg" alt="AirportSim apron at work, from the official close-view set on master">
+    <figcaption><strong>The apron at work, same set (2026-11-09).</strong>
+    Ground operations at the stands, captured on master after the fleet expansion
+    and the real-layouts pack landed.</figcaption>
   </figure>
 
   <figure>
@@ -380,7 +355,15 @@
     headless, dated 2026-11-02.</figcaption>
   </figure>
 
-  <h2 id="building">What is being built</h2>
+  <h2 id="building">What was being built — and where it stopped</h2>
+  <p>When the owner delayed the programme on 2026-11-10, the queue stood like
+  this: the collision fix first (diagnosed, designed, partly built), then ground
+  markings, three small investigations (pilot recentring, a remapped key, cargo
+  scarcity in the demo world), a hardening of the game's randomness, the
+  interface renewal, and finally the full replay proof and the 7.0 “Latitude”
+  handover. All of it is banked — the designs and evidence stand in the project
+  records — and none of it is in progress tonight. What follows is how the work
+  got here.</p>
   <p><strong>M1 — “Green gate &amp; safe repository” — is complete and accepted</strong>
   (2026-11-01): a fresh clone of the default branch passed the strict gate, the
   repository trap was closed, and the adoption documentation was reconciled. Since
@@ -423,8 +406,10 @@
   of the minute, so a reload quietly changed the weather; the fix made a
   reloaded game byte-identical to one that never stopped (PR #24). The Windows
   verification harness followed, and then moved — with every other check — to a
-  self-hosted rig on the owner's PC, where a native Windows battery now runs on
-  every merge. WP-09 then grew Development Mode into the full diagnostic
+  self-hosted rig on the owner's PC, where a native Windows battery ran on
+  every merge while the programme was active. (When work resumes, the checks
+  run on Linux lanes only — the owner's ruling of 2026-11-10; he plays the
+  game through Ubuntu on WSL.) WP-09 then grew Development Mode into the full diagnostic
   environment described above. Where the programme stands now is summarized in
   <a href="#dream">the programme today</a>; the forward queue is on the
   <a href="roadmap.html">roadmap</a>. M1's original criteria remain:</p>
@@ -438,9 +423,9 @@
   </ul>
   <p>All eight were satisfied with evidence — the details live on the
   <a href="testing.html">engineering &amp; testing page</a>. The register has
-  moved since: of the three Beta gates, two are now satisfied — native Windows
-  verification (the owner's PC is the test rig, and a native Windows battery
-  runs on every merge; K3) and the save/reload fix (FND-002, PR #24). The
+  moved since: of the three Beta gates, two were satisfied while the programme
+  was active — native Windows verification (the owner's PC was the test rig,
+  and a native Windows battery ran on every merge; K3) and the save/reload fix (FND-002, PR #24). The
   owner's 2026-11-02 hands-on with a pre-adoption Windows build (0.5.4, by the
   original author) — about an hour at Detroit, launched and played correctly,
   saves not tested — stands as the provisional gameplay record for that older
