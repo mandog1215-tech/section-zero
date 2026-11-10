@@ -43,7 +43,7 @@
     <tr><td>Owner &amp; director</td><td>Andrew</td><td>Sets priorities, approves phases and releases, makes the calls that stop or start work. Releases happen only by his decision.</td></tr>
     <tr><td>Lead developer</td><td>Diesel (AI)</td><td>Designs, builds, tests, documents, and operates the projects day to day — repositories, websites, verification, and this site.</td></tr>
     <tr><td>Creator of Blacksite &amp; AirportSim</td><td>Grok Bot (AI)</td><td>Built the studio's two larger games; Blacksite is the studio's engineering blueprint.</td></tr>
-    <tr><td>Independent assessor</td><td>ChatGPT (AI)</td><td>Reviews progress reports, challenges conclusions, and drafts the directives the owner issues. Its conclusions enter a project only through the owner.</td></tr>
+    <tr><td>Independent assessor <span class="mono">(2026-10-30 → 2026-11-09)</span></td><td>ChatGPT (AI)</td><td>Reviewed progress reports and challenged conclusions. The owner ended the role on 2026-11-09 — “it's just back to me and you” — and the studio works without an assessor now. Its findings only ever entered a project through the owner, as they still would.</td></tr>
   </table>
 
   <h2>Development philosophy</h2>
@@ -74,7 +74,9 @@
 
   <h2>The shared foundation</h2>
   <p>Every Section Zero game is built the same way at the foundation level:
-  C11 and SDL2 only; 100% procedural assets (no loaded art, sound, or music
+  C11 throughout, with SDL2 in Blacksite, AirportSim and WorldForge — the
+  newest game, LONGSHOT, is being built on SDL3, by the owner's decision;
+  100% procedural assets (no loaded art, sound, or music
   files); the shared Section Zero studio card opening every game; a written
   project brain (state, architecture, roadmap, tests, decisions) kept beside the
   code; and the same release bar for a small game as for a large one. What the
@@ -127,13 +129,15 @@
     Complexity must serve the game: complexity that does not is not depth, it
     is weight.</p></div>
 
-  <p>Two structural decisions complete the picture. The studio's games are
-  <strong>native Windows products, developed on Linux</strong>. And the
-  unified game UI — one shared interface across the games — is a
-  <strong>post-release initiative</strong>: deferred until after both
-  AirportSim and WorldForge are released, with no shared interface work
-  before then. Development Mode, by contrast, is a separate, per-game
-  initiative, already under way.</p>
+  <p>Two structural decisions complete the picture. The studio's first games
+  are <strong>native Windows products, developed on Linux</strong> — and the
+  newest direction reverses the emphasis: LONGSHOT is Linux-first, and the
+  owner's ruling of 2026-11-10 makes AirportSim Linux-only from here on too,
+  played through Ubuntu on WSL; Windows support there is best-effort. A
+  unified game UI — one shared interface across the games — was once planned
+  as a post-release initiative; with AirportSim delayed and WorldForge
+  shelved, no shared interface work exists or is scheduled. Development Mode
+  remains what it always was: a separate, per-game initiative.</p>
 
   <h2>How the studio builds — five engineering principles</h2>
   <p>The companion document — the engineering philosophy, established the same
@@ -171,13 +175,16 @@
   <table>
     <tr><th>Game</th><th>State</th><th>Version identity</th></tr>
     <tr><td><a href="projects/airportsim/index.html"><strong>AirportSim</strong></a></td>
-      <td><span class="pill dev">Active development</span> Development Mode complete; the ATC rework complete (all five steps merged and battery-verified); master at <span class="mono">d8bb3c8</span>.</td>
+      <td><span class="pill delayed">Delayed</span> Parked by the owner's decision, 2026-11-10, with a completed overhaul design banked and the records standing as left; master at <span class="mono">53563f2</span>.</td>
       <td><strong>0.6.0-alpha.2 “Threshold”</strong> — internal development identity; 0.5.3 remains the last public build.</td></tr>
+    <tr><td><a href="projects/longshot/index.html"><strong>LONGSHOT</strong></a> <span class="mono">(codename)</span></td>
+      <td><span class="pill dev">In development</span> Announced 2026-11-10. Engine first: the first engine milestone is under way.</td>
+      <td>No version yet — the first development version will be <strong>0.1.0</strong>. The real title is the owner's to give, later.</td></tr>
     <tr><td><a href="projects/blacksite/index.html"><strong>Blacksite</strong></a></td>
-      <td><span class="pill cancelled">Cancelled</span> Development cancelled 2026-11-02 (owner's decision — the studio concentrates on AirportSim); tree and records retained as a design reference.</td>
+      <td><span class="pill cancelled">Cancelled</span> Development cancelled 2026-11-02 by the owner's decision; tree and records retained as a design reference.</td>
       <td><strong>1.5.0</strong> <span class="pill held">Held</span> — built, never published; no release, no download.</td></tr>
     <tr><td><a href="projects/worldforge/index.html"><strong>WorldForge</strong></a></td>
-      <td><span class="pill shelved">Shelved</span> Shelved 2026-10-31; no development in any form until AirportSim and its post-release mod-support work are complete and the owner authorizes revival.</td>
+      <td><span class="pill shelved">Shelved</span> Shelved 2026-10-31; briefly revived by the owner on 2026-11-10 and parked again the same night. Not in development.</td>
       <td><strong>1.0.0 candidate</strong> <span class="pill held">Held</span> — tag and package local only, never published.</td></tr>
   </table>
 
