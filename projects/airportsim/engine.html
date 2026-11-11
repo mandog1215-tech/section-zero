@@ -3,158 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="What the name Halcyon 2.5D actually covers in AirportSim's source — an identity header, a boot module, and the renderer that was already there.">
-<title>AirportSim — the Halcyon 2.5D engine · Section Zero Interactive</title>
+<title>AirportSim — The Engine Room — Section Zero Interactive</title>
+<meta name="description" content="AirportSim's hand-rolled C engine: a simulated world kept separate from its drawing, and the SDL2-to-SDL3 foundation swap under way tonight.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a class="here" href="index.html">AirportSim</a>
-  <a href="../worldforge/index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="AirportSim">
-  <span class="sect">AirportSim</span>
-  <a href="index.html">Overview</a>
-  <a href="systems.html">Systems</a>
-  <a class="here" href="engine.html">Engine</a>
-  <a href="mathematics.html">Mathematics</a>
-  <a href="testing.html">Engineering &amp; testing</a>
-  <a href="versions.html">Versions</a>
-  <a href="roadmap.html">Roadmap</a>
-  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
-</nav>
-<main id="main">
-  <div class="projhero as slim">
-    <svg class="skybg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="skyfade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#96b9dc" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#96b9dc" stop-opacity="0.10"/>
-          <stop offset="1" stop-color="#96b9dc" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="skyblur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
-      </defs>
-      <rect class="skyterm" x="-480" y="-40" width="440" height="420" fill="url(#skyfade)"/>
-      <g fill="#cfe3f5">
-        <circle cx="80" cy="42" r="1.3" opacity="0.5"/><circle cx="210" cy="96" r="1" opacity="0.35"/>
-        <circle cx="330" cy="30" r="1.5" opacity="0.55"/><circle cx="470" cy="70" r="1" opacity="0.3"/>
-        <circle cx="590" cy="38" r="1.2" opacity="0.45"/><circle cx="720" cy="92" r="1" opacity="0.3"/>
-        <circle cx="845" cy="34" r="1.4" opacity="0.5"/><circle cx="965" cy="78" r="1" opacity="0.35"/>
-        <circle cx="1080" cy="44" r="1.2" opacity="0.45"/><circle cx="1145" cy="110" r="1" opacity="0.3"/>
-        <circle cx="150" cy="150" r="1" opacity="0.25"/><circle cx="660" cy="150" r="1" opacity="0.22"/>
-        <circle cx="1035" cy="170" r="1" opacity="0.25"/><circle cx="415" cy="120" r="1" opacity="0.2"/>
-      </g>
-      <path id="sky-r2" d="M-20,110 C320,30 760,190 1220,70" fill="none" stroke="#7fa8c9" stroke-opacity="0.34" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r3" d="M-20,322 C420,244 820,118 1220,238" fill="none" stroke="#7fa8c9" stroke-opacity="0.22" stroke-width="1.1" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r1" d="M-20,262 C280,140 640,300 1220,150" fill="none" stroke="#c9a227" stroke-opacity="0.38" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <g>
-        <circle cx="250" cy="232" r="2" fill="#c9a227" opacity="0.55"/><circle cx="700" cy="118" r="2" fill="#c9a227" opacity="0.5"/>
-        <circle cx="982" cy="252" r="2" fill="#c9a227" opacity="0.5"/><circle cx="520" cy="84" r="1.8" fill="#9cc0e8" opacity="0.5"/>
-      </g>
-      <g class="skycloud" opacity="0.055" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="210" cy="66" rx="95" ry="17"/><ellipse cx="265" cy="82" rx="60" ry="13"/>
-      </g>
-      <g class="skycloud c2" opacity="0.05" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="950" cy="288" rx="110" ry="19"/><ellipse cx="890" cy="272" rx="58" ry="12"/>
-      </g>
-      <g opacity="0.85">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#e6c65c"/>
-        <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r1"/></animateMotion>
-      </g>
-      <g opacity="0.7">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#bcd6ee" transform="scale(0.8)"/>
-        <animateMotion dur="38s" begin="-14s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r2"/></animateMotion>
-      </g>
-      <g>
-        <circle r="6.5" fill="#9cc0e8" opacity="0.18"/><circle r="2.6" fill="#cfe3f5" opacity="0.9"/>
-        <animateMotion dur="46s" begin="-31s" repeatCount="indefinite"><mpath href="#sky-r3"/></animateMotion>
-      </g>
-    </svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/" aria-current="page">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE ENGINE ROOM <b>★</b> MIND THE TRANSPLANT IN PROGRESS <b>★</b></span>
+  <span>THE ENGINE ROOM <b>★</b> MIND THE TRANSPLANT IN PROGRESS <b>★</b></span>
+</div></div>
 
-  <h2>What carries the name</h2>
-  <p>In AirportSim's source tree, <em>src/engine/</em> contains exactly two files:
-  <em>halcyon.h</em> — the identity header, defining <em>HALCYON_NAME "Halcyon
-  2.5D"</em> and <em>HALCYON_VERSION "2.5.0"</em> — and <em>boot.c</em>, which runs
-  the boot sequence: the Section Zero studio card, the "powered by" card and
-  title, the F3 developer overlay, and the F2 credits. That is the whole of the
-  "engine" as a directory: a branding and boot layer. The F3 overlay it opens,
-  though, grew well past a boot layer's ambitions: WP-09 developed it into the
-  game's full Development Mode — a complete diagnostic environment of eight
-  increments, finished on 2026-11-03 — built on the retained engine below.</p>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">AIRPORTSIM — FIELD NOTES</p>
+    <h1>Notes from the <span class='hl-teal'>Engine Room</span></h1>
+    <p class="sub">The machinery under the airfield: plain C, a world that never touches the drawing board, and a change of foundations performed mid-flight.</p>
+  </section>
 
-  <h2>What actually renders</h2>
-  <p>The renderer the name sits on lives in the flat <em>src/</em> tree: an
-  SDL_RenderGeometry triangle batcher (<em>render.c</em>, <em>render_layout.c</em>)
-  with an isometric projection (<em>iso.c</em>) and painter's-sort drawing. It is
-  this game's own work, written for this game's 2.5D presentation. The studio
-  Engine Registry records the relationship precisely: the audit found no evidence
-  establishing a shared engine codebase between this layer and the studio's other
-  games — see the <a href="../../engine-lab/index.html">Engine Laboratory</a> for
-  the full, qualified finding.</p>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>A world, separate from its picture</h3>
+        <p>The simulation files are forbidden from including the graphics library's headers. The airport therefore exists — lands, delays, defaults — with no window open at all. That separation is what lets the test batteries run whole airports headlessly, thousands of times, while nobody watches.</p>
+      </div>
+      <div class="card">
+        <h3>Why change foundations</h3>
+        <p>SDL2 carried the prototype era honourably. SDL3 is where the studio now stands: LONGSHOT flies on it, its design bench was proven on it, and a two-game studio compounds every lesson when both games share one base.</p>
+      </div>
+      <div class="card">
+        <h3>How a transplant is survived</h3>
+        <p>In slices, each small enough to prove on its own: compile clean, run the four lanes, compare the photographs. The game must be demonstrably itself on the far side of the swap — same airports, same behaviour, same pictures — or the swap is not finished, whatever the compiler thinks.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>The version number</h2>
-  <div class="card"><p class="st mid">No recorded lineage</p>
-    <h3>"2.5.0" was assigned at birth</h3>
-    <p><em>halcyon.h</em> was introduced in commit <em>626ec77</em> (2026-10-29) as
-    a boot/branding module added to an already-working renderer, and it has
-    exactly one commit in its history: the version was <em>"2.5.0"</em> in that
-    first commit and has never changed. No 1.0 or 2.0 exists anywhere in the
-    project's history or changelog, and why that number was chosen is not
-    recorded. It is not a point on Blacksite's Halcyon scale (whose 1.0 → 2.0 →
-    3.0 lineage is documented), and the two numbers should never be compared.</p></div>
-
-  <h2>Recorded open item</h2>
-  <div class="card gap"><p class="st">Documentation discipline · Not yet in force</p>
-    <h3>Engine changes have no changelog of their own</h3>
-    <p>Because nothing records engine-layer changes separately, the version
-    constant could drift from the code unrecorded. The Engine Registry's
-    recommended control — an explicit engine line in the game's changelog
-    practice — is adopted at the game's next documentation pass. Until then it
-    is recorded here as an open item, not a practice.</p></div>
-
-  <h2>The verdict — and what is not claimed</h2>
-  <p>The engine review this page once anticipated has happened: on 2026-11-01
-  a full engine assessment and mathematics audit examined the engine and the
-  simulation's mathematics end to end, and its verdict was <strong>RETAIN the
-  engine</strong> — no replacement was undertaken, and none is planned.
-  Development Mode — the phase the old order placed after that review — is
-  likewise complete (WP-09, eight increments, 2026-11-03). Engine claims here
-  are graded by evidence class, as everywhere in the studio: Linux tests; the
-  MinGW cross-compile (producibility only); Wine (preliminary, never called
-  Windows verification); and native Windows runtime — a release gate, today
-  exercised by the native battery on the owner's rig at every merge (the four
-  classes are set out in the <a href="../../engine-lab/index.html">Engine
-  Laboratory</a>). Nothing beyond that record is claimed: this page describes
-  the engine exactly as it stands in the current development build,
-  0.6.0-alpha.2.</p>
-
-  <footer>
-    <p>Sources: <em>src/engine/halcyon.h</em> and its git history, the studio
-    Halcyon audit (2026-11-01) and its review, and the studio Engine Registry.
-    If this page and those records disagree, the records are right.</p>
-  </footer>
-  <script>
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('svg.skybg').forEach(function (s) { if (s.pauseAnimations) { s.pauseAnimations(); } });
-  }
-  </script>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The airfield itself — diagram, airlines, photographs and one small landing strip — waits on the main page of this hall.</p>
+      <p><a class="btn white" href="index.html">Return to the airfield</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>

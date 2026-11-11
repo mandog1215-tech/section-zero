@@ -3,473 +3,322 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AirportSim: an airport management simulation in a living world — 4,531 real airports, eight playable roles, and a development record kept in the open. In active development.">
-<title>AirportSim — Section Zero Interactive</title>
+<title>AirportSim — The Airfield — Section Zero Interactive</title>
+<meta name="description" content="AirportSim is an airport sandbox with tycoon weight and god-game reach, where the airlines themselves are the other players. 253 real airports, 58 aircraft types, one long memory.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a class="here" href="index.html">AirportSim</a>
-  <a href="../worldforge/index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="AirportSim">
-  <span class="sect">AirportSim</span>
-  <a class="here" href="index.html">Overview</a>
-  <a href="systems.html">Systems</a>
-  <a href="engine.html">Engine</a>
-  <a href="mathematics.html">Mathematics</a>
-  <a href="testing.html">Engineering &amp; testing</a>
-  <a href="versions.html">Versions</a>
-  <a href="roadmap.html">Roadmap</a>
-  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
-</nav>
-<main id="main">
-  <div class="projhero as">
-    <svg class="skybg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="skyfade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#96b9dc" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#96b9dc" stop-opacity="0.10"/>
-          <stop offset="1" stop-color="#96b9dc" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="skyblur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
-      </defs>
-      <rect class="skyterm" x="-480" y="-40" width="440" height="420" fill="url(#skyfade)"/>
-      <g fill="#cfe3f5">
-        <circle cx="80" cy="42" r="1.3" opacity="0.5"/><circle cx="210" cy="96" r="1" opacity="0.35"/>
-        <circle cx="330" cy="30" r="1.5" opacity="0.55"/><circle cx="470" cy="70" r="1" opacity="0.3"/>
-        <circle cx="590" cy="38" r="1.2" opacity="0.45"/><circle cx="720" cy="92" r="1" opacity="0.3"/>
-        <circle cx="845" cy="34" r="1.4" opacity="0.5"/><circle cx="965" cy="78" r="1" opacity="0.35"/>
-        <circle cx="1080" cy="44" r="1.2" opacity="0.45"/><circle cx="1145" cy="110" r="1" opacity="0.3"/>
-        <circle cx="150" cy="150" r="1" opacity="0.25"/><circle cx="660" cy="150" r="1" opacity="0.22"/>
-        <circle cx="1035" cy="170" r="1" opacity="0.25"/><circle cx="415" cy="120" r="1" opacity="0.2"/>
-      </g>
-      <path id="sky-r2" d="M-20,110 C320,30 760,190 1220,70" fill="none" stroke="#7fa8c9" stroke-opacity="0.34" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r3" d="M-20,322 C420,244 820,118 1220,238" fill="none" stroke="#7fa8c9" stroke-opacity="0.22" stroke-width="1.1" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r1" d="M-20,262 C280,140 640,300 1220,150" fill="none" stroke="#c9a227" stroke-opacity="0.38" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <g>
-        <circle cx="250" cy="232" r="2" fill="#c9a227" opacity="0.55"/><circle cx="700" cy="118" r="2" fill="#c9a227" opacity="0.5"/>
-        <circle cx="982" cy="252" r="2" fill="#c9a227" opacity="0.5"/><circle cx="520" cy="84" r="1.8" fill="#9cc0e8" opacity="0.5"/>
-      </g>
-      <g class="skycloud" opacity="0.055" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="210" cy="66" rx="95" ry="17"/><ellipse cx="265" cy="82" rx="60" ry="13"/>
-      </g>
-      <g class="skycloud c2" opacity="0.05" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="950" cy="288" rx="110" ry="19"/><ellipse cx="890" cy="272" rx="58" ry="12"/>
-      </g>
-      <g opacity="0.85">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#e6c65c"/>
-        <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r1"/></animateMotion>
-      </g>
-      <g opacity="0.7">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#bcd6ee" transform="scale(0.8)"/>
-        <animateMotion dur="38s" begin="-14s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r2"/></animateMotion>
-      </g>
-      <g>
-        <circle r="6.5" fill="#9cc0e8" opacity="0.18"/><circle r="2.6" fill="#cfe3f5" opacity="0.9"/>
-        <animateMotion dur="46s" begin="-31s" repeatCount="indefinite"><mpath href="#sky-r3"/></animateMotion>
-      </g>
-    </svg>
-    <p class="kicker">Project · Airport management simulation</p>
-    <h1>AirportSim</h1>
-    <p class="tag">Run an airport — inside a world that flies whether you watch it or not.</p>
-    <div class="record-strip" aria-label="AirportSim record">
-      <div><span>Version</span><b>0.6.0-alpha.2 “Threshold” · Alpha</b></div>
-      <div><span>World</span><b>4,531 airports · 246 real layouts (pack) · 26 built in</b></div>
-      <div><span>Save format</span><b>HL-SAVE 1</b></div>
-      <div><span>Simulation suite</span><b>192,063 checks · 0 failed</b></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/" aria-current="page">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
+  </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>GATE ANNOUNCEMENT <b>★</b> NOWHERE ELSE DO THE AIRLINES PLAY BACK <b>★</b> 253 AIRPORTS <b>★</b> 58 AIRCRAFT TYPES <b>★</b> MIND THE JET BRIDGE <b>★</b></span>
+  <span>GATE ANNOUNCEMENT <b>★</b> NOWHERE ELSE DO THE AIRLINES PLAY BACK <b>★</b> 253 AIRPORTS <b>★</b> 58 AIRCRAFT TYPES <b>★</b> MIND THE JET BRIDGE <b>★</b></span>
+</div></div>
+
+<main class="wrap">
+
+  <section class="hero-world">
+    <div class="hw-top">
+      <p class="mono" style="font-weight:700;letter-spacing:.24em;color:var(--cobalt)">HALL 01 — THE AIRFIELD</p>
+      <h1>AirportSim</h1>
+      <p class="hw-sub">An airport sandbox with the heart of a tycoon game and the reach of a god game. Run the tower like a professional, run the books like a magnate, or reach in and move the weather — the field absorbs all of it and keeps its own honest score.</p>
+      <div class="fieldrow">
+        <span class="tag sun">VERSION 0.6.0-ALPHA.2</span>
+        <span class="tag cobalt">IN ACTIVE DEVELOPMENT</span>
+        <span class="tag ink">HAND-ROLLED C ENGINE</span>
+        <span class="tag teal">LINUX</span>
+        <span class="tag pink">CREATED BY GROK BOT</span>
+      </div>
+    </div>
+    <figure class="diagram">
+      <svg viewBox="0 0 1200 560" role="img" aria-label="Diagram of an AirportSim airfield: runway, taxiways, terminal with stands and jet bridges, cargo apron and tower">
+        <rect width="1200" height="560" fill="#2E7D46"/>
+        <g fill="#359251"><rect x="0" y="0" width="1200" height="46"/><rect x="0" y="118" width="1200" height="40"/><rect x="0" y="330" width="1200" height="48"/><rect x="0" y="470" width="1200" height="44"/></g>
+        <!-- runway -->
+        <rect x="90" y="52" width="1020" height="62" fill="#3C4148"/>
+        <g fill="#F5F2E6"><rect x="104" y="58" width="10" height="50"/><rect x="120" y="58" width="10" height="50"/><rect x="136" y="58" width="10" height="50"/><rect x="152" y="58" width="10" height="50"/></g>
+        <g fill="#F5F2E6" opacity=".85"><rect x="230" y="80" width="42" height="6"/><rect x="300" y="80" width="42" height="6"/><rect x="370" y="80" width="42" height="6"/><rect x="440" y="80" width="42" height="6"/><rect x="510" y="80" width="42" height="6"/><rect x="580" y="80" width="42" height="6"/><rect x="650" y="80" width="42" height="6"/><rect x="720" y="80" width="42" height="6"/><rect x="790" y="80" width="42" height="6"/><rect x="860" y="80" width="42" height="6"/></g>
+        <text x="196" y="94" font-family="Space Mono, monospace" font-size="24" fill="#F5F2E6" font-weight="700">09</text>
+        <!-- landing plane -->
+        <g transform="translate(520,58)"><path d="M0 12 L44 12 L58 20 L44 27 L0 27 L8 20 Z" fill="#EDEFF2"/><path d="M22 12 L30 2 L38 2 L36 12 Z" fill="#C8CDD4"/><path d="M22 27 L30 37 L38 37 L36 27 Z" fill="#C8CDD4"/><rect x="40" y="16" width="10" height="3" fill="#2456E6"/></g>
+        <!-- taxiway -->
+        <rect x="90" y="168" width="1020" height="30" fill="#4A4F57"/>
+        <rect x="90" y="181" width="1020" height="4" fill="#FFC61A"/>
+        <g fill="#4A4F57"><rect x="300" y="114" width="24" height="54"/><rect x="640" y="114" width="24" height="54"/><rect x="940" y="114" width="24" height="54"/><rect x="420" y="198" width="24" height="66"/><rect x="760" y="198" width="24" height="66"/></g>
+        <!-- apron + terminal -->
+        <rect x="180" y="264" width="840" height="150" fill="#9AA0A8"/>
+        <rect x="330" y="330" width="420" height="66" fill="#5B6068"/>
+        <rect x="330" y="330" width="420" height="12" fill="#EE3A24"/>
+        <text x="540" y="370" font-family="Space Mono, monospace" font-size="17" fill="#FFF6DE" text-anchor="middle" font-weight="700">TERMINAL</text>
+        <!-- stands with planes + jet bridges -->
+        <g>
+          <g transform="translate(392,278)"><path d="M0 14 L40 14 L52 21 L40 27 L0 27 L7 21 Z" fill="#EDEFF2"/><path d="M20 14 L27 5 L34 5 L32 14Z" fill="#B9BEC7"/><path d="M20 27 L27 36 L34 36 L32 27Z" fill="#B9BEC7"/></g>
+          <rect x="428" y="318" width="7" height="16" fill="#FFC61A" transform="rotate(24 428 318)"/>
+          <g transform="translate(520,278)"><path d="M0 14 L40 14 L52 21 L40 27 L0 27 L7 21 Z" fill="#EDEFF2"/><path d="M20 14 L27 5 L34 5 L32 14Z" fill="#B9BEC7"/><path d="M20 27 L27 36 L34 36 L32 27Z" fill="#B9BEC7"/></g>
+          <rect x="556" y="318" width="7" height="16" fill="#FFC61A" transform="rotate(24 556 318)"/>
+          <g transform="translate(648,278)"><path d="M0 14 L40 14 L52 21 L40 27 L0 27 L7 21 Z" fill="#EDEFF2"/><path d="M20 14 L27 5 L34 5 L32 14Z" fill="#B9BEC7"/><path d="M20 27 L27 36 L34 36 L32 27Z" fill="#B9BEC7"/></g>
+          <rect x="684" y="318" width="7" height="16" fill="#FFC61A" transform="rotate(24 684 318)"/>
+        </g>
+        <!-- cargo apron -->
+        <rect x="880" y="286" width="180" height="104" fill="#8A9098"/>
+        <g transform="translate(916,318) scale(1.25)"><path d="M0 14 L40 14 L52 21 L40 27 L0 27 L7 21 Z" fill="#D8B25C"/><path d="M20 14 L27 5 L34 5 L32 14Z" fill="#B8933F"/><path d="M20 27 L27 36 L34 36 L32 27Z" fill="#B8933F"/></g>
+        <text x="970" y="308" font-family="Space Mono, monospace" font-size="14" fill="#1D2440" text-anchor="middle" font-weight="700">CARGO</text>
+        <!-- tower -->
+        <circle cx="150" cy="330" r="10" fill="#FFC61A" stroke="#1D2440" stroke-width="3"/>
+        <rect x="146" y="338" width="8" height="34" fill="#5B6068"/>
+        <!-- service road -->
+        <path d="M0 440 H1200" stroke="#C9C2A8" stroke-width="10" stroke-dasharray="26 18"/>
+        <!-- callout badges -->
+        <g font-family="Bungee, sans-serif" font-size="17" text-anchor="middle">
+          <circle cx="1010" cy="83" r="15" fill="#EE3A24" stroke="#FFF6DE" stroke-width="3"/><text x="1010" y="90" fill="#fff">1</text>
+          <circle cx="1060" cy="183" r="15" fill="#EE3A24" stroke="#FFF6DE" stroke-width="3"/><text x="1060" y="190" fill="#fff">2</text>
+          <circle cx="470" cy="290" r="15" fill="#EE3A24" stroke="#FFF6DE" stroke-width="3"/><text x="470" y="297" fill="#fff">3</text>
+          <circle cx="600" cy="330" r="15" fill="#EE3A24" stroke="#FFF6DE" stroke-width="3"/><text x="600" y="337" fill="#fff">4</text>
+          <circle cx="1010" cy="360" r="15" fill="#EE3A24" stroke="#FFF6DE" stroke-width="3"/><text x="1010" y="367" fill="#fff">5</text>
+          <circle cx="150" cy="300" r="15" fill="#EE3A24" stroke="#FFF6DE" stroke-width="3"/><text x="150" y="307" fill="#fff">6</text>
+        </g>
+      </svg>
+      <figcaption>THE FIELD, READ AS A GAME BOARD — EVERY MARKED FEATURE IS A DECISION YOU GET TO MAKE.</figcaption>
+    </figure>
+  </section>
+
+  <section class="act">
+    <div class="grid two">
+      <div class="card"><h3><span class="tag red">1</span> The runway</h3><p>Where reputations touch down. Scheduling, spacing and the nerve to divert a flight just because you can — the strip absorbs your judgement and grades it in delays, diversions and very pointed silences from the airlines.</p></div>
+      <div class="card"><h3><span class="tag red">2</span> The taxiways</h3><p>The airport's patience, painted in yellow. Route aircraft well and the whole field breathes; bottle them up and you will watch a rush hour invent itself out of your own shortcuts.</p></div>
+      <div class="card"><h3><span class="tag red">3</span> The stands</h3><p>Every parking spot is measured geometry, not decoration. In the great stand repair, 2,252 of them across 26 layouts were picked up and set down again so no parked giant rests its nose against a wall — and a placement law now refuses any spot where a fuselage would touch a building.</p></div>
+      <div class="card"><h3><span class="tag red">4</span> The jet bridges</h3><p>The handshake between terminal and aircraft. They were always simulated; now they are drawn boldly enough that you can watch the handshake land — or spot the gate where it didn't.</p></div>
+      <div class="card"><h3><span class="tag red">5</span> The cargo apron</h3><p>Freight used to haunt the edges of the schedule. Contracts now arrive for freighters in their own right, and the heavy metal parks where heavy metal belongs.</p></div>
+      <div class="card"><h3><span class="tag red">6</span> The tower</h3><p>Your chair, should you want it. Work the field by hand like a controller, or climb upstairs to the money and the strategy while the airport runs itself underneath you.</p></div>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="players-h">
+    <div class="act-head">
+      <span class="kicker">THE SIGNATURE</span>
+      <h2 id="players-h">The airlines are the other players</h2>
+    </div>
+    <p class="lede">In most management games the customers are weather — they blow in, they blow out. Here the airlines are opponents and partners with memories. Each one keeps a private ledger of its life at your airport, and acts on it.</p>
+    <div class="grid three chars">
+      <div class="card">
+        <p class="face" aria-hidden="true">🛬</p>
+        <h3>The Regular</h3>
+        <p>It has flown your field for years and its ledger is thick with small kindnesses and small slights. Treat it steadily and it bases aircraft with you, grows routes, and forgives the occasional storm. Its loyalty is earned arithmetic, not a script.</p>
+      </div>
+      <div class="card">
+        <p class="face" aria-hidden="true">💼</p>
+        <h3>The Prize</h3>
+        <p>A rival airport across the region is courting this one with fee waivers and promises. You will see the courtship happen. Match it, beat it, or watch the press release go out with somebody else's runway in the photograph.</p>
+      </div>
+      <div class="card">
+        <p class="face" aria-hidden="true">🧳</p>
+        <h3>The Defector</h3>
+        <p>Every delay you caused, every promise that quietly expired — it remembers all of it, added up. One season it simply stops renewing. And when it goes, it can tell you exactly why, in a single plain sentence. So can every airline, about every decision it makes.</p>
+      </div>
+    </div>
+    <blockquote class="pull">A decision the game cannot explain in one plain sentence does not ship. That is the house law the whole design answers to.</blockquote>
+  </section>
+
+  <section class="act" aria-labelledby="ways-h">
+    <div class="act-head">
+      <span class="kicker">ONE WORLD, THREE CHAIRS</span>
+      <h2 id="ways-h">Sit wherever the mood takes you</h2>
+    </div>
+    <div class="grid three">
+      <div class="card"><h3>The Sandbox</h3><p>Poke the world and watch it stay truthful. Ground a fleet on a whim, summon the storm, divert a stranger's flagship to your smallest gate — the simulation's job is to absorb your mischief coherently.</p></div>
+      <div class="card"><h3>The Tycoon</h3><p>Fees, contracts, incentives and the long game of route politics. Set the money right and the airport runs itself while you negotiate like a minister and count like a miser.</p></div>
+      <div class="card"><h3>The Tower</h3><p>Full realism is available for the asking: work arrivals and departures as a controller would, or ride along as a pilot. Depth is there for whoever wants it — and never forced on whoever doesn't.</p></div>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="chronicle-h">
+    <div class="dark">
+      <p class="mono" style="letter-spacing:.22em;font-weight:700">THE AIRPORT REMEMBERS</p>
+      <h2 id="chronicle-h">A chronicle, kept whether you read it or not</h2>
+      <p>The field writes its own diary: the diversions, the emergencies handled well, the contract that got away, the morning everything worked. The chronicle is more than a story to read back — it is the memory the airlines negotiate against, and proof, kept in ink, of what kind of airport yours has been.</p>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="frames-h">
+    <div class="act-head">
+      <span class="kicker">FROM THE PROOF CAMERA</span>
+      <h2 id="frames-h">The field, as photographed this season</h2>
+    </div>
+    <div class="grid two">
+      <figure class="shot"><img src="img/field-day.jpg" alt="AirportSim in daylight, a full apron of airliners at the terminal" loading="lazy"><figcaption>DAY SHIFT — THE APRON AT WORK, BRIDGES DRAWN UP TO DOORS.</figcaption></figure>
+      <figure class="shot"><img src="img/field-night.jpg" alt="AirportSim at night, the field lit and quiet under a dark sky" loading="lazy"><figcaption>NIGHT SHIFT — THE SAME FIELD, RUNNING ON LAMPLIGHT AND SCHEDULES.</figcaption></figure>
+      <figure class="shot"><img src="img/field-detroit-detail.jpg" alt="Close view of Detroit stands in AirportSim, aircraft parked with clear space around them" loading="lazy"><figcaption>DETROIT, UP CLOSE — STANDS WITH ROOM TO BREATHE AFTER THE GREAT REPAIR.</figcaption></figure>
+      <figure class="shot"><img src="img/field-liveries.jpg" alt="A gallery of airliner liveries in AirportSim, the roster's colours side by side" loading="lazy"><figcaption>THE ROSTER DRESSED — 58 TYPES WEARING THEIR AIRLINES' COLOURS.</figcaption></figure>
+      <figure class="shot"><img src="img/field-freighter-a40.jpg" alt="A 777 freighter parked at Detroit stand A40 in AirportSim with clear space at its nose" loading="lazy"><figcaption>THE LONGEST NOSE IN THE FLEET AT STAND A40 — CLEAR OF THE WALL, AS THE LAW NOW REQUIRES.</figcaption></figure>
+      <figure class="shot"><img src="img/field-atlanta.jpg" alt="Aerial view of Atlanta in AirportSim with traffic moving on the taxiways" loading="lazy"><figcaption>ATLANTA — ONE OF 253 REAL FIELDS IN THE CATALOGUE.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="act" id="toy" aria-labelledby="toy-h">
+    <div class="act-head">
+      <span class="kicker">PLEASE TOUCH</span>
+      <h2 id="toy-h">Talk her down</h2>
+    </div>
+    <div class="toy">
+      <canvas id="strip" width="880" height="360">Your browser skipped the canvas, so picture it: a blue sky, a grey runway, and a jet on final approach waiting for your nerve.</canvas>
+      <div class="toy-bar">
+        <button class="btn" id="toy-go" type="button">Send her in</button>
+        <span class="readout" id="toy-read">RUNWAY 09 IN SIGHT. PRESS THE BUTTON WHEN READY.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="notes-h">
+    <div class="act-head">
+      <span class="kicker">FIELD NOTES</span>
+      <h2 id="notes-h">More pages from this hall</h2>
+    </div>
+    <div class="grid three">
+      <div class="card"><h3>The Road</h3><p>What stands between this alpha and the finished article, item by item.</p><p><a class="btn white" href="roadmap.html">Walk the road</a></p></div>
+      <div class="card"><h3>Systems at Play</h3><p>Contracts, cargo, the chronicle and the placement law, explained as gameplay.</p><p><a class="btn white" href="systems.html">See the systems</a></p></div>
+      <div class="card"><h3>The Engine Room</h3><p>A hand-rolled C engine, and why it is changing foundations to SDL3 tonight.</p><p><a class="btn white" href="engine.html">Visit the engine room</a></p></div>
+      <div class="card"><h3>The Mathematics</h3><p>Deterministic worlds, measured geometry, and arithmetic that keeps its promises.</p><p><a class="btn white" href="mathematics.html">Check the sums</a></p></div>
+      <div class="card"><h3>The Proving</h3><p>Four public test lanes and a camera that never blinks kindly.</p><p><a class="btn white" href="testing.html">Watch it prove</a></p></div>
+      <div class="card"><h3>Versions</h3><p>Where 0.6.0-alpha.2 stands, and what the road to the finished game is called.</p><p><a class="btn white" href="versions.html">Read the ledger</a></p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
     </div>
   </div>
+</footer>
 
-  <div class="status">
-    <strong>Development status:</strong> in active development (adopted for continued
-    development on 2026-10-31; current build 0.6.0-alpha.2 “Threshold” (first Alpha; last public build 0.5.3), C11 + SDL2, in-house
-    Halcyon 2.5D engine). No public release is recorded in the available repository
-    release records, and no downloads are offered from this page. Current status
-    summary: <a href="versions.html">versions &amp; status records</a>.
-  </div>
+<script>
+/* The Landing Strip — a pocket airfield. One button, one approach. */
+(function () {
+  var cv = document.getElementById("strip"), ctx = cv.getContext("2d");
+  var read = document.getElementById("toy-read"), btn = document.getElementById("toy-go");
+  var W = cv.width, H = cv.height, RWY = H - 64;
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var anim = null, touchdown = 0;
 
-  <p>This section keeps three things separate, on purpose:
-  <a href="#today">the game today</a> (verified), <a href="#building">what is being built</a>
-  (active work), and <a href="#vision">the long-term vision</a> (intent, not inventory).</p>
-
-  <h2 id="dream">The dream — in the owner's words</h2>
-  <div class="callout">
-    <p>“Basically, an airport sandbox. With heavy tycoon and god game elements.
-    Wanna divert a flight just for the hell of it? You can. Wanna play as
-    realistically as possible as a pilot or ATC? You can do that. Want to
-    manage the airport financially while everything is run automatically. You
-    can do that.”</p>
-    <p>— Andrew, the owner, 2026-11-03. One world, many stances — sandbox,
-    tycoon, god game — switchable at will; full realism available but never
-    forced; automation is a legitimate way to play. This is the standard the
-    current programme is judged against.</p>
-  </div>
-
-  <h2>The programme today (updated 2026-11-10)</h2>
-  <p><strong>Development Mode is complete.</strong> The WP-09 programme grew
-  the F3 overlay into a full diagnostic environment in eight increments — all
-  merged, each verified by a full post-merge battery: visual inspection; the
-  Mathematics Lab; the Test Lab (experiments in separate processes); the
-  Performance Lab; the Replay Lab; investigation history (every control
-  decision recorded with its reason); an integrity trio (save check,
-  determinism lamp, evidence gaps); and the economy rollup, which records
-  each day's money line by line and re-adds it against the day's profit.
-  Development Mode is strictly read-only: it shows what tests establish, what
-  remains untested, where behaviour first deviates, and possible mechanisms —
-  it never invents a cause beyond recorded evidence. On its completion the
-  build advanced to <strong>0.6.0-alpha.2 “Threshold”</strong> (2026-11-03).</p>
-  <p><strong>The issues pass is done.</strong> Every open item was closed or
-  classified with its evidence on 2026-11-03: test processes that shared one
-  save folder (fixed); long airline names cut off in the Business
-  window (fixed with a self-sizing column); three memory-recovery
-  paths that could crash (fixed); three sibling sites judged guarded,
-  no change; departures starving behind arrival streams, traced to runway
-  assignment with no load term (classified — its remedy is the departure
-  queue in the rework below); aircraft drawn over terminal roofs (a real
-  draw-order defect; the fix is designed and scheduled with the visuals
-  pass); jet bridges that do engage at all 135 Detroit gate stands but are
-  nearly invisible (visuals pass); and display scaling, whose high-DPI half
-  turned out to be fixed in the code long ago — the remaining question, the
-  game's own presentation at interface scales above 100%, will be judged at
-  the owner's hands-on test version. The day also enforced the owner's brand
-  rule: no real commercial brand names in the game — the terminal
-  inspector's flavour names were replaced with invented ones, and the test
-  suite now fails permanently if a real brand appears in terminal text.
-  The owner has since extended the same rule to airline names:
-  the generator can no longer produce a real carrier — six roots were
-  replaced with invented names chosen to keep the roster's random stream
-  bit-identical — and a blocklist test now guards the whole roster
-  permanently. It landed as the opening change of the world update below.</p>
-  <p><strong>The reckoning is written.</strong> Every major system was
-  audited — the creator's design notes checked against the code and its
-  mathematics — and ranked, healthiest first: simulation core, weather,
-  economy &amp; finance, ground operations, construction &amp; layout,
-  airlines/routes/network, staff &amp; roles, events &amp; emergencies,
-  passengers/demand/pricing, and last, air traffic control. The full audit,
-  its five weakest points, and the ranking chart are on the
-  <a href="systems.html">systems page</a>.</p>
-  <p><strong>The ATC rework is complete.</strong> On the owner's direction —
-  “We need to completely rework the ATC system, it's very crude” — the
-  weakest system was rebuilt in five steps, all merged and verified by a
-  full post-merge battery: controller-assigned speeds on final,
-  one separation law everywhere, a real departure queue,
-  arrival sequencing, and ground separation by aircraft size with
-  separation measured live in Development Mode. Detail on
-  the <a href="systems.html">systems page</a>.</p>
-  <p><strong>The continuous world landed.</strong> The owner's
-  direction, 2026-11-03: the airport's 9&nbsp;km tile with its hard edge —
-  never his original scope — became one continuous world you can scroll
-  or fly across, airport to airport, with one fully simulated airport at
-  a time and the rest living statistical lives until you arrive. It was
-  built in measured steps: a double-precision world frame (worst measured
-  round-trip error 0.00001&nbsp;m); arriving flights born with real
-  identities — airline, aircraft, callsign, origin — entering on the real
-  bearing from their real origin, and departing flights handed off into
-  onward tracks instead of vanishing at the fence; the new traffic then
-  judged against the pre-world baseline at a pass line frozen in writing
-  before the sample ran — a firm pass on all nine measures. A Development
-  Mode skeleton view strips the running simulation to its structure, and
-  airfield markings paint stand and runway numbers at every airport. The
-  geography was measured before it was promised: the full planet pack —
-  1.46&nbsp;GB of terrain, land cover and shorelines against a
-  2.5–3.0&nbsp;GB working budget — is wired into the game, and on
-  2026-11-06 the owner approved the far view and closed the geography
-  set: the approved look is real geography, smooth and clean at distance.
-  The clean-sheet save system landed on 2026-11-07 as <strong>HL-SAVE
-  1</strong>: a file of named, individually versioned sections, a loader
-  that cannot crash, and a one-way importer for every older save. The
-  interface overhaul's status board is merged; its in-game frame was in
-  progress when the programme paused. Four world steps were still to
-  come — a second airport spinning up, the background law for far
-  airports, continuous pilot flight, the owner in the world — with the
-  Pilot, Passenger and ATC roles growing inside them. They are banked
-  with the rest of the road. The queue from here is on the
-  <a href="roadmap.html">roadmap</a>.</p>
-  <p><strong>Update, 2026-11-08 — the aircraft fleet expansion is
-  closed.</strong> The roster grew from 36 to 58 aircraft types,
-  including the classic trijets (727-200, DC-10-30, MD-11) with
-  their tail engines drawn as engines; liveries are generated per
-  carrier, with the airline's logo on the tail fin and the forward
-  fuselage, and every gate carries a branding board in the serving
-  airline's colours. The close-up screenshot proof caught three
-  real defects before close — a fuselage logo that never painted,
-  tail branding hidden behind the trijets' centre engine, and
-  trijets that could never appear in live traffic — and all three
-  were fixed and re-proven in a fresh official screenshot set,
-  inspected image by image. The master battery is fully green on
-  the owner's test rig: <strong>192,032 simulation checks,
-  0 failed</strong> in the run of 2026-11-08, the sanitiser lanes
-  passing separately on the same run. Work now moves to the
-  foundations for the 7.0 “Latitude” test copy: real airport
-  layouts, collision, and ground markings.</p>
-  <p><strong>Update, 2026-11-09 — real airport layouts are in,
-  and the first hands-on snapshot is with the owner.</strong>
-  Airports no longer have to wear a generated layout: a pack of
-  <strong>246 real airports</strong>, built from OpenStreetMap
-  data, now loads each field's actual runways, taxiways and
-  stands in place of the generated ones. The proof ran on the
-  owner's test rig: a soak passed at all nine sampled airports
-  across two simulated days each, Detroit's layout compared
-  identical with and without the pack, and the layout
-  screenshots were inspected image by image (twelve of the
-  thirteen views captured; one close view timed out on the rig
-  and is noted, not hidden). A bake-tool defect found on the
-  way — a manifest bug that silently dropped the pack's last
-  two airports — was fixed and the pack rebuilt complete. The
-  catalogue keeps growing in the background beyond the proven
-  246. This evening the owner received a snapshot of the game
-  as it stands for hands-on testing — a development snapshot,
-  not a release. <em>(On 2026-11-10 he ordered that snapshot
-  deleted, unplayed, and ruled there would be no more interim
-  copies: the next copy he takes is the finished 7.0.)</em>
-  Next on the road was collision — work that began, and was
-  diagnosed, before the pause.</p>
-  <p><strong>Update, 2026-11-10 — delayed, then resumed.</strong>
-  By the owner's decision the programme was parked this morning
-  and its status changed to delayed; within the hour he resumed
-  it, and development is active again — the shortest delay in
-  the studio's short history, recorded because it happened. The
-  last work before the pause was diagnostic: the collision
-  finding — aircraft overlapping terminal roofs at some stands —
-  was measured and traced to three stacked causes (stand
-  geometry, a flat draw order, and aircraft drawn at 1.4× true
-  size), with the fix designed. A complete overhaul design,
-  re-founding the game's mathematics on four primitives, was
-  finished and banked the same day. The road continues from
-  exactly where it stopped.</p>
-  <p><strong>Update, 2026-11-11 — collision closed; this is the
-  active programme.</strong> The studio spent a night on the
-  space game (see LONGSHOT), then the owner sent it back here.
-  The collision fix — stand geometry repaired across all 26
-  baked layouts, an allocation law that refuses any stand whose
-  true rectangle touches a building, and aircraft drawn at true
-  scale in depth order — passed its full four-lane test battery
-  and merged the same night (PR #116). Nose-penetrating stands
-  fell from hundreds per aircraft type to nearly zero; the stand
-  in the original report, Detroit A40, went from a 16.9 m overlap
-  to a 39.7 m clearance.</p>
-
-  <h2>About — two scales, one simulation</h2>
-  <p><strong>Global scale:</strong> a living aviation network runs across a real-Earth
-  map — 4,531 airports, flights airborne around the clock, day and night sweeping the
-  map, weather systems and real METAR reports, incidents that close runways.</p>
-  <p><strong>Airport scale:</strong> inside that world you own and operate one airport —
-  gates, construction, money, airline deals — or step into the work itself: pilot, air
-  traffic controller, passenger, ramp worker, gate agent, security, airport
-  firefighter. Eight playable roles, one coherent simulation underneath all of them.
-  It is not an idle tycoon with mini-games attached; the management game and the
-  operational game are the same world seen from different seats.</p>
-
-  <h2 id="today">The game today — verified</h2>
-  <p>Established by a full baseline audit on 2026-10-31 (build, launch and test results
-  on the <a href="testing.html">engineering &amp; testing page</a>):</p>
-  <ul>
-    <li>A living world network: in the captured test session, <strong>1,405 flights
-      airborne on 1,659 routes, under 23 weather systems</strong> — a reported baseline
-      observation, not a guaranteed constant</li>
-    <li>Airport ownership play: construction, gates, economy, airline deals, a home
-      airport that can start half-broken and be built up</li>
-    <li>Ground operations and air traffic control at real layouts — 26 built in
-      at this baseline (Boston, Heathrow, Kelowna and 23 more); a pack of 246
-      more landed on 2026-11-09</li>
-    <li>Eight playable roles in the same simulation</li>
-    <li>Weather with real METAR data; country and locale data for 232 territories</li>
-    <li>Saves that migrate forward across versions — save fixtures spanning
-      versions 4 through 13 load cleanly in the test suite today</li>
-  </ul>
-
-  <div class="nums">
-    <div><b>192,063</b><span>simulation checks, 0 failed — latest recorded full run</span></div>
-    <div><b>9,676</b><span>interface checks, 0 failed</span></div>
-    <div><b>4,531</b><span>airports in the world data</span></div>
-    <div><b>246 + 26</b><span>real airport layouts (pack + built in)</span></div>
-    <div><b>~31,500</b><span>lines of C11 — no asset files</span></div>
-  </div>
-  <p>The suite's recorded full runs: 162,315 checks at adoption (2026-11-01),
-  162,701 at the final integrated gate (2026-11-02, on the merged code —
-  72 test groups), 192,032 on 2026-11-08, and 192,063 in the latest
-  recorded tally — 0 failed at every point.
-  They show the tested behaviour holds; they are not, by themselves, proof that
-  every feature works — the per-system grades live on the
-  <a href="systems.html">systems page</a>.</p>
-
-  <figure>
-    <img src="img/worldmap.png" alt="AirportSim world map with live flights and weather">
-    <figcaption><strong>The world map, live in testing.</strong> Flights, routes and
-    weather systems across the real Earth, with the day/night terminator sweeping
-    through. This is the world your one airport lives in. (Refreshed 2026-11-04
-    from the current build: 1,439 flights airborne at capture time.)</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/trijet-close.jpg" alt="Close view of a trijet at the gate, from the official close-view set on master">
-    <figcaption><strong>Close view, from the official set on master (2026-11-09).</strong>
-    The trijets up close — tail engine, fin livery and gate branding board. Frames like
-    this one, inspected image by image, are what caught the fleet expansion's three
-    painting defects before it closed.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/apron-wide.jpg" alt="AirportSim apron at work, from the official close-view set on master">
-    <figcaption><strong>The apron at work, same set (2026-11-09).</strong>
-    Ground operations at the stands, captured on master after the fleet expansion
-    and the real-layouts pack landed.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/cylw.png" alt="Kelowna airport in the owner view">
-    <figcaption><strong>Medium airport: Kelowna (CYLW).</strong> The owner's seat — the
-    standard campaign starts here with a crumbling terminal and a balance sheet.
-    (Refreshed 2026-11-04 from the current build.)</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/egll.png" alt="Heathrow airport during a session">
-    <figcaption><strong>Large airport: Heathrow (EGLL) in session.</strong> Live
-    traffic, flight strips and the ground radio log at one of the world's biggest
-    airports. (Refreshed 2026-11-04 from the current build.)</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/keyw.png" alt="Key West airport, a small single-runway airfield, during a session">
-    <figcaption><strong>Small airport: Key West (KEYW).</strong> One runway, a
-    departure and an arrival — the same simulation at the smallest scale.
-    (Captured 2026-11-04 from the current build.)</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/gate-world-2026-11-02.png" alt="World map during the automated gate run of 2026-11-02">
-    <figcaption><strong>The world map, from the automated gate (2026-11-02).</strong>
-    Captured by the gate itself from the current development build, running headless
-    on a dummy video driver: 1,515 flights airborne on 1,728 routes in the test
-    world at capture time. A test-world observation, not a gameplay beauty shot —
-    the gate's captures exist so the interface can be inspected, not admired.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/gate-airport-2026-11-02.png" alt="Toronto Pearson airport view during the automated gate run of 2026-11-02">
-    <figcaption><strong>Toronto Pearson (CYYZ), from the same gate run.</strong> The
-    end-to-end menu flow loaded a game and the capture shows live approach traffic,
-    flight strips and the radio log. Same capture conditions as above: automated,
-    headless, dated 2026-11-02.</figcaption>
-  </figure>
-
-  <h2 id="building">What is being built</h2>
-  <p>The queue stands like this: the collision fix first (diagnosed, designed,
-  under construction), then ground markings, three small investigations
-  (pilot recentring, a remapped key, cargo scarcity in the demo world), a
-  hardening of the game's randomness, the interface renewal, and finally the
-  full replay proof and the 7.0 “Latitude” handover. The programme was
-  delayed on the morning of 2026-11-10 and resumed within the hour; nothing
-  in the queue changed, and a complete overhaul design sits banked beside it
-  — designed, not started. What follows is how the work got here.</p>
-  <p><strong>M1 — “Green gate &amp; safe repository” — is complete and accepted</strong>
-  (2026-11-01): a fresh clone of the default branch passed the strict gate, the
-  repository trap was closed, and the adoption documentation was reconciled. Since
-  then, the development line has completed the five-stage Development Mode workstream
-  and the performance-baseline work package.</p>
-  <p><strong>The integration (2026-11-02) — complete.</strong> The owner authorized a
-  dependency-ordered sequence of eleven packages. All eleven are merged to the
-  default branch, each verified after its merge: the save-persistence fixes
-  (OwnerBook attribution, save format v11; FleetBook accumulators, v12; the
-  simulation-clock widening, v13), the cargo save/reload audit, the whole-world
-  reproducibility tests, the save-loader fuzz harness, the adoption framework
-  documents, the test tooling (CI now runs four jobs), and a three-fix package
-  (deterministic test worlds for the game binary, a top-bar overlap fix, and a
-  latitude-conversion undefined-behaviour fix). The screenshot-capture reliability
-  package (PR #9) merged after its checks found a Windows build failure in its own
-  capture code — a one-line fix, made and re-verified the same day. The
-  test-seeding package (PR #11) merged as the recorded resolution: its seeding
-  turned out to be already covered by the three-fix package. The Development Mode
-  branch merged last, after two small fixes on its first trip through the full
-  checks (a Windows clock call made portable; a memory leak in a test, caught by
-  the memory-safety run), both fixed and re-verified before merging. The final
-  full gate on the integrated tree passed — 162,701 simulation checks and 9,676
-  interface checks, zero failed, end-to-end flows green, and all four CI jobs
-  passing on the final code. <strong>No pull requests remain open.</strong> The
-  integrated build is named <strong>0.6.0-alpha.1 “Threshold”</strong> — the
-  project's first Alpha and its first codename, approved by the owner on
-  2026-11-02; the code's version string then read 0.6.0-alpha.1. The name is
-  an internal development identity, not a release: no tag or public package
-  exists for it, and the last public build remains 0.5.3. <em>Update,
-  2026-11-03:</em> with Development Mode complete, the build advanced to
-  <strong>0.6.0-alpha.2 “Threshold”</strong>, codename kept — see
-  “The programme today” above.</p>
-  <p>The intermittent failure that shadowed the sequence — an unseeded test world
-  making the interface test nondeterministic — is fixed for determinism. A related
-  cosmetic defect was tracked as issue #14 (the Business window truncating long
-  airline names); it was fixed on 2026-11-03 with a self-sizing column (PR #42).</p>
-  <p><strong>What came next, in order — all of it now done:</strong> the
-  save/reload continuation investigation (issue #15) ran first, as the owner
-  directed, and was solved — a minute's weather was computed from the fraction
-  of the minute, so a reload quietly changed the weather; the fix made a
-  reloaded game byte-identical to one that never stopped (PR #24). The Windows
-  verification harness followed, and then moved — with every other check — to a
-  self-hosted rig on the owner's PC, where a native Windows battery ran on
-  every merge through the rig era. (The checks have since moved for good:
-  since 2026-11-10 they run on the four GitHub-hosted Linux lanes, each run
-  approved by the owner, and the game is Linux-only — he plays it through
-  Ubuntu on WSL.) WP-09 then grew Development Mode into the full diagnostic
-  environment described above. Where the programme stands now is summarized in
-  <a href="#dream">the programme today</a>; the forward queue is on the
-  <a href="roadmap.html">roadmap</a>. M1's original criteria remain:</p>
-  <ul>
-    <li>A clean clone of the default branch passes the strict release gate</li>
-    <li>Test counts at or above the baseline (162,315 / 9,676), zero failures</li>
-    <li>The automated pipeline passes on the same commit</li>
-    <li>The source diff contains only the approved one-line gate fix (+ justified kin)</li>
-    <li>The five documentation discrepancies are reconciled</li>
-    <li>The default-branch problem is closed by the owner's approved route</li>
-  </ul>
-  <p>All eight were satisfied with evidence — the details live on the
-  <a href="testing.html">engineering &amp; testing page</a>. The register has
-  moved since: of the three Beta gates, two were satisfied in their era —
-  native Windows verification (the owner's PC was the test rig, and a native
-  Windows battery ran on every merge; K3 — the gate was retired on 2026-11-10
-  when the game went Linux-only) and the save/reload fix (FND-002, PR #24). The
-  owner's 2026-11-02 hands-on with a pre-adoption Windows build (0.5.4, by the
-  original author) — about an hour at Detroit, launched and played correctly,
-  saves not tested — stands as the provisional gameplay record for that older
-  build. The third gate, the full 14-scenario × 3-seed end-to-end matrix
-  rerun (K6), remains open deliberately: it is sequenced last, immediately
-  before the Beta decision, which is the owner's.</p>
-
-  <h2 id="vision">The long-term vision</h2>
-  <p>Intent, not inventory: a sophisticated, polished airport simulation where depth
-  serves decisions — a new player can get in and enjoy it, the living world keeps
-  surprising its owner, and the business game underneath rewards long-term thinking.
-  The owner's own statement of that vision is quoted in full
-  <a href="#dream">above</a>. The phases that lead there are on the roadmap page,
-  each with the gate that must pass before the next begins.</p>
-
-  <footer>
-    <p>AirportSim is a Section Zero project. The game's source repository is private
-    during development, so this site carries the public record. Statuses here derive
-    from the project's development record; if the two ever disagree, the record is
-    right and this site gets corrected.</p>
-  </footer>
-  <script>
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('svg.skybg').forEach(function (s) { if (s.pauseAnimations) { s.pauseAnimations(); } });
+  function plane(x, y, s) {
+    ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+    ctx.fillStyle = "#F4F6F8";
+    ctx.beginPath();
+    ctx.moveTo(-46, 0); ctx.quadraticCurveTo(-48, -9, -34, -10);
+    ctx.lineTo(18, -10); ctx.quadraticCurveTo(44, -9, 50, -1);
+    ctx.quadraticCurveTo(44, 5, 20, 6); ctx.lineTo(-30, 6);
+    ctx.quadraticCurveTo(-44, 5, -46, 0); ctx.fill();
+    ctx.fillStyle = "#D8DDE3";
+    ctx.beginPath(); ctx.moveTo(-40, -9); ctx.lineTo(-52, -24); ctx.lineTo(-42, -25); ctx.lineTo(-28, -10); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-2, 4); ctx.lineTo(-14, 20); ctx.lineTo(-4, 21); ctx.lineTo(10, 5); ctx.fill();
+    ctx.fillStyle = "#2456E6"; ctx.fillRect(28, -7, 14, 4);
+    ctx.fillStyle = "#EE3A24"; ctx.fillRect(-46, -3, 8, 3);
+    ctx.restore();
   }
-  </script>
-</main>
-<script src="../../90s.js?v=98" defer></script>
+  function scene(px, py, ps, puff) {
+    var sky = ctx.createLinearGradient(0, 0, 0, RWY);
+    sky.addColorStop(0, "#5FB2E8"); sky.addColorStop(1, "#BFE6FA");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, W, RWY);
+    ctx.fillStyle = "#F6C453"; ctx.beginPath(); ctx.arc(W - 90, 52, 24, 0, 7); ctx.fill();
+    ctx.fillStyle = "#2E7D46"; ctx.fillRect(0, RWY, W, H - RWY);
+    ctx.fillStyle = "#3C4148"; ctx.fillRect(0, RWY - 14, W, 34);
+    ctx.fillStyle = "#F5F2E6";
+    for (var x = 26; x < W - 40; x += 62) ctx.fillRect(x, RWY + 1, 34, 5);
+    ctx.font = "700 22px 'Space Mono', monospace"; ctx.fillText("09", 30, RWY - 22);
+    ctx.fillStyle = "#5B6068"; ctx.fillRect(W - 210, RWY - 74, 70, 60);
+    ctx.fillStyle = "#EE3A24"; ctx.fillRect(W - 210, RWY - 74, 70, 9);
+    ctx.fillStyle = "#5B6068"; ctx.fillRect(W - 128, RWY - 96, 10, 82);
+    ctx.fillStyle = "#FFC61A"; ctx.beginPath(); ctx.arc(W - 123, RWY - 100, 9, 0, 7); ctx.fill();
+    if (puff > 0) {
+      ctx.fillStyle = "rgba(255,255,255,.75)";
+      for (var i = 0; i < 6; i++) { ctx.beginPath(); ctx.arc(px - 20 - i * 9, RWY - 16 - (i % 3) * 4, 6 + i * 1.6, 0, 7); ctx.fill(); }
+    }
+    if (px !== null) plane(px, py, ps);
+  }
+  function verdict(d) {
+    if (d < 150) return "SHORT AND FIRM — THE PASSENGERS FELT THAT ONE. THE AIRLINE'S LEDGER NOTICES.";
+    if (d < 330) return "GREASED IT. " + d + " M PAST THE NUMBERS — THE TOWER SENDS ITS COMPLIMENTS.";
+    if (d < 520) return "SAFELY DOWN, " + d + " M IN. A LONG ROLLOUT AND A LONGER TAXI BACK.";
+    return d + " M — YOU USED EVERY METRE THE TAXPAYERS BOUGHT. DOWN IS DOWN.";
+  }
+  function fly() {
+    if (anim) return;
+    touchdown = 120 + Math.round(Math.random() * 460);
+    if (reduced) { scene(120 + touchdown, RWY - 24, 1, 0); read.textContent = "ON THE GROUND (REDUCED-MOTION EDITION): " + verdict(touchdown); return; }
+    var t0 = performance.now(), DUR = 4300;
+    btn.disabled = true; read.textContent = "ON FINAL. GEAR DOWN, FLAPS SET, FINGERS CROSSED.";
+    function step(now) {
+      var t = Math.min(1, (now - t0) / DUR);
+      var touchT = 0.62, x, y, puff = 0;
+      if (t < touchT) {
+        var k = t / touchT, ease = k * k * (3 - 2 * k);
+        x = 60 + (120 + touchdown - 60) * ease;
+        y = 40 + (RWY - 24 - 40) * ease + Math.sin(k * Math.PI) * -8;
+      } else {
+        var r = (t - touchT) / (1 - touchT), dec = 1 - Math.pow(1 - r, 2.2);
+        x = 120 + touchdown + (W - 260 - (120 + touchdown)) * dec;
+        y = RWY - 24; puff = r < 0.24 ? 1 : 0;
+        if (r > 0.05 && r < 0.3) read.textContent = "TOUCHDOWN… ROLLOUT…";
+      }
+      scene(x, y, 1, puff);
+      if (t < 1) { anim = requestAnimationFrame(step); }
+      else { anim = null; btn.disabled = false; read.textContent = verdict(touchdown); }
+    }
+    anim = requestAnimationFrame(step);
+  }
+  btn.addEventListener("click", fly);
+  scene(120, RWY - 24, 1, 0);
+  read.textContent = "RUNWAY 09 IN SIGHT. PRESS THE BUTTON WHEN READY.";
+})();
+</script>
+<script src="../../site.js"></script>
 </body>
 </html>

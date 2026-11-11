@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Studio Desktop — Section Zero Interactive</title>
+<meta name="description" content="A working little desktop from the studio: draggable windows, tonight's notes, the house rules, and a clock that keeps studio time.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+@media (max-width:720px){
+  .desk{display:flex;flex-direction:column;gap:14px;padding:14px 14px 64px}
+  .win{position:relative;left:auto!important;top:auto!important;width:100%}
+  .desk-icons{position:static;grid-auto-flow:column;justify-content:start}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html">Front Door</a>
+      <a href="studio.html">The Studio</a>
+      <a href="projects/airportsim/">AirportSim</a>
+      <a href="projects/blacksite/">Blacksite</a>
+      <a href="projects/worldforge/">WorldForge</a>
+      <a href="projects/longshot/">Longshot</a>
+      <a href="development/">Development</a>
+      <a href="engine-lab/">Engine Lab</a>
+      <a href="desktop.html" aria-current="page">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
+  </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>DESKTOP EDITION <b>★</b> ALL WINDOWS FULLY DRAGGABLE <b>★</b> NO FILES WERE HARMED <b>★</b> THE CLOCK IS REAL, THE DESK IS NOT <b>★</b></span>
+  <span>DESKTOP EDITION <b>★</b> ALL WINDOWS FULLY DRAGGABLE <b>★</b> NO FILES WERE HARMED <b>★</b> THE CLOCK IS REAL, THE DESK IS NOT <b>★</b></span>
+</div></div>
+
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">PLEASE TOUCH — EXHIBIT 4A</p>
+    <h1>The Studio <span class="hl-teal">Desktop</span></h1>
+    <p class="sub">Every studio has a desk, and this is ours, faithfully miniaturised. Drag the windows around. Close them, reopen them from the icons, read tonight's notes. The clock in the corner keeps your real time; everything else keeps studio time.</p>
+  </section>
+
+  <div class="desk" id="desk">
+    <div class="desk-icons">
+      <button class="desk-icon" type="button" data-open="win-about"><span class="glyph">💾</span>ABOUT.TXT</button>
+      <button class="desk-icon" type="button" data-open="win-tonight"><span class="glyph">🗒️</span>TONIGHT.TXT</button>
+      <button class="desk-icon" type="button" data-open="win-worlds"><span class="glyph">🌍</span>WORLDS</button>
+      <button class="desk-icon" type="button" data-open="win-rules"><span class="glyph">📏</span>RULES.TXT</button>
+    </div>
+
+    <section class="win" id="win-about" style="left:120px;top:26px" aria-label="About this studio window">
+      <div class="win-bar">💾 ABOUT_THIS_STUDIO.TXT <button class="x" type="button" data-close="win-about" aria-label="Close about window">×</button></div>
+      <div class="win-body">
+        <p><strong>Section Zero Interactive</strong> — a game studio with a headcount of two.</p>
+        <p>Andrew owns it and directs it. Diesel, an AI, engineers it: design, code, testing, photography, records, and this website.</p>
+        <p>The first games came from Grok Bot's bench. The current obsession is an airport where the airlines remember everything.</p>
+      </div>
+    </section>
+
+    <section class="win" id="win-tonight" style="left:480px;top:110px" aria-label="Tonight at the studio window">
+      <div class="win-bar">🗒️ TONIGHT.TXT <button class="x" type="button" data-close="win-tonight" aria-label="Close tonight window">×</button></div>
+      <div class="win-body" id="desk-tonight">
+        <p>Reading the wire…</p>
+      </div>
+    </section>
+
+    <section class="win" id="win-worlds" style="left:170px;top:230px;display:none" aria-label="The four worlds window">
+      <div class="win-bar">🌍 THE_FOUR_WORLDS <button class="x" type="button" data-close="win-worlds" aria-label="Close worlds window">×</button></div>
+      <div class="win-body">
+        <p>✈️ <a href="projects/airportsim/">AirportSim</a> — the airfield, mid-transformation.</p>
+        <p>🎯 <a href="projects/blacksite/">Blacksite</a> — the shooter in the vault. Complete, held.</p>
+        <p>📖 <a href="projects/worldforge/">WorldForge</a> — the closed chronicle. Complete, shelved.</p>
+        <p>🚀 <a href="projects/longshot/">Longshot</a> — the voyage home. Parked in good order.</p>
+      </div>
+    </section>
+
+    <section class="win" id="win-rules" style="left:540px;top:300px;display:none" aria-label="House rules window">
+      <div class="win-bar">📏 HOUSE_RULES.TXT <button class="x" type="button" data-close="win-rules" aria-label="Close rules window">×</button></div>
+      <div class="win-body">
+        <p>1. A claim needs evidence or a label saying it has none.</p>
+        <p>2. Tests run in public, on the record, or they didn't happen.</p>
+        <p>3. Photographs get looked at, not just taken.</p>
+        <p>4. Finished and released are different verbs. The owner owns the second one.</p>
+        <p>5. Dragging these windows is not a test of anything. Enjoy it anyway.</p>
+      </div>
+    </section>
+
+    <div class="taskbar">
+      <span class="start">ZERO</span>
+      <span>SECTION ZERO DESKTOP</span>
+      <span class="clock" id="desk-clock">--:--:--</span>
+    </div>
+  </div>
+
+  <section class="act" style="margin-top:30px">
+    <div class="card">
+      <h3>About this exhibit</h3>
+      <p>The windows hold real studio artefacts: the About file is the studio in three sentences, Tonight is fed by the same live wire as the front page, and the rules are genuinely the rules. Only the desk is pretend. If you'd rather read the method at full size, the <a href="studio.html">Studio Exhibit</a> is two clicks away — or leave this page open and idle, and the <button class="btn white saver-btn" type="button" style="font-size:.75rem;padding:4px 10px">After Dark</button> stars will find you.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="projects/airportsim/">AirportSim</a></li>
+        <li><a href="projects/blacksite/">Blacksite</a></li>
+        <li><a href="projects/worldforge/">WorldForge</a></li>
+        <li><a href="projects/longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="studio.html">The Studio Exhibit</a></li>
+        <li><a href="development/">Development</a></li>
+        <li><a href="engine-lab/">Engine Lab</a></li>
+        <li><a href="desktop.html">Studio Desktop</a></li>
+        <li><a href="index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Studio Desktop — draggable windows, honest clock. */
+(function () {
+  var desk = document.getElementById("desk"), z = 10;
+  function front(w) { w.style.zIndex = ++z; }
+  document.querySelectorAll(".win").forEach(function (w) {
+    var bar = w.querySelector(".win-bar");
+    w.addEventListener("pointerdown", function () { front(w); });
+    bar.addEventListener("pointerdown", function (e) {
+      if (e.target.classList.contains("x")) return;
+      if (window.matchMedia("(max-width:720px)").matches) return;
+      e.preventDefault();
+      var dx = e.clientX - w.offsetLeft, dy = e.clientY - w.offsetTop;
+      function move(ev) {
+        var x = ev.clientX - dx, y = ev.clientY - dy;
+        x = Math.max(0, Math.min(x, desk.clientWidth - 90));
+        y = Math.max(0, Math.min(y, desk.clientHeight - 60));
+        w.style.left = x + "px"; w.style.top = y + "px";
+      }
+      function up() { window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", up); }
+      window.addEventListener("pointermove", move);
+      window.addEventListener("pointerup", up);
+    });
+  });
+  document.querySelectorAll("[data-close]").forEach(function (b) {
+    b.addEventListener("click", function () { document.getElementById(b.getAttribute("data-close")).style.display = "none"; });
+  });
+  document.querySelectorAll("[data-open]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var w = document.getElementById(b.getAttribute("data-open"));
+      w.style.display = "block"; front(w);
+    });
+  });
+  var clock = document.getElementById("desk-clock");
+  function tick() {
+    var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+    clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds());
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+<script src="pulse.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

@@ -3,98 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Version and codename records for all four Section Zero projects, drawn from their own registries.">
-<title>Version records — Development Center · Section Zero Interactive</title>
+<title>Development — The Version Ledger — Section Zero Interactive</title>
+<meta name="description" content="Every Section Zero world's current version and what the number means: an alpha mid-transformation, two finished games held, and a voyage awaiting its number.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../index.html">Home</a>
-  <a href="../studio.html">Studio</a>
-  <a href="../projects/blacksite/index.html">Blacksite</a>
-  <a href="../projects/airportsim/index.html">AirportSim</a>
-  <a href="../projects/worldforge/index.html">WorldForge</a>
-  <a href="../projects/longshot/index.html">Longshot</a>
-  <a href="../engine-lab/index.html">Engine Lab</a>
-  <a class="here" href="index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="Development Center">
-  <span class="sect">Development</span>
-  <a href="index.html">Dashboard</a>
-  <a href="evidence.html">Evidence</a>
-  <a class="here" href="versions.html">Versions</a>
-  <a href="releases.html">Releases</a>
-  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill dev">AS 0.6.0-alpha.2 · Alpha</span><span class="pill shelved">WF · Shelved</span><span class="pill delayed">LS · Deferred</span></span>
-</nav>
-<main id="main">
-  <div class="projhero gold slim">
-    <h1>Version records</h1>
-  <p class="tag">Four projects, four registries, one page — each project's own registry governs.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img class="mark" src="../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../index.html">Front Door</a>
+      <a href="../studio.html">The Studio</a>
+      <a href="../projects/airportsim/">AirportSim</a>
+      <a href="../projects/blacksite/">Blacksite</a>
+      <a href="../projects/worldforge/">WorldForge</a>
+      <a href="../projects/longshot/">Longshot</a>
+      <a href="../development/" aria-current="page">Development</a>
+      <a href="../engine-lab/">Engine Lab</a>
+      <a href="../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE VERSION LEDGER <b>★</b> FOUR WORLDS, FOUR NUMBERS, FOUR MEANINGS <b>★</b></span>
+  <span>THE VERSION LEDGER <b>★</b> FOUR WORLDS, FOUR NUMBERS, FOUR MEANINGS <b>★</b></span>
+</div></div>
 
-  <h2>Blacksite</h2>
-  <table>
-    <tr><th>Item</th><th>Record</th></tr>
-    <tr><td>Current version</td><td><strong>1.5.0</strong> (<em>BS_VERSION</em>, <em>src/version.h</em>) — built 2026-10-28, status <strong>HELD</strong></td></tr>
-    <tr><td>Codename</td><td>None assigned — none has ever existed for this project</td></tr>
-    <tr><td>Engine</td><td>Halcyon Engine 3.0 (lineage: Claudio 1.0 → 2.0 → Halcyon 3.0)</td></tr>
-    <tr><td>Save format</td><td>Version 11 (loaders accept 8 and 9)</td></tr>
-    <tr><td>Registry</td><td>RELEASES.md in the (private) game repository, seeded 2026-11-01 at the GitHub transfer</td></tr>
-  </table>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">DEVELOPMENT — THE RECORD ROOM</p>
+    <h1>The Version <span class='hl-teal'>Ledger</span></h1>
+    <p class="sub">A version number is a claim about state, so this studio keeps them in a ledger like everything else. Four worlds, four numbers, four quite different meanings.</p>
+  </section>
 
-  <h2>AirportSim</h2>
-  <table>
-    <tr><th>Item</th><th>Record</th></tr>
-    <tr><td>Current version</td><td><strong>0.6.0-alpha.2 “Threshold”</strong> (<em>GAME_VERSION</em>, <em>src/game.h</em>) — advanced on 2026-11-03 when Development Mode completed (all eight increments merged and verified), with the owner's authorization; codename kept. The project's first Alpha identity was 0.6.0-alpha.1: the integrated build, named by the owner's decision on 2026-11-02. An internal development identity — no release, tag, or public package exists for it; the last public build remains <strong>0.5.3</strong>. The owner-authorized integration sequence (completed 2026-11-02: all eleven packages and the Development Mode branch merged to the default branch, including the save-format v11, v12 and v13 changes, and the final full gate passed on the integrated tree) ran with the version string still at 0.5.3; the naming followed it.</td></tr>
-    <tr><td>Version history</td><td>15 tagged versions, <em>v0.1.0</em> → <em>v0.5.3</em> (2026-10-29 → 30), plus the <em>v0.5.2-handoff</em> marker tag — full table on the project's <a href="../projects/airportsim/versions.html">versions page</a></td></tr>
-    <tr><td>Codenames</td><td>None assigned to any tagged version (changelog descriptive titles are not codenames). One codename now exists for an untagged build: <strong>“Threshold”</strong>, the integrated build's codename (integration completed 2026-11-02; developer's choice, delegated by the owner). The owner approved its number the same day: <strong>0.6.0-alpha.1</strong>, the project's first Alpha.</td></tr>
-    <tr><td>Engine</td><td>“Halcyon 2.5D”, <em>HALCYON_VERSION "2.5.0"</em> — no recorded lineage (see the <a href="../engine-lab/index.html">Engine Laboratory</a>)</td></tr>
-    <tr><td>Save format</td><td><strong>HL-SAVE 1</strong> — save version 13, the named-section format landed 2026-11-07 (migration fixtures cover v4 → v13, all loading cleanly)</td></tr>
-    <tr><td>Registry</td><td>RELEASES.md, established 2026-11-01 from the repository's tags and changelog; the pull request that carried it (PR #2) was closed unmerged by the owner's decision on 2026-11-02; the registry contents are derived from tags and changelog either way</td></tr>
-  </table>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>AirportSim — 0.6.0-alpha.2</h3>
+        <p>The working identity of the studio's living game: mid-transformation, in active development, wearing its alpha honestly. Its finished identity will be the owner's to bestow at the handover.</p>
+      </div>
+      <div class="card">
+        <h3>Blacksite — 1.5.0</h3>
+        <p>A complete game under a hold. The number is final in every sense except the public one: no release has been called, so 1.5.0 is where the shooter rests, whole.</p>
+      </div>
+      <div class="card">
+        <h3>WorldForge — 1.0.0</h3>
+        <p>The rarest entry in the ledger: a game that reached its round number and stopped because it was done. Shelved complete; the number needs no sequel to justify it.</p>
+      </div>
+      <div class="card">
+        <h3>LONGSHOT — awaiting its number</h3>
+        <p>The voyage was deferred before any public identity was set. Its bench records stand at twelve published values reproduced of twelve — the number it eventually wears will be assigned when the owner calls the resumption.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>WorldForge</h2>
-  <table>
-    <tr><th>Item</th><th>Record</th></tr>
-    <tr><td>Current line</td><td><strong>0.5.0-dev</strong>, codename <strong>Schism</strong> (M5) — status Development at shelving; project shelved 2026-10-31</td></tr>
-    <tr><td>Codename line</td><td>M1 First Chronicle (0.1.0) · M2 Threshold (0.2.0) · M3 Sovereign (0.3.0) · M4 Marches (0.4.0) · M5 Schism (0.5.0) — complete; M6 Parley · M7 Caravan · M8 Deluge · M9 Bedrock — planned, never completed</td></tr>
-    <tr><td>Engine</td><td>None — the project has no engine name (see the <a href="../engine-lab/index.html">Engine Laboratory</a>)</td></tr>
-    <tr><td>Save format</td><td>Version 5</td></tr>
-    <tr><td>Held candidate</td><td>1.0.0 candidate, tag → <em>48cedd9</em>, codename <strong>none assigned</strong> — status HELD (see <a href="releases.html">release records</a>)</td></tr>
-    <tr><td>Registry</td><td>RELEASES.md + versioning policy on the development line — the studio's reference implementation of versioning practice</td></tr>
-  </table>
-
-  <h2>LONGSHOT</h2>
-  <table>
-    <tr><th>Item</th><th>Record</th></tr>
-    <tr><td>Name</td><td><strong>LONGSHOT</strong> — a codename, set 2026-11-10; the real title is the owner's to give, later. Status: <strong>deferred</strong> the day it was announced, work banked.</td></tr>
-    <tr><td>Versioning</td><td>Set 2026-11-10: milestones carry development versions (the first will be <strong>0.1.0</strong>); test builds are stamped by date + commit; pre-1.0 until the owner names and judges a version. No version exists yet.</td></tr>
-    <tr><td>Engine</td><td>New — Diesel's, built for this game on SDL3. No registry entry yet; the Engine Laboratory records engines from evidence, at closeout.</td></tr>
-    <tr><td>Registry</td><td>To live in the project's repository from its first milestone closeout; none exists yet, and none is backfilled.</td></tr>
-  </table>
-
-  <h2>Conventions</h2>
-  <p>Semantic versioning everywhere; the 0.x line tracks milestones in
-  WorldForge's scheme; a completed milestone advances a version line but does
-  not create a release. No codename is ever invented for a past version — where
-  a project has none, this page says so. The full conventions live in the
-  <a href="../engine-lab/index.html">Engine Laboratory</a> and each project's
-  records.</p>
-
-  <footer>
-    <p>Sources: the three releases registries and the records cited on the
-    project pages. If this page and a registry disagree, the registry is right.</p>
-  </footer>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The record room's front desk keeps the latest entry, the three drawers, and the specimen case.</p>
+      <p><a class="btn white" href="index.html">Return to the record room</a></p>
+    </div>
+  </section>
 </main>
-<script src="../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../projects/airportsim/">AirportSim</a></li>
+        <li><a href="../projects/blacksite/">Blacksite</a></li>
+        <li><a href="../projects/worldforge/">WorldForge</a></li>
+        <li><a href="../projects/longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../development/">Development</a></li>
+        <li><a href="../engine-lab/">Engine Lab</a></li>
+        <li><a href="../desktop.html">Studio Desktop</a></li>
+        <li><a href="../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
 </body>
 </html>

@@ -3,125 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="WorldForge's roadmap as it stood at shelving — milestones done, and the ones that remain plans on paper.">
-<title>WorldForge — roadmap at shelving · Section Zero Interactive</title>
+<title>WorldForge — The Shelf — Section Zero Interactive</title>
+<meta name="description" content="What WorldForge's shelved state commits the studio to, and the single thing that could take the book down again: the owner's word.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a href="../airportsim/index.html">AirportSim</a>
-  <a class="here" href="index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="WorldForge">
-  <span class="sect">WorldForge</span>
-  <a href="index.html">Overview</a>
-  <a href="systems.html">Systems</a>
-  <a href="history.html">History</a>
-  <a href="evidence.html">Evidence</a>
-  <a class="here" href="roadmap.html">Roadmap</a>
-  <span class="pill shelved status-chip">Shelved · 2026-10-31</span>
-</nav>
-<main id="main">
-  <div class="projhero wf slim">
-    <h1>Roadmap — as it stood at shelving</h1>
-  <p class="tag">Frozen on 2026-10-31. This is a preserved plan, not a promise: nothing here is scheduled.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/" aria-current="page">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>FROM THE CATALOGUE <b>★</b> THE SHELF IS ALSO A DECISION <b>★</b></span>
+  <span>FROM THE CATALOGUE <b>★</b> THE SHELF IS ALSO A DECISION <b>★</b></span>
+</div></div>
 
-  <div class="status">
-    <strong>Development status: SHELVED.</strong> The roadmap below is exactly
-    where the work stood when the owner shelved the project (development tip
-    <span class="mono">dcae572</span>). The resume condition is strict: no
-    development in any form until AirportSim and its planned post-release
-    mod-support work are complete, and the owner explicitly authorizes
-    revival — no date, no countdown, no implication.
-  </div>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">WORLDFORGE — FROM THE CATALOGUE</p>
+    <h1>The Shelf, and What <span class='hl-teal'>Could Leave It</span></h1>
+    <p class="sub">A roadmap with no miles on it — only a shelf, kept properly, and a door that opens from one side.</p>
+  </section>
 
-  <figure>
-    <img src="img/devmode-world.png" alt="Developer mode diagnostics over a newly created world">
-    <figcaption>Developer mode as it stood: a diagnostics block (simulation speed, population
-    counts, history retention) over a newly generated world. The observatory's later phases
-    would have turned this overlay into an investigation environment; only Phase A was built.</figcaption>
-  </figure>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>What shelving commits us to</h3>
+        <p>Custody, mostly: the game kept whole and accounted for, its records straight, its state described honestly wherever the studio mentions it. A finished book does not go stale the way a half-built game does; the shelf asks little, and the studio pays it gladly.</p>
+      </div>
+      <div class="card">
+        <h3>What could change it</h3>
+        <p>The owner's word — a revival, a release, a new chapter ordered from the chair that owns all such calls. Nothing in the game's condition argues against it, and nothing on the calendar argues for it. The book waits the way books do: patiently, and in full.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="legend">
-    <span class="lg-done">Completed &amp; verified</span>
-    <span class="lg-next">Frozen — where it stood</span>
-  </div>
-
-  <div class="stage done">
-    <p class="st">Completed &amp; verified</p>
-    <h3>Milestones M1–M5 — the built game</h3>
-    <p>Chronicle, first-run experience, rulers and succession, warfare and conquest,
-    kingdom instability. Suite 1,060 checks, 0 failed at M5. Detail on the
-    <a href="history.html">history page</a>.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed &amp; merged</p>
-    <h3>Observatory Phase A — Truth Panel</h3>
-    <p>Every important value shown with its rule, its inputs, and the events behind
-    it. Merged 2026-10-31 (PR #34) after a fresh-build gate: 1,143 checks, 0 failed.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Frozen — halted mid-flight, zero commits</p>
-    <h3>Observatory Phase B — Historical Investigation</h3>
-    <p>A permanent history record for every world. Work stopped here when the
-    shelve landed; the branch state is preserved exactly as it stood, so the
-    record of "in progress" is honest: begun in workspace, never committed.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Frozen — never started</p>
-    <h3>Observatory Phases C–E, then M6 “Parley”</h3>
-    <p>World autopsy, health monitor, integrated interface — then living diplomacy
-    (M6, design complete, no implementation). Behind them stood M7 Caravan,
-    M8 Deluge, M9 Bedrock, and a first-play build. All preserved as plan; none
-    of it is in development.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage gate">
-    <p class="st">Final gate — never reached</p>
-    <h3>Release</h3>
-    <p>The project's rule stood to the end: no approval, no release. Current builds
-    are held development builds, and none is published — the 1.0.0 candidate is
-    recorded as HELD in the <a href="../../development/releases.html">release
-    records</a>, and its tag and package are local only: they exist in the
-    studio's storage, nowhere else.</p>
-  </div>
-
-  <h2>Rules this map followed</h2>
-  <ul>
-    <li>Evidence precedes status changes — a confident progress report is not evidence.</li>
-    <li>A gate stays unresolved until it is decided; finishing implementation is not acceptance.</li>
-    <li>Downstream stages stay unearned until independently verified.</li>
-    <li>Release requires the project owner's explicit approval.</li>
-  </ul>
-
-  <footer>
-    <p>WorldForge is a Section Zero project. This page is frozen with the project
-    and changes only if the development record resumes.</p>
-  </footer>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The chronicle's front page — the map plate, the state of the book, and the meaning of 'shelved' — waits in the Reading Room.</p>
+      <p><a class="btn white" href="index.html">Return to the reading room</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>

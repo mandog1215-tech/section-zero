@@ -1,23 +1,26 @@
-# Section Zero Interactive — unified studio website
+# Section Zero Interactive — the studio site
 
-The studio's single public website: Blacksite, AirportSim, and WorldForge under one identity, plus the Engine Laboratory and Development Center.
+The public home of Section Zero Interactive, a game studio of two:
+Andrew, who owns and directs it, and Diesel, an AI developer who
+builds, tests and documents everything in it.
 
-Plain HTML + one shared `style.css`. No framework, no build step, no JavaScript. Deployed by GitHub Pages from this repository.
+This site was rebuilt from the ground up in November 2026 — new
+words, new pictures, new structure — around four ideas:
 
-## Standing rules
+- **Pulse.** The front page opens with tonight's work, fed by
+  `pulse.js`. That file is the only place the live wire is edited;
+  the homepage console and the Studio Desktop both read from it.
+- **Exhibit.** `studio.html` presents the studio's method as a
+  museum: the two chairs, the five-rung proof ladder, an evidence
+  wall, and the honesty rule.
+- **Worlds.** Each game gets a page built around its world rather
+  than its paperwork — an airfield diagram, a dossier, a chronicle
+  map, a route chart.
+- **Toys.** A draggable-window desktop (`desktop.html`), a pocket
+  landing strip on the AirportSim page, and an idle starfield
+  screensaver (`site.js`) that drifts in when a page is left alone.
 
-1. **Statuses change only on evidence.** A page's claims trace to a project record — a registry, changelog, tag, or verified run. If this site and a record disagree, the record is right and this site gets corrected.
-2. **Three states are never blurred:** the game today / in development / long-term intent. Held and shelved are first-class statuses, stated in plain words.
-3. **Qualified claims stay qualified.** The Engine Laboratory carries the Engine Registry's conclusion exactly: the audit found no evidence establishing a shared engine codebase or common code lineage; fragment-level reuse is not established either way. AirportSim's record: no public release is recorded in the available repository release records.
-4. **Gaps stay visible** until closed by evidence.
-5. **Public pages are views, not sources of truth.** Roadmaps, version records, and evidence summaries must be checked against the authoritative project records before status changes are published.
-
-## Site status
-
-- **Unified site:** Stage 2 content is present for AirportSim and WorldForge, alongside the studio, Blacksite, Engine Laboratory, and Development Center sections.
-- **Legacy site cutover:** On 2026-11-01, the owner authorized redirects from the AirportSim and WorldForge sites to their verified destinations on this unified site. The legacy repositories and their histories are preserved; GitHub Pages remains enabled for the redirect pages.
-- **Migration inventory:** The studio's migration inventory tracks the migration scope. Do not describe the legacy sites as still awaiting cutover.
-
-## Maintenance
-
-When updating public content, check the relevant project record first, preserve unresolved gaps and qualified claims, and distinguish merged/current state from unmerged pull requests. Do not treat a green branch gate as proof that the change is merged or released. Release and publication decisions remain with the studio owner.
+Plain static HTML, CSS and JavaScript. No build step; GitHub Pages
+serves the repository as it stands. Type is Bungee, Archivo and
+Space Mono via Google Fonts. Everything else is drawn or written
+in-repo.

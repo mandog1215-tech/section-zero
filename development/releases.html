@@ -3,129 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Release records: published, none. Two builds held and labelled as held, and the rules that keep this page honest.">
-<title>Release records — Development Center · Section Zero Interactive</title>
+<title>Development — The Release Ledger — Section Zero Interactive</title>
+<meta name="description" content="Section Zero's release ledger: nothing published yet, two games finished and held, and the philosophy that keeps those lists separate.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../index.html">Home</a>
-  <a href="../studio.html">Studio</a>
-  <a href="../projects/blacksite/index.html">Blacksite</a>
-  <a href="../projects/airportsim/index.html">AirportSim</a>
-  <a href="../projects/worldforge/index.html">WorldForge</a>
-  <a href="../projects/longshot/index.html">Longshot</a>
-  <a href="../engine-lab/index.html">Engine Lab</a>
-  <a class="here" href="index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="Development Center">
-  <span class="sect">Development</span>
-  <a href="index.html">Dashboard</a>
-  <a href="evidence.html">Evidence</a>
-  <a href="versions.html">Versions</a>
-  <a class="here" href="releases.html">Releases</a>
-  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill dev">AS 0.6.0-alpha.2 · Alpha</span><span class="pill shelved">WF · Shelved</span><span class="pill delayed">LS · Deferred</span></span>
-</nav>
-<main id="main">
-  <div class="projhero gold slim">
-    <h1>Release records</h1>
-  <p class="tag">Kept blunt: a build is a release only when a registry records it as one — and a tag is not a publication.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img class="mark" src="../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../index.html">Front Door</a>
+      <a href="../studio.html">The Studio</a>
+      <a href="../projects/airportsim/">AirportSim</a>
+      <a href="../projects/blacksite/">Blacksite</a>
+      <a href="../projects/worldforge/">WorldForge</a>
+      <a href="../projects/longshot/">Longshot</a>
+      <a href="../development/" aria-current="page">Development</a>
+      <a href="../engine-lab/">Engine Lab</a>
+      <a href="../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE RELEASE LEDGER <b>★</b> AN EMPTY COLUMN, KEPT ON PURPOSE <b>★</b></span>
+  <span>THE RELEASE LEDGER <b>★</b> AN EMPTY COLUMN, KEPT ON PURPOSE <b>★</b></span>
+</div></div>
 
-  <h2>Published releases</h2>
-  <p><strong>None.</strong> No Section Zero game has a published release as of
-  2026-11-01, stated per project in each project's own record terms:</p>
-  <ul>
-    <li><strong>Blacksite:</strong> no GitHub Release exists (release list verified
-      empty at transfer, 2026-11-01); its 1.5.0 package was never uploaded.</li>
-    <li><strong>AirportSim:</strong> no public release is recorded in the available
-      repository release records. Whether any build was distributed through a
-      channel outside those records was not checked, and no claim about that is
-      made here.</li>
-    <li><strong>WorldForge:</strong> its registry records no official release; the
-      candidate below is recorded as held, in its own words.</li>
-  </ul>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">DEVELOPMENT — THE RECORD ROOM</p>
+    <h1>The Release <span class='hl-red'>Ledger</span></h1>
+    <p class="sub">Two lists live in this drawer, and the studio is careful never to let them touch: what is finished, and what has been released. They are not the same list. At this studio, so far, they barely overlap at all.</p>
+  </section>
 
-  <h2>Held builds — visibly distinct from releases</h2>
-  <table>
-    <tr><th>Build</th><th>Record</th><th>Status</th></tr>
-    <tr>
-      <td><strong>Blacksite 1.5.0</strong></td>
-      <td>Built and packaged 2026-10-28 (archive 2,546,319 bytes, checksum in the
-        project's releases registry). Build tag <em>v1.5.0</em> → <em>059bbe1</em>
-        exists as a historical marker of the build. The package remains in local
-        studio storage only.</td>
-      <td><span class="pill held">Held</span> Placed on hold by the owner the day
-        it was built (2026-10-28). Not published; no downloads exist. Releasing
-        it, or retiring the hold, is a future owner decision.</td>
-    </tr>
-    <tr>
-      <td><strong>WorldForge 1.0.0 candidate</strong></td>
-      <td>Prepared during the 2026-10-30 release pass. Local tag <em>v1.0.0</em>
-        → <em>48cedd9</em>; package checksum recorded in the project's registry.
-        Codename: <strong>none assigned</strong> — recorded in the registry as
-        not retroactively invented. The tag's occupation of v1.0.0 is a flagged
-        open item for the owner's eventual release decision.</td>
-      <td><span class="pill held">Held</span> Not a release: the build does not
-        meet the studio's finished-game standard, and the project has since been
-        shelved. It stays held on the evidence, not for want of a signature.</td>
-    </tr>
-  </table>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>Released to the public</h3>
+        <p>Nothing — yet, and by choice rather than by accident. As this ledger is written, the public column is empty because the owner has not called a release, and releases here are called, never drifted into.</p>
+      </div>
+      <div class="card">
+        <h3>Finished, and held</h3>
+        <p>Blacksite, complete at 1.5.0, rests in the vault. WorldForge, complete at 1.0.0, rests on the shelf. Two whole games, done, unpublished — the clearest possible proof that in this house, finishing and releasing are separate crafts with separate calendars.</p>
+      </div>
+      <div class="card">
+        <h3>Still in the workshop</h3>
+        <p>AirportSim is mid-transformation under its working identity, and LONGSHOT is parked in good order awaiting the owner's word to resume. Neither appears in either column above, and the ledger is comfortable saying so.</p>
+      </div>
+      <div class="card">
+        <h3>The rule of the drawer</h3>
+        <p>A version number in a drawer is not a launch, a tag is not a publication, and 'basically done' is not a state this ledger recognises. When the first release is called, it will be entered here in the same plain hand as everything else.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>Public-build policy (owner, 2026-11-03)</h2>
-  <p>The game is not planned for public sale or release: its next major
-  milestone is a closed dev beta, 7.0 “Latitude” — a private test build
-  for the owner's hands-on, internal testing only (authorised 2026-11-07;
-  the programme was briefly delayed on 2026-11-10 and resumed the same
-  morning). LONGSHOT, announced and deferred on 2026-11-10, has nothing
-  built to release — it is pre-0.1.0, its engine start banked. Any copy that does leave the studio is a private one, and
-  it ships under two standing rules the owner set on 2026-11-03:</p>
-  <ul>
-    <li><strong>Copy protection in place.</strong> Protection here is
-      provenance, not a gate: the studio's credits and copyright in the
-      game, the binary and the data, and a unique invisible fingerprint
-      on each copy handed out — so a copy's origin can always be shown.
-      There is no license-key gate and nothing phones home; heavy
-      protection that punishes honest players would fail the owner's
-      standard.</li>
-    <li><strong>No source code in public builds.</strong> Packages will
-      contain compiled binaries and game data only — never source files —
-      and the package contents will be verified against that rule before
-      anything goes out.</li>
-  </ul>
-  <p>Nothing public ships until both rules are met. The held builds above are
-  unaffected: they were never public, and they stay held.</p>
-
-  <h2>The rules that keep this page honest</h2>
-  <ul>
-    <li>A build is a release only when recorded in a registry with its exact
-      commit or tag, its evidence, and its status.</li>
-    <li><strong>HELD</strong> is a first-class status, recorded in plain words —
-      never omitted to make a project look further along.</li>
-    <li>No status changes without evidence on the exact commit; no release
-      happens without the owner's explicit approval.</li>
-    <li>Public packages ship compiled binaries and game data only — no
-      source code — with copy protection in place and the contents verified
-      before anything goes out (the owner's public-build policy,
-      2026-11-03).</li>
-  </ul>
-
-  <footer>
-    <p>Sources: the projects' releases registries (Blacksite RELEASES.md,
-    AirportSim RELEASES.md, WorldForge RELEASES.md) and the transfer and release
-    records cited on the project pages. The registries govern; this page echoes
-    them.</p>
-  </footer>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The record room's front desk keeps the latest entry, the three drawers, and the specimen case.</p>
+      <p><a class="btn white" href="index.html">Return to the record room</a></p>
+    </div>
+  </section>
 </main>
-<script src="../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../projects/airportsim/">AirportSim</a></li>
+        <li><a href="../projects/blacksite/">Blacksite</a></li>
+        <li><a href="../projects/worldforge/">WorldForge</a></li>
+        <li><a href="../projects/longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../development/">Development</a></li>
+        <li><a href="../engine-lab/">Engine Lab</a></li>
+        <li><a href="../desktop.html">Studio Desktop</a></li>
+        <li><a href="../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
 </body>
 </html>

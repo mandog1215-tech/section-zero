@@ -1,13 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="480" height="480">
-<rect width="240" height="240" fill="#1C1C1E"/>
-<pattern id="caphatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="1.8"/></pattern>
-<path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="5"/>
-<path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="5"/>
-<path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#caphatch)" stroke="#C9A227" stroke-width="5"/>
-<path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#caphatch)" stroke="#C9A227" stroke-width="5"/>
-<circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="3"/>
-<circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="3"/>
-<circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="2.5"/>
-<circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="#FFC61A" stroke="#1D2440" stroke-width="4"/>
+  <path d="M18 16h28v8L32 40h14v8H18v-8l14-16H18z" fill="#EE3A24" stroke="#1D2440" stroke-width="2.5" stroke-linejoin="round"/>
 </svg>
