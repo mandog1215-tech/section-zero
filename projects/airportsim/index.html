@@ -315,7 +315,13 @@
     anim = requestAnimationFrame(step);
   }
   btn.addEventListener("click", fly);
-  scene(120, RWY - 24, 1, 0);
+  /* Idle pose: hold her on final approach, gear down, waiting for the word. */
+  (function idle() {
+    var k = 0.45, ease = k * k * (3 - 2 * k);
+    var x = 60 + (120 + 300 - 60) * ease;
+    var y = 40 + (RWY - 24 - 40) * ease + Math.sin(k * Math.PI) * -8;
+    scene(x, y, 1, 0);
+  })();
   read.textContent = "RUNWAY 09 IN SIGHT. PRESS THE BUTTON WHEN READY.";
 })();
 </script>

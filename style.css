@@ -211,6 +211,8 @@ blockquote.pull{font-family:"Bungee",cursive;font-size:clamp(1.2rem,2.6vw,1.7rem
   width:24px;height:24px;line-height:1;cursor:pointer;font-weight:700}
 .win-body{padding:12px 14px;font-size:.92rem}
 .win-body p{margin:.4em 0}
+#win-tonight{display:flex;flex-direction:column;max-height:calc(100% - 152px)}
+#win-tonight .win-body{overflow-y:auto}
 .desk-icons{position:absolute;top:14px;left:14px;display:grid;gap:14px;z-index:1}
 .desk-icon{background:none;border:none;cursor:pointer;text-align:center;width:76px;font-family:"Space Mono",monospace;font-size:.7rem;font-weight:700;color:#fff}
 .desk-icon .glyph{font-size:1.9rem;display:block;background:var(--cream);border:3px solid var(--ink);border-radius:12px;padding:6px 0;margin-bottom:4px;box-shadow:4px 4px 0 rgba(29,36,64,.5)}

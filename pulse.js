@@ -38,8 +38,8 @@ const PULSE = {
   /* The freshest frame off the line. Path is relative to the site root. */
   shot: {
     src: "projects/airportsim/img/field-day.jpg",
-    alt: "Daylight over a busy AirportSim apron, airliners parked at the terminal with jet bridges drawn up to their doors",
-    caption: "Fresh off the proof camera: a Detroit morning after the stand repairs, bridges meeting doors the way they should."
+    alt: "Wide aerial view of an AirportSim airfield from directly above: two runways crossing green fields, the taxiway web, a small terminal, and one jet taxiing out",
+    caption: "Fresh off the proof camera: the whole field from above — runways crossing in the green, taxiways picked out in yellow, and one jet taxiing out."
   }
 };
 
