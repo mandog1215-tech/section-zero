@@ -47,16 +47,17 @@ body {
   margin: 0; color: var(--ink);
   background-color: var(--sky-1);
   background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='30' cy='60' r='1.8'/%3E%3Ccircle cx='120' cy='20' r='1.2' opacity='0.7'/%3E%3Ccircle cx='210' cy='90' r='2'/%3E%3Ccircle cx='300' cy='40' r='1.3' opacity='0.8'/%3E%3Ccircle cx='60' cy='180' r='1.4' opacity='0.75'/%3E%3Ccircle cx='170' cy='240' r='1.9'/%3E%3Ccircle cx='260' cy='300' r='1.4' opacity='0.7'/%3E%3Ccircle cx='330' cy='180' r='1.2' opacity='0.6'/%3E%3Cpath d='M150 136l2.6 8.4L161 147l-8.4 2.6L150 158l-2.6-8.4L139 147l8.4-2.6z' opacity='0.95'/%3E%3Cpath d='M282 132l1.7 5.3L289 139l-5.3 1.7L282 146l-1.7-5.3L275 139l5.3-1.7z' opacity='0.8'/%3E%3C/g%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='12' cy='20' r='1.4'/%3E%3Ccircle cx='66' cy='8' r='0.9' opacity='0.7'/%3E%3Ccircle cx='118' cy='44' r='1.2'/%3E%3Ccircle cx='34' cy='84' r='0.8' opacity='0.6'/%3E%3Ccircle cx='96' cy='110' r='1.5'/%3E%3Ccircle cx='130' cy='128' r='0.8' opacity='0.65'/%3E%3Ccircle cx='52' cy='128' r='1' opacity='0.8'/%3E%3Cpath d='M84 60l1.6 3.4L89 65l-3.4 1.6L84 70l-1.6-3.4L79 65l3.4-1.6z' opacity='0.9'/%3E%3C/g%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='230' height='230'%3E%3Cg fill='%23cfe8ff'%3E%3Ccircle cx='40' cy='150' r='1.1' opacity='0.55'/%3E%3Ccircle cx='180' cy='30' r='1.3' opacity='0.6'/%3E%3Ccircle cx='210' cy='190' r='1' opacity='0.5'/%3E%3Ccircle cx='90' cy='210' r='1.2' opacity='0.45'/%3E%3C/g%3E%3C/svg%3E"),
     radial-gradient(ellipse 90% 34rem at 50% -8rem, rgba(255,47,214,0.20), transparent 70%),
     linear-gradient(180deg, var(--sky-2), var(--sky-1) 34rem);
-  background-attachment: fixed, fixed, scroll, scroll;
+  background-attachment: fixed, fixed, fixed, scroll, scroll;
   animation: sz-twinkle 9s ease-in-out infinite alternate;
 }
 @keyframes sz-twinkle {
-  from { background-position: 0 0, 0 0, 0 0, 0 0; }
-  to   { background-position: 24px 40px, -30px 18px, 0 0, 0 0; }
+  from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+  to   { background-position: 16px 26px, 24px 40px, -30px 18px, 0 0, 0 0; }
 }
 main { max-width: 48rem; margin: 0 auto; padding: 2.2rem 1.25rem 4rem; }
 main.wide { max-width: 64rem; }
@@ -444,6 +445,302 @@ svg text { font-family: var(--mono); }
 @keyframes sz-sway {
   from { transform: translateX(-9px); }
   to   { transform: translateX(9px); }
+}
+
+
+/* ============================================================
+   '96 CREATIVE PASS (2026-11-11) — the owner's word: "more
+   detail and creativity, less generic borders." The uniform
+   beveled panel is retired as the house style: every game now
+   wears a frame drawn from itself — a boarding pass, a tactical
+   HUD, a chronicle leaf, a star chart — over generated texture
+   (SVG noise, graph paper, brushed metal, ruled parchment),
+   with window chrome, rivets, rubber stamps and gate markers
+   for detail density. Prose untouched; this is paint, not text.
+   ============================================================ */
+:root {
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  --constellation: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='36'%3E%3Cpath d='M18 24L74 10L128 21L186 8L246 23L314 12L376 26L434 9L492 20L556 11' fill='none' stroke='%23c07dff' stroke-width='1' opacity='0.75'/%3E%3Cg fill='%23e6ccff'%3E%3Ccircle cx='18' cy='24' r='2.2'/%3E%3Ccircle cx='74' cy='10' r='1.6'/%3E%3Ccircle cx='128' cy='21' r='2.4'/%3E%3Ccircle cx='186' cy='8' r='1.5'/%3E%3Ccircle cx='246' cy='23' r='2'/%3E%3Ccircle cx='314' cy='12' r='1.6'/%3E%3Ccircle cx='376' cy='26' r='2.2'/%3E%3Ccircle cx='434' cy='9' r='1.5'/%3E%3Ccircle cx='492' cy='20' r='2'/%3E%3Ccircle cx='556' cy='11' r='1.7'/%3E%3Ccircle cx='330' cy='29' r='1.1' opacity='0.6'/%3E%3Ccircle cx='40' cy='6' r='1.1' opacity='0.6'/%3E%3Ccircle cx='520' cy='30' r='1.1' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E");
+  --rocket: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1c3 2.6 4.5 6.4 4.5 10.5l-2 3h-5l-2-3C7.5 7.4 9 3.6 12 1z' fill='%23e8e8ff'/%3E%3Ccircle cx='12' cy='8' r='2' fill='%237a3cff'/%3E%3Cpath d='M7.5 12.5L4 18l3.5-1zM16.5 12.5L20 18l-3.5-1z' fill='%23c07dff'/%3E%3Cpath d='M10.5 17h3l-1.5 5z' fill='%23ffb340'/%3E%3C/svg%3E");
+}
+
+/* A shooting star over the page ground — one brief streak in a
+   long, quiet cycle; tasteful or nothing. */
+body::after {
+  content: ""; position: fixed; z-index: 1; pointer-events: none;
+  top: 9%; left: -12rem; width: 11rem; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95) 72%, #ffffff);
+  opacity: 0; animation: sz-shoot 14s linear infinite; animation-delay: 4s;
+}
+@keyframes sz-shoot {
+  0%, 72%   { transform: translate(0, 0) rotate(-16deg); opacity: 0; }
+  75%       { opacity: 0.85; }
+  84%, 100% { transform: translate(58vw, 21vh) rotate(-16deg); opacity: 0; }
+}
+
+/* Subtle grain over the generic panels, so flat fills retire too. */
+.card, .sys, .rung, .stage, .chain {
+  background-image: var(--noise); background-blend-mode: soft-light;
+}
+
+/* Window-chrome title bars — the homepage hero and the studio
+   (gold) project heroes wear a silver window bar with the little
+   glyph cluster, in place of the plain rainbow crown. */
+main .hero { padding-top: 2.9rem; }
+.hero::before, .projhero.gold::before {
+  content: "▁ ▢ ✕"; height: auto; padding: 0.22rem 0.6rem 0.05rem;
+  text-align: right; letter-spacing: 0.3em; z-index: 2;
+  font-family: var(--mono); font-size: 0.82rem; color: #14143c;
+  background: linear-gradient(180deg, #f2f2ff, #9a9ad8);
+  border-bottom: 2px solid #5656c8; animation: none;
+}
+main .projhero.gold { padding-top: 2.9rem; }
+
+/* Slim chrome strips on the card family — a window sill over
+   every system panel, glyphs to the right. */
+.card, .sys, .rung, .callout { position: relative; }
+.card::before, .sys::before, .rung::before, .callout::before {
+  content: "▢ ✕"; display: block; margin: -1rem -1.2rem 0.85rem;
+  padding: 0.12rem 0.55rem 0.02rem; text-align: right; letter-spacing: 0.3em;
+  font-family: var(--mono); font-size: 0.8rem; color: #14143c;
+  background: linear-gradient(180deg, #e8e8ff, #9a9ad8);
+  border-bottom: 2px solid #5656c8;
+}
+.callout::before { background: linear-gradient(180deg, #fff6a8, #d8a812); border-bottom-color: #7a5c00; }
+
+/* Rivets — screw heads in the corners of the hardware-flavoured
+   panels: Blacksite's frames, roadmap stages, the footer. */
+.band.bs, .projhero.bs, .stage, footer { position: relative; }
+:is(.band.bs, .projhero.bs, .stage, footer)::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background-repeat: no-repeat; background-size: 100% 100%;
+  background-image:
+    radial-gradient(circle 3.5px at 11px 11px, #f4f4ff 0 1.2px, #8f8ff0 2.4px, rgba(0,0,20,0.55) 3.4px, transparent 4.2px),
+    radial-gradient(circle 3.5px at calc(100% - 11px) 11px, #f4f4ff 0 1.2px, #8f8ff0 2.4px, rgba(0,0,20,0.55) 3.4px, transparent 4.2px),
+    radial-gradient(circle 3.5px at 11px calc(100% - 11px), #f4f4ff 0 1.2px, #8f8ff0 2.4px, rgba(0,0,20,0.55) 3.4px, transparent 4.2px),
+    radial-gradient(circle 3.5px at calc(100% - 11px) calc(100% - 11px), #f4f4ff 0 1.2px, #8f8ff0 2.4px, rgba(0,0,20,0.55) 3.4px, transparent 4.2px);
+}
+
+/* Rubber stamps — the big status words are stamped, not chipped:
+   heavy coloured ink, a hard double-weight border, a few degrees
+   of rotation, a whisper of the colour bleeding into the panel. */
+.band h3 .pill, .status-strip .pill {
+  background: rgba(16,16,48,0.28); border: 2.5px solid; border-radius: 3px;
+  box-shadow: none; letter-spacing: 0.12em; font-size: 1.02rem;
+  padding: 0.18rem 0.6rem 0.05rem; transform: rotate(-3deg);
+}
+.status-strip .pill { transform: rotate(-2deg); }
+:is(.band h3, .status-strip) .pill.held    { color: #ff8fab; border-color: #ff5c8a; background-color: rgba(255,92,138,0.10); }
+:is(.band h3, .status-strip) .pill.dev, :is(.band h3, .status-strip) .pill.prog { color: #7dd6ff; border-color: var(--acc-as); background-color: rgba(77,195,255,0.10); }
+:is(.band h3, .status-strip) .pill.done, :is(.band h3, .status-strip) .pill.closed, :is(.band h3, .status-strip) .pill.verified { color: #b6ff7a; border-color: var(--lime); background-color: rgba(141,255,31,0.08); }
+:is(.band h3, .status-strip) .pill.shelved, :is(.band h3, .status-strip) .pill.queue, :is(.band h3, .status-strip) .pill.delayed { color: #ffd97a; border-color: var(--gold); background-color: rgba(255,210,62,0.08); border-style: solid; }
+:is(.band h3, .status-strip) .pill.intent  { color: #ffd97a; border-color: var(--gold); background-color: rgba(255,210,62,0.10); }
+
+/* Split-flap dates — the homepage timeline's date column becomes
+   a departure-board flap: two dark halves split by a hairline. */
+table.timeline td:first-child {
+  background: linear-gradient(180deg, #26263e 0%, #26263e 47%, #05050f 50%, #17172a 53%, #17172a 100%);
+  box-shadow: inset 0 0 0 2px #3c3c5e;
+  letter-spacing: 0.06em; text-align: center;
+}
+
+/* ---------- AirportSim: the boarding pass ----------
+   Runway threshold stripes for a top rule, asphalt grain under
+   everything, a gate-sign header, a perforated stub edge on the
+   photo, and a barcode strip along the bottom edge. */
+.band.as, .projhero.as {
+  background-color: #26262e; border-color: #454b58;
+  background-image: var(--noise),
+    linear-gradient(165deg, rgba(77,195,255,0.14), rgba(10,10,24,0.25) 60%),
+    linear-gradient(180deg, #2c2f38, #22242b);
+  background-blend-mode: soft-light, normal, normal;
+}
+.band.as::before, .projhero.as::before {
+  height: 0.8rem; animation: none; z-index: 2;
+  background-color: #23262e; border-bottom: 3px solid #0c0c0c;
+  background-image: repeating-linear-gradient(90deg, #fbf7e8 0 1.7rem, transparent 1.7rem 3.4rem);
+  background-size: auto; background-position: 0 0;
+}
+.band.as { padding-top: 2rem; padding-bottom: 2.3rem; }
+.projhero.as { padding-top: 2.3rem; padding-bottom: 1.7rem; }
+.band.as::after, .projhero.as::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.05rem; z-index: 2;
+  background-color: #e9e6da; border-top: 2px solid #0c0c0c; opacity: 0.92;
+  background-image:
+    repeating-linear-gradient(90deg, #111111 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(90deg, #111111 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, #111111 0 3px, transparent 3px 11px);
+}
+.band.as h3 {
+  background: #0b0b10; border: 2px solid var(--yellow);
+  padding: 0.5rem 0.7rem 0.35rem; box-shadow: 4px 4px 0 rgba(0,0,10,0.5);
+}
+.band.as h3 a { color: var(--yellow); }
+.projhero.as .kicker {
+  display: inline-block; background: #0b0b10; color: var(--yellow);
+  border: 2px solid var(--yellow); padding: 0.18rem 0.6rem 0.05rem;
+}
+.band.as figure.shot { position: relative; padding-right: 1.15rem; }
+.band.as figure.shot::after {
+  content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 0.85rem;
+  border-right: 2px dashed rgba(251,247,232,0.5);
+  background-image: radial-gradient(circle 3px at 50% 7px, #1d1d24 2.6px, rgba(0,0,0,0.45) 3.4px, transparent 4.2px);
+  background-size: 0.85rem 1.05rem; background-repeat: repeat-y;
+}
+.projhero.as .record-strip b { color: #7dd6ff; text-shadow: 0 0 6px rgba(77,195,255,0.55); }
+
+/* Gate markers on the AirportSim roadmap — every stage boards
+   through a numbered gate, counted in pure CSS. */
+.rm-gates { counter-reset: gate; }
+.rm-gates .stage { counter-increment: gate; padding-left: 4.7rem; }
+.rm-gates .stage::before {
+  content: "GATE\A A-" counter(gate, decimal-leading-zero);
+  white-space: pre; position: absolute; left: 0.8rem; top: 0.8rem;
+  font-family: var(--mono); font-weight: 700; font-size: 0.92rem; line-height: 1.2;
+  text-align: center; letter-spacing: 0.08em;
+  color: var(--yellow); background: #0b0b10; border: 2px solid var(--yellow);
+  padding: 0.3rem 0.45rem 0.15rem;
+}
+
+/* ---------- Blacksite: the tactical frame ----------
+   Caution tape along the top edge, brushed dark metal under
+   everything, HUD brackets around the photo, stencil headers. */
+.band.bs, .projhero.bs {
+  background-color: #241a12; border-color: #6e4520;
+  background-image: var(--noise),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 5px),
+    linear-gradient(170deg, #33241a, #1d130c);
+  background-blend-mode: soft-light, normal, normal;
+}
+.band.bs::before, .projhero.bs::before {
+  height: 0.85rem; animation: none; z-index: 2;
+  background-image: repeating-linear-gradient(45deg, #ffb340 0 14px, #151310 14px 28px);
+  background-size: auto; border-bottom: 3px solid #0c0a08;
+}
+.band.bs { padding-top: 2.1rem; }
+.projhero.bs { padding-top: 2.3rem; }
+.band.bs h3 { text-transform: uppercase; letter-spacing: 0.05em; border-left: 6px solid var(--acc-bs); padding-left: 0.6rem; }
+.projhero.bs h1 { text-transform: uppercase; letter-spacing: 0.04em; }
+.band.bs figure.shot {
+  position: relative; padding: 0.55rem;
+  background-image:
+    linear-gradient(#ff9a3c, #ff9a3c), linear-gradient(#ff9a3c, #ff9a3c),
+    linear-gradient(#ff9a3c, #ff9a3c), linear-gradient(#ff9a3c, #ff9a3c),
+    linear-gradient(#ff9a3c, #ff9a3c), linear-gradient(#ff9a3c, #ff9a3c),
+    linear-gradient(#ff9a3c, #ff9a3c), linear-gradient(#ff9a3c, #ff9a3c);
+  background-size: 18px 3px, 3px 18px, 18px 3px, 3px 18px, 18px 3px, 3px 18px, 18px 3px, 3px 18px;
+  background-position: 0 0, 0 0, 100% 0, 100% 0, 0 100%, 0 100%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+}
+.band.bs figure.shot img { border-color: #6e4520; }
+.projhero.bs .record-strip b { color: #ffb340; text-shadow: 0 0 6px rgba(255,154,60,0.55); }
+
+/* ---------- WorldForge: the chronicle leaf ----------
+   Ruled parchment-dark panels, a hairline manuscript frame
+   inset from the edge, a wax seal, and a serif drop cap —
+   the archive's handwriting inside the pixel idiom. */
+.band.wf, .projhero.wf {
+  background-color: #2e2110; border-color: #8a6d2f;
+  background-image: var(--noise),
+    repeating-linear-gradient(180deg, transparent 0 1.55rem, rgba(255,214,120,0.05) 1.55rem 1.62rem),
+    linear-gradient(165deg, #3a2a12, #241a0c);
+  background-blend-mode: soft-light, normal, normal;
+}
+.band.wf::before, .projhero.wf::before {
+  inset: 0.55rem; height: auto; z-index: 0; background: none; animation: none;
+  border: 1.5px solid rgba(255,210,62,0.55);
+  outline: 1px solid rgba(255,210,62,0.28); outline-offset: 3px;
+}
+.band.wf::after, .projhero.wf::after {
+  content: "✦"; position: absolute; right: 1rem; bottom: 0.9rem; z-index: 2;
+  width: 3rem; height: 3rem; display: grid; place-items: center;
+  font-size: 1.25rem; color: #ffd9a0; border-radius: 50%; transform: rotate(-9deg);
+  background: radial-gradient(circle at 38% 34%, #d84a3a, #9c1f14 62%, #6e130c);
+  box-shadow: inset 0 0 0 3px rgba(255,217,160,0.35), inset 0 0 0 6px rgba(110,19,12,0.9),
+    inset -3px -4px 7px rgba(0,0,0,0.45), 2px 3px 5px rgba(0,0,10,0.5);
+}
+.band.wf > div > p:first-of-type::first-letter {
+  font-family: Georgia, "Times New Roman", serif; font-weight: 700;
+  font-size: 2.6em; line-height: 0.82; float: left;
+  padding: 0.06em 0.12em 0 0; color: var(--gold);
+}
+.projhero.wf .record-strip b { color: #b6ff7a; text-shadow: 0 0 6px rgba(157,255,87,0.5); }
+
+/* ---------- LONGSHOT: the star chart ----------
+   Graph paper under deep space, a constellation band along
+   the top, a mission patch on the hero, and an orbital ring
+   around the homepage band's version pill. */
+.band.ls, .projhero.ls {
+  background-color: #150f2e; border-color: #5b3f9e;
+  background-image:
+    linear-gradient(rgba(192,125,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192,125,255,0.07) 1px, transparent 1px),
+    var(--noise),
+    linear-gradient(165deg, #241645, #120b28);
+  background-size: 28px 28px, 28px 28px, 160px 160px, auto;
+  background-blend-mode: normal, normal, soft-light, normal;
+}
+.band.ls::before, .projhero.ls::before {
+  height: 2.1rem; animation: none; z-index: 0;
+  background-color: rgba(10,6,26,0.55);
+  background-image: var(--constellation);
+  background-repeat: repeat-x; background-size: auto 100%;
+  border-bottom: 1px solid rgba(192,125,255,0.4);
+}
+.band.ls { padding-top: 3.1rem; }
+.projhero.ls { padding-top: 3.2rem; }
+.projhero.ls::after {
+  content: ""; position: absolute; top: 2.8rem; right: 1.2rem; z-index: 2;
+  width: 4.4rem; height: 4.4rem; border-radius: 50%; transform: rotate(8deg);
+  border: 2px solid #c07dff;
+  background-image: var(--rocket), radial-gradient(circle, #2a1650 58%, #1a0f38 62%);
+  background-repeat: no-repeat; background-position: center, center;
+  background-size: 2.2rem, 100% 100%;
+  box-shadow: inset 0 0 0 3px #150f2e, inset 0 0 0 5px rgba(192,125,255,0.5), 3px 4px 0 rgba(0,0,15,0.45);
+}
+.band.ls h3 .pill { position: relative; }
+.band.ls h3 .pill::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 138%; height: 2.1em; pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-14deg);
+  border: 2px solid rgba(192,125,255,0.75); border-radius: 50%;
+}
+.band.ls figure.shot {
+  padding: 0.6rem; border: 2px solid rgba(192,125,255,0.45);
+  background-image:
+    linear-gradient(rgba(192,125,255,0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192,125,255,0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.projhero.ls .record-strip b { color: #d3a6ff; text-shadow: 0 0 6px rgba(192,125,255,0.55); }
+
+/* Ornament dividers — a row of the game's own motifs between
+   homepage bands, ruled off on both sides (injected by 90s.js). */
+.sz-orn { display: flex; align-items: center; gap: 0.7rem; margin: 0.2rem 0 0.4rem; }
+.sz-orn::before, .sz-orn::after {
+  content: ""; flex: 1; height: 2px;
+  background: linear-gradient(90deg, transparent, #5656c8, transparent);
+}
+.sz-orn span { display: block; width: 17px; height: 17px; flex: none; }
+.sz-orn svg { width: 17px; height: 17px; display: block; }
+
+/* Rain depth — far pieces smaller, dimmer, desaturated; near
+   pieces carry the colour. (Tiers are classed by 90s.js.) */
+.sz-drop.far svg { filter: saturate(0.55) brightness(0.8); }
+
+/* Phone — the frames fold down with the bands: the perforation
+   turns to the photo's bottom edge, seals and patches shrink. */
+@media (max-width: 48rem) {
+  .band.as figure.shot { padding: 0 0 1.15rem; }
+  .band.as figure.shot::after {
+    top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 0.85rem;
+    border-right: none; border-bottom: 2px dashed rgba(251,247,232,0.5);
+    background-image: radial-gradient(circle 3px at 7px 50%, #1d1d24 2.6px, rgba(0,0,0,0.45) 3.4px, transparent 4.2px);
+    background-size: 1.05rem 0.85rem; background-repeat: repeat-x;
+  }
+  .band.wf::after, .projhero.wf::after { width: 2.4rem; height: 2.4rem; right: 0.6rem; bottom: 0.6rem; }
+  .projhero.ls::after { width: 3.1rem; height: 3.1rem; top: 2.6rem; right: 0.8rem; background-size: 1.6rem, 100% 100%; }
+  .rm-gates .stage { padding-left: 4.3rem; }
 }
 
 /* Calm everything for reduced motion — the era had an off switch

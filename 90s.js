@@ -128,16 +128,25 @@
     layer.setAttribute("aria-hidden", "true");
     var rand = rng(game.charCodeAt(0) * 131 + game.charCodeAt(1) * 17 + el.offsetTop);
     var motifs = MOTIFS[game];
-    var COUNT = 12;
+    var COUNT = 16;
     for (var i = 0; i < COUNT; i++) {
-      var size = 18 + Math.floor(rand() * 22);            /* 18–40 px */
+      /* Two depths of rain: far pieces small, dim and slow;
+         near pieces big, bright and quick — a field of rain
+         through the panel's whole height, not a banner strip.
+         The delay spread is tied to each piece's own duration,
+         so pieces start distributed along the full fall. */
+      var near = rand() < 0.38;
+      var size = near ? 24 + Math.floor(rand() * 20)      /* near: 24–43 px */
+                      : 10 + Math.floor(rand() * 9);      /* far: 10–18 px */
+      var dur = near ? 7 + rand() * 6 : 14 + rand() * 11;
       var drop = document.createElement("span");
-      drop.className = "sz-drop";
+      drop.className = "sz-drop " + (near ? "near" : "far");
       drop.style.left = (1 + rand() * 95).toFixed(1) + "%";
       drop.style.top = (-size - 6) + "px";
-      drop.style.opacity = (0.34 + rand() * 0.24).toFixed(2);
-      drop.style.animationDuration = (8 + rand() * 10).toFixed(1) + "s";
-      drop.style.animationDelay = (-rand() * 26).toFixed(1) + "s";
+      drop.style.opacity = near ? (0.42 + rand() * 0.20).toFixed(2)
+                                : (0.16 + rand() * 0.14).toFixed(2);
+      drop.style.animationDuration = dur.toFixed(1) + "s";
+      drop.style.animationDelay = (-rand() * dur * 1.6).toFixed(1) + "s";
       var inner = document.createElement("span");
       inner.className = "sz-drop-in";
       inner.style.width = size + "px";
@@ -164,6 +173,23 @@
   targets.forEach(function (el) {
     var g = gameOf(el);
     if (g) rainOn(el, g);
+  });
+
+  /* Ornament dividers — a ruled row of the game's own motifs
+     between the homepage bands, one dialect per game. */
+  document.querySelectorAll("article.band").forEach(function (el) {
+    var g = gameOf(el);
+    if (!g) return;
+    var orn = document.createElement("div");
+    orn.className = "sz-orn";
+    orn.setAttribute("aria-hidden", "true");
+    var motifs = MOTIFS[g];
+    for (var k = 0; k < 5; k++) {
+      var sp = document.createElement("span");
+      sp.innerHTML = motifs[k % motifs.length];
+      orn.appendChild(sp);
+    }
+    el.parentNode.insertBefore(orn, el.nextSibling);
   });
   refreshFall();
   var t;
