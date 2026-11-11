@@ -3,271 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AirportSim's version and status records: 0.6.0-alpha.2 Threshold, save format history, and the state of the programme as it stands.">
-<title>AirportSim — versions &amp; status records · Section Zero Interactive</title>
+<title>AirportSim — Versions — Section Zero Interactive</title>
+<meta name="description" content="What AirportSim's current identity, 0.6.0-alpha.2, honestly means, and why the finished game's version belongs to the owner to bestow.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a class="here" href="index.html">AirportSim</a>
-  <a href="../worldforge/index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="AirportSim">
-  <span class="sect">AirportSim</span>
-  <a href="index.html">Overview</a>
-  <a href="systems.html">Systems</a>
-  <a href="engine.html">Engine</a>
-  <a href="mathematics.html">Mathematics</a>
-  <a href="testing.html">Engineering &amp; testing</a>
-  <a class="here" href="versions.html">Versions</a>
-  <a href="roadmap.html">Roadmap</a>
-  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
-</nav>
-<main id="main">
-  <div class="projhero as slim">
-    <svg class="skybg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="skyfade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#96b9dc" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#96b9dc" stop-opacity="0.10"/>
-          <stop offset="1" stop-color="#96b9dc" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="skyblur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
-      </defs>
-      <rect class="skyterm" x="-480" y="-40" width="440" height="420" fill="url(#skyfade)"/>
-      <g fill="#cfe3f5">
-        <circle cx="80" cy="42" r="1.3" opacity="0.5"/><circle cx="210" cy="96" r="1" opacity="0.35"/>
-        <circle cx="330" cy="30" r="1.5" opacity="0.55"/><circle cx="470" cy="70" r="1" opacity="0.3"/>
-        <circle cx="590" cy="38" r="1.2" opacity="0.45"/><circle cx="720" cy="92" r="1" opacity="0.3"/>
-        <circle cx="845" cy="34" r="1.4" opacity="0.5"/><circle cx="965" cy="78" r="1" opacity="0.35"/>
-        <circle cx="1080" cy="44" r="1.2" opacity="0.45"/><circle cx="1145" cy="110" r="1" opacity="0.3"/>
-        <circle cx="150" cy="150" r="1" opacity="0.25"/><circle cx="660" cy="150" r="1" opacity="0.22"/>
-        <circle cx="1035" cy="170" r="1" opacity="0.25"/><circle cx="415" cy="120" r="1" opacity="0.2"/>
-      </g>
-      <path id="sky-r2" d="M-20,110 C320,30 760,190 1220,70" fill="none" stroke="#7fa8c9" stroke-opacity="0.34" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r3" d="M-20,322 C420,244 820,118 1220,238" fill="none" stroke="#7fa8c9" stroke-opacity="0.22" stroke-width="1.1" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r1" d="M-20,262 C280,140 640,300 1220,150" fill="none" stroke="#c9a227" stroke-opacity="0.38" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <g>
-        <circle cx="250" cy="232" r="2" fill="#c9a227" opacity="0.55"/><circle cx="700" cy="118" r="2" fill="#c9a227" opacity="0.5"/>
-        <circle cx="982" cy="252" r="2" fill="#c9a227" opacity="0.5"/><circle cx="520" cy="84" r="1.8" fill="#9cc0e8" opacity="0.5"/>
-      </g>
-      <g class="skycloud" opacity="0.055" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="210" cy="66" rx="95" ry="17"/><ellipse cx="265" cy="82" rx="60" ry="13"/>
-      </g>
-      <g class="skycloud c2" opacity="0.05" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="950" cy="288" rx="110" ry="19"/><ellipse cx="890" cy="272" rx="58" ry="12"/>
-      </g>
-      <g opacity="0.85">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#e6c65c"/>
-        <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r1"/></animateMotion>
-      </g>
-      <g opacity="0.7">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#bcd6ee" transform="scale(0.8)"/>
-        <animateMotion dur="38s" begin="-14s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r2"/></animateMotion>
-      </g>
-      <g>
-        <circle r="6.5" fill="#9cc0e8" opacity="0.18"/><circle r="2.6" fill="#cfe3f5" opacity="0.9"/>
-        <animateMotion dur="46s" begin="-31s" repeatCount="indefinite"><mpath href="#sky-r3"/></animateMotion>
-      </g>
-    </svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/" aria-current="page">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE VERSION LEDGER <b>★</b> NUMBERS ARE IDENTITIES, NOT SCORES <b>★</b></span>
+  <span>THE VERSION LEDGER <b>★</b> NUMBERS ARE IDENTITIES, NOT SCORES <b>★</b></span>
+</div></div>
 
-  <h2>Status summary (updated 2026-11-10 — development active; the programme was delayed and resumed within the same morning)</h2>
-  <table>
-    <tr><th>Item</th><th>State</th></tr>
-    <tr><td>Verified baseline</td><td>Version 0.5.3 — commit <em>ba389b8</em>, 192 commits of project history preserved; M1 merged on top (merge commit <em>181794d</em>). The default branch has since advanced through the completed 2026-11-02 integration and now carries the project's first Alpha, 0.6.0-alpha.1 “Threshold”; 0.5.3 remains the last public build.</td></tr>
-    <tr><td>Latest build &amp; test evidence</td><td>Latest recorded full run: <strong>192,063 simulation checks, 0 failed</strong> (the 2026-11-08 master battery ran 192,032 / 0). Since the 2026-11-07 line below: the clean-sheet save system landed as HL-SAVE 1 (2026-11-07), the fleet expansion closed at 58 types (2026-11-08), and the real-layouts pack landed at 246 airports (2026-11-09). Checking now runs on the four GitHub-hosted Linux lanes, dispatched with the owner's approval; the game is Linux-only (rulings of 2026-11-10). Earlier record — final full gate, on the integrated tree, 2026-11-02: exit 0 · 162,701 simulation checks, 0 failed · 9,676 interface checks, 0 failed · end-to-end flows pass (72 test groups). The adoption/M1 baseline (2026-11-01: 162,315 / 9,676 from a fresh clone) is kept on the <a href="testing.html">engineering &amp; testing page</a>.</td></tr>
-    <tr><td>Release-gate status</td><td class="ok">M1 gate green on the default branch, from a fresh clone (K2 closed, 2026-11-01). The 2026-11-02 integration closed with its final full gate on the integrated tree — exit 0; the integration is complete.</td></tr>
-    <tr><td>Current milestone</td><td>Integration of the owner-authorized package sequence: <strong>complete</strong> — all eleven packages and the Development Mode branch merged on 2026-11-02, each verified after merging, and the final full gate passed on the integrated tree. No pull requests remain open. The integrated build is named <strong>0.6.0-alpha.1 “Threshold”</strong> — the project's first Alpha (see Build labelling). M1 — Green gate &amp; safe repository — remains <strong>COMPLETE and accepted</strong> (all eight criteria; evidence on the <a href="testing.html">engineering &amp; testing page</a>).</td></tr>
-    <tr><td>Save format v13 (PR #10)</td><td><strong>MERGED</strong> to the default branch on 2026-11-02: <em>sim_time</em> is widened to double precision and pre-v13 save layouts receive migration handling. The default branch is now at save format <strong>v13</strong>; this step did not change the game version (0.5.3 at the time; the integrated build has since been named 0.6.0-alpha.1 “Threshold”).</td></tr>
-    <tr><td>Earlier persistence work</td><td>PR #3 (save format v11, OwnerBook attribution) and PR #5 (save format v12, FleetBook accumulators) were <strong>merged</strong> to the default branch on 2026-11-02, as the first steps of the integration sequence. Neither is a release.</td></tr>
-    <tr><td>Outstanding blockers</td><td>None for M1. Open items carried forward honestly: K3 narrowed — gameplay is provisionally demonstrated on a pre-adoption Windows build (0.5.4, played by the owner on 2026-11-02; saves not tested), while the current code's Windows build has never run natively; the decided route is a scripted harness on GitHub-hosted Windows runners. K4 (documented pilot-test flake), K6 (full end-to-end matrix not yet rerun on the current version), K7 (ATC final speed control). Plus the save/reload continuation finding (issue #15): a reloaded game continues slightly differently from an uninterrupted one — cause not yet attributed; the owner unparked the investigation on 2026-11-02 and it runs first after integration. <em>Update, 2026-11-03:</em> issue #15 is closed (FND-002 solved, PR #24); K3 is satisfied — a native Windows battery runs on the owner's self-hosted rig on every merge; K7 is closed by DEF-007 (PR #44). K6 remains open by design: the full end-to-end matrix rerun is sequenced last, immediately before the Beta decision.</td></tr>
-    <tr><td>Next step</td><td><em>(Updated 2026-11-02.)</em> The integration is finished. Next, in order: the save/reload continuation investigation (issue #15), the Windows test harness on GitHub's machines, then WP-09 — Development Mode grown into a full diagnostic environment. See the <a href="roadmap.html">roadmap</a>. <em>Update, 2026-11-03:</em> that sequence has run — the save/reload fix landed, the checks moved to the owner's rig, and WP-09 is complete. The current queue: the ATC rework's final step, then the visuals pass, then the big updates chosen by the reckoning, then the full matrix and the Beta decision. <em>Update, 2026-11-07:</em> that queue has run its course — the ATC rework completed, the continuous-world phase followed, the full geography pack is wired into the game, and the owner approved the far view and closed the geography set on 2026-11-06. The queue now: the interface overhaul (status board merged; the in-game frame in progress), then a clean-sheet save system — in design, replacing the v13 format this table records — then real airport layouts and collision physics. The next major milestone is a closed dev beta, 7.0 “Latitude”, internal testing only, in development. <em>Update, 2026-11-10:</em> that queue ran on — HL-SAVE 1 landed, the fleet reached 58 types, and the layouts pack landed at 246 airports. The programme was delayed and resumed within this one morning; the queue now stands at collision, then markings, the small investigations, the interface frame, and the 7.0 handover, with a banked overhaul design beside it. Checking moved to the four GitHub-hosted Linux lanes the same day.</td></tr>
-    <tr><td>Build labelling</td><td>Policy adopted by the owner on 2026-11-02: development builds are named by date + commit and carry no stage label. The integrated build is the project's first <strong>Alpha</strong>: <strong>0.6.0-alpha.1 “Threshold”</strong> — the codename is the developer's choice, delegated by the owner, and the number was approved by the owner on 2026-11-02; the development line's version string then read 0.6.0-alpha.1. Alpha means: complete core simulation, playable end to end, under heavy construction, known faults tracked openly. The name is an internal development identity — no release, tag, or public package exists for it; the last public build remains 0.5.3. <strong>Beta</strong> is gated on three things: proven native Windows verification, the save/reload fix (issue #15), and a full end-to-end matrix rerun. <em>Status at 2026-11-03:</em> the first two gates are satisfied (native verification demonstrated on the owner's self-hosted rig; the save/reload fix merged as PR #24); the full matrix rerun remains, sequenced last before a Beta decision. The owner's release-path plan (2026-11-02): a private test version around 0.7.5, and open betas published on this site around 0.8.0,  <em>Update, 2026-11-03:</em> Development Mode is complete — all eight increments (visual inspection, Mathematics Lab, Test Lab, Performance Lab, Replay Lab, investigation history, the integrity trio, and the economy breakdown) merged and verified — and the build advanced to <strong>0.6.0-alpha.2 “Threshold”</strong>, codename kept, internal identity only.</td></tr>
-    <tr><td>Releases</td><td>No public release is recorded in the available repository release records. The held standard: a release requires the completion standard met and the owner's explicit approval.</td></tr>
-  </table>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">AIRPORTSIM — FIELD NOTES</p>
+    <h1>The Version <span class='hl-teal'>Ledger</span></h1>
+    <p class="sub">What the current number means, and why the next meaningful one is not the engineers' to give.</p>
+  </section>
 
-  <h2>2026-11-03 — the day's record</h2>
-  <p>One day, four programmes, every merge gated on a green rig lane with the
-  commit-identity check and verified by the full battery after landing. The
-  build's identity at the day's end: <strong>0.6.0-alpha.2 “Threshold”</strong> —
-  an internal development identity; no release, no tag, no download; 0.5.3
-  remains the last public build. Master stands at
-  <span class="mono">d8bb3c8</span>; the suite runs over 163,000 checks.</p>
-  <div class="tl">
-    <div class="ev done"><span class="when">WP-09 complete · PR #38 + #39</span>
-      <p>The economy rollup (PR #38) closed Development Mode's eighth and final
-      increment — all eight merged and battery-verified — and the build
-      advanced to <strong>0.6.0-alpha.2 “Threshold”</strong>, codename kept
-      (PR #39).</p></div>
-    <div class="ev done"><span class="when">The owner's brand rule · PR #40</span>
-      <p>No real commercial brand names in the game: the terminal inspector's
-      flavour names were replaced with invented ones at the same list
-      lengths, and the test suite now fails permanently if a real brand
-      appears in terminal text. Airline names were not covered — they are the
-      simulated carriers. The owner extended the rule to airline names on 2026-11-03; the generator guard landed with PR #51.</p></div>
-    <div class="ev done"><span class="when">The issues pass · PRs #41–#43</span>
-      <p>Test processes sharing one save folder isolated (FND-015, PR #41);
-      long airline names given a self-sizing column (issue #14, PR #42);
-      three memory-recovery paths fixed (FND-005, PR #43). The remaining
-      findings were classified with their evidence: FND-006 guarded, no
-      change; FND-008 departure starvation traced to runway assignment
-      (GitHub issue #18 closed; remedy in the rework); FND-012 draw order
-      (fix designed, visuals pass); FND-013 jet bridges (visuals pass);
-      FND-010 display scaling (remaining question held for the owner's
-      hands-on).</p></div>
-    <div class="ev done"><span class="when">The reckoning · record</span>
-      <p>Every major system audited against the creator's design notes, the
-      code, and its mathematics, and ranked — simulation core strongest, ATC
-      weakest. The audit chooses the big updates that follow the rework.</p></div>
-    <div class="ev done"><span class="when">The ATC rework, steps 0–3 · PRs #44–#47</span>
-      <p>Controller-assigned speeds on final (DEF-007, PR #44 — its first lane
-      failed on two faults in the new code, both fixed and proven in a rig
-      replica before the rerun); one separation law everywhere (R1, PR #45);
-      a real departure queue (R2, PR #46 — its first design broke saved-game
-      continuation and was redesigned around saved state before merging);
-      arrival sequencing (R3, PR #47).</p></div>
-    <div class="ev"><span class="when">The ATC rework, steps 4–5 · merged — rework complete</span>
-      <p>Ground separation by aircraft size, with the deadlock breakers on
-      the record (R4, PR #48 — its first lane's failure exposed and fixed a
-      queue that could block its own runway), and separation measured live
-      in Development Mode (R5, PR #49). Both post-merge batteries all six
-      green; master at <span class="mono">d8bb3c8</span>. The five-step
-      rework the owner directed that morning stands complete.</p></div>
-  </div>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>0.6.0-alpha.2, today</h3>
+        <p>The working identity of a game mid-transformation: complete enough to run real airports against real airline behaviour, and honest enough to wear 'alpha' on its chest while the playability programme finishes the job.</p>
+      </div>
+      <div class="card">
+        <h3>The number that matters</h3>
+        <p>A finished game's version is an identity, and identities here are the owner's department. The engineers build toward the handover; Andrew names what crosses it. Until that day, the ledger keeps the working number and says so.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>Version record</h2>
-  <p>From the project's releases registry (established 2026-11-01), seeded only
-  from the repository's own tags, its changelog, and each tagged tree's own
-  save-format constant. Every version's status is <strong>Development</strong>;
-  no tagged version carries a codename, and none are invented here for them.
-  (Changelog entries carry descriptive titles; those are not codenames.) One
-  codename now exists — for a build that has not been tagged: the integrated
-  build (completed 2026-11-02) is <strong>0.6.0-alpha.1 “Threshold”</strong>, the
-  project's first Alpha — “Threshold” is the developer's choice, delegated by
-  the owner, and the owner approved the number on 2026-11-02. It appears in
-  no row of the table below, because the table is seeded from tags and no
-  tag or public package exists for it; the last public build remains 0.5.3.
-  <em>Update, 2026-11-03:</em> on Development Mode's completion the build
-  advanced to <strong>0.6.0-alpha.2 “Threshold”</strong>, codename kept — the
-  same internal identity one step on; still no tag, no package, and 0.5.3
-  still the last public build.</p>
-  <table>
-    <tr><th>Version</th><th>Date</th><th>Tag → commit</th><th>Save format</th><th>Status</th></tr>
-    <tr><td>0.1.0</td><td>2026-10-29</td><td><em>v0.1.0</em> → <em>76a6921</em></td><td>1</td><td>Development</td></tr>
-    <tr><td>0.1.1</td><td>2026-10-29</td><td><em>v0.1.1</em> → <em>c02d5f5</em></td><td>1</td><td>Development</td></tr>
-    <tr><td>0.2.0</td><td>2026-10-29</td><td><em>v0.2.0</em> → <em>1189d32</em></td><td>4</td><td>Development</td></tr>
-    <tr><td>0.2.1</td><td>2026-10-29</td><td><em>v0.2.1</em> → <em>f17adf0</em></td><td>4</td><td>Development</td></tr>
-    <tr><td>0.2.2</td><td>2026-10-29</td><td><em>v0.2.2</em> → <em>bd20ef7</em></td><td>4</td><td>Development</td></tr>
-    <tr><td>0.3.0</td><td>2026-10-29</td><td><em>v0.3.0</em> → <em>7df8bd6</em></td><td>6</td><td>Development</td></tr>
-    <tr><td>0.3.1</td><td>2026-10-29</td><td><em>v0.3.1</em> → <em>76347ef</em></td><td>7</td><td>Development</td></tr>
-    <tr><td>0.3.2</td><td>2026-10-29</td><td><em>v0.3.2</em> → <em>bdf6c7b</em></td><td>7</td><td>Development</td></tr>
-    <tr><td>0.3.3</td><td>2026-10-29</td><td><em>v0.3.3</em> → <em>d486264</em></td><td>8</td><td>Development</td></tr>
-    <tr><td>0.3.4</td><td>2026-10-29</td><td><em>v0.3.4</em> → <em>0969748</em></td><td>8</td><td>Development</td></tr>
-    <tr><td>0.4.0</td><td>2026-10-29</td><td><em>v0.4.0</em> → <em>d91d0a1</em></td><td>9</td><td>Development</td></tr>
-    <tr><td>0.5.0</td><td>2026-10-29</td><td><em>v0.5.0</em> → <em>b6fc06f</em></td><td>10</td><td>Development</td></tr>
-    <tr><td>0.5.1</td><td>2026-10-30</td><td><em>v0.5.1</em> → <em>b22a002</em></td><td>10</td><td>Development</td></tr>
-    <tr><td>0.5.2</td><td>2026-10-30</td><td><em>v0.5.2</em> → <em>fcd9b8b</em></td><td>10</td><td>Development</td></tr>
-    <tr><td>0.5.3</td><td>2026-10-30</td><td><em>v0.5.3</em> → <em>ba389b8</em></td><td>10</td><td>Development</td></tr>
-  </table>
-  <p>Plus one marker tag, not a version: <em>v0.5.2-handoff</em> → <em>437e931</em>
-  (2026-10-30), a handoff marker on the 0.5.2 line. The registry also records what
-  it does not claim: no per-tag gate evidence survives for the historical versions.
-  One earlier statement is corrected here (2026-11-02): a Windows build of the
-  pre-adoption 0.5.4 line <em>was</em> run by the owner on 2026-11-02 — about an
-  hour of gameplay at Detroit; it launched and played correctly, and saves were
-  not tested. No Windows build of the <em>current</em> code has ever been run (K3).
-  <em>Update, later the same day:</em> the current code — 0.6.0-alpha.1
-  “Threshold”, including the save/reload fix — has now been run natively: a
-  scripted harness on GitHub's Windows runners launched it, passed its
-  interface suite and scripted scenarios, wrote saves into the real Windows
-  save location and reloaded them in a second launch, and captured 23 frames
-  (PR #25, merged 2026-11-02; battery verdict PASS).</p>
-
-  <div class="diagram" role="img" aria-label="Diagram: save format evolution on the default branch, v10 to v13">
-    <svg viewBox="0 0 660 168" width="660" style="max-width:100%">
-      <defs>
-        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9a227"/></marker>
-      </defs>
-      <text x="10" y="18" fill="#c9a227" font-size="12">SAVE FORMAT — DEFAULT BRANCH, AS OF 2026-11-02</text>
-      <rect x="10" y="30" width="130" height="56" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="75" y="54" fill="#e8e4d8" font-size="15" text-anchor="middle">v10</text>
-      <text x="75" y="72" fill="#bdb8a6" font-size="10.5" text-anchor="middle">0.5.3 tagged baseline</text>
-      <rect x="180" y="30" width="130" height="56" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="245" y="54" fill="#e8e4d8" font-size="15" text-anchor="middle">v11</text>
-      <text x="245" y="72" fill="#bdb8a6" font-size="10.5" text-anchor="middle">OwnerBook fix · PR #3</text>
-      <rect x="350" y="30" width="130" height="56" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="415" y="54" fill="#e8e4d8" font-size="15" text-anchor="middle">v12</text>
-      <text x="415" y="72" fill="#bdb8a6" font-size="10.5" text-anchor="middle">FleetBook fix · PR #5</text>
-      <rect x="520" y="30" width="130" height="56" rx="6" fill="#171b26" stroke="#c9a227" stroke-width="2"/>
-      <text x="585" y="54" fill="#e8e4d8" font-size="15" text-anchor="middle">v13</text>
-      <text x="585" y="72" fill="#bdb8a6" font-size="10.5" text-anchor="middle">clock widened · PR #10</text>
-      <line x1="142" y1="58" x2="176" y2="58" stroke="#c9a227" marker-end="url(#ar2)"/>
-      <line x1="312" y1="58" x2="346" y2="58" stroke="#c9a227" marker-end="url(#ar2)"/>
-      <line x1="482" y1="58" x2="516" y2="58" stroke="#c9a227" marker-end="url(#ar2)"/>
-      <line x1="10" y1="118" x2="650" y2="118" stroke="#4c5261"/>
-      <line x1="10" y1="112" x2="10" y2="124" stroke="#4c5261"/>
-      <line x1="650" y1="112" x2="650" y2="124" stroke="#4c5261"/>
-      <text x="10" y="108" fill="#bdb8a6" font-size="11">v4</text>
-      <text x="650" y="108" fill="#bdb8a6" font-size="11" text-anchor="end">v13</text>
-      <text x="330" y="140" fill="#e8e4d8" font-size="12" text-anchor="middle">Migration fixtures kept for every format from v4 through v13 — all load cleanly in the suite</text>
-      <text x="330" y="158" fill="#bdb8a6" font-size="11" text-anchor="middle">Each step shipped with a migration for older saves; no step is a release, and the game version stayed 0.5.3 throughout</text>
-    </svg>
-    <p class="cap"><strong>The save format's year in one line.</strong> Three
-    persistence fixes moved the default branch from v10 to v13 during the
-    2026-11-02 integration; v13 (gold) is the current format. The tagged
-    versions in the table above keep the save format of their own trees —
-    0.5.3's tag is a v10 tree; the branch has moved on without a version
-    change.</p>
-  </div>
-
-  <h2>Authoritative records</h2>
-  <p>The repository's records outrank this website. If they disagree: the discrepancy
-  is identified, the record and the implementation evidence are inspected, and the
-  website is corrected.</p>
-  <p>The records the project is run from (in the private development repository;
-  named here so their existence and role are public, without pretending private
-  documents are publicly readable):</p>
-  <ul>
-    <li><strong>AGENTS.md</strong> — the working rules for anyone developing the game</li>
-    <li><strong>PROJECT_STATE.md</strong> — the single source of truth for current state</li>
-    <li><strong>ARCHITECTURE.md</strong> — the verified system architecture</li>
-    <li><strong>TESTS.md</strong> — what the test suites are and how to run them</li>
-    <li><strong>RELEASES.md</strong> — the releases registry this page renders (established 2026-11-01; the pull request that carried it, PR #2, was closed unmerged by the owner's decision on 2026-11-02 — its contents are drawn from the same tags and changelog either way)</li>
-    <li><strong>docs/adoption/VISION.md &amp; DESIGN.md</strong> — the adopted vision and design record</li>
-    <li><strong>docs/adoption/ROADMAP.md</strong> — the milestone plan this site's roadmap renders</li>
-    <li><strong>docs/adoption/KNOWN_ISSUES.md</strong> — the issue register behind the testing page</li>
-    <li><strong>The adoption assessment</strong> — the Stage 1 baseline audit every figure on this site traces to</li>
-  </ul>
-  <p>The game's source tree is deliberately <em>not</em> reorganized: its layout is
-  load-bearing for the build, the tests, and these documents' references. The
-  organization work happened in documentation and metadata, where it is safe.</p>
-
-  <footer>
-    <p>This summary is updated at milestone closeouts, in the same pass as the work's
-    report — never ahead of the evidence.</p>
-  </footer>
-  <script>
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('svg.skybg').forEach(function (s) { if (s.pauseAnimations) { s.pauseAnimations(); } });
-  }
-  </script>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The airfield itself — diagram, airlines, photographs and one small landing strip — waits on the main page of this hall.</p>
+      <p><a class="btn white" href="index.html">Return to the airfield</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>

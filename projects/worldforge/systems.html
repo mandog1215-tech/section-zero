@@ -3,180 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="WorldForge's systems as they stood at shelving: terrain, cohesion, diplomacy, and the observatory that watches them.">
-<title>WorldForge — how the simulation works · Section Zero Interactive</title>
+<title>WorldForge — The Making — Section Zero Interactive</title>
+<meta name="description" content="WorldForge as the studio keeps it: a world-building game whose point is the chronicle — a world, and the record that world earned.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a href="../airportsim/index.html">AirportSim</a>
-  <a class="here" href="index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="WorldForge">
-  <span class="sect">WorldForge</span>
-  <a href="index.html">Overview</a>
-  <a class="here" href="systems.html">Systems</a>
-  <a href="history.html">History</a>
-  <a href="evidence.html">Evidence</a>
-  <a href="roadmap.html">Roadmap</a>
-  <span class="pill shelved status-chip">Shelved · 2026-10-31</span>
-</nav>
-<main id="main">
-  <div class="status">
-    <strong>Development status: SHELVED.</strong> The project owner shelved
-    WorldForge on <strong>2026-10-31</strong>, after five verified milestones.
-    It is not in active development. Everything in this section is the project's
-    record as it stood at shelving — preserved, not continued. There is no
-    public release and no downloads are offered; a 1.0.0 candidate build exists
-    and is <strong>HELD</strong> (see the Development Center's
-    <a href="../../development/releases.html">release records</a>).
-    The resume condition is strict: <strong>no development in any form until
-    AirportSim and its planned post-release mod-support work are complete,
-    and the owner explicitly authorizes revival.</strong>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/" aria-current="page">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
-  <div class="projhero wf slim">
-    <h1>How the simulation works</h1>
-  <p class="tag">Simple to watch. Layered underneath — and every layer pushes on the others.</p>
-  </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>FROM THE CATALOGUE <b>★</b> ON THE MAKING OF WORLDS <b>★</b></span>
+  <span>FROM THE CATALOGUE <b>★</b> ON THE MAKING OF WORLDS <b>★</b></span>
+</div></div>
 
-  <p>WorldForge is not a set of independent features. It is one chain of causes: the land
-  decides what can live, what lives decides what can be built, and what is built decides
-  who holds power — while war, hunger and time push back down the chain.</p>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">WORLDFORGE — FROM THE CATALOGUE</p>
+    <h1>How a World <span class='hl-teal'>Gets Forged</span></h1>
+    <p class="sub">The Reading Room presents this game the way the studio keeps it: as a bound thing — a world on one side of the covers, and its chronicle on the other.</p>
+  </section>
 
-  <div class="chain">
-    <p><strong>Geography</strong> — landforms, forests, water, climate zones</p>
-    <p class="arr">↓ shapes</p>
-    <p><strong>Ecology &amp; food</strong> — grazers, predators, forage, harvests</p>
-    <p class="arr">↓ feeds</p>
-    <p><strong>Settlements</strong> — villages, houses, food and wood stores</p>
-    <p class="arr">↓ grows</p>
-    <p><strong>Populations &amp; kingdoms</strong> — rulers, succession, stability</p>
-    <p class="arr">↓ drives</p>
-    <p><strong>Diplomacy &amp; warfare</strong> — grievances, alliances, wars, conquest</p>
-    <p class="loop">…and conquest, raiding and collapse rewrite the map the chain began with.</p>
-  </div>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>Building, as authorship</h3>
+        <p>WorldForge is a world-building game: the player's material is a world itself, and the work is the making of it. Where most of the studio's games are about running something — an airport, a voyage — this one is about bringing something into being and answering for what it becomes.</p>
+      </div>
+      <div class="card">
+        <h3>The chronicle habit</h3>
+        <p>The studio's taste for kept records shows here in its purest form. A forged world earns a chronicle; the chronicle is kept; the kept chronicle is, in the end, the monument. It is no accident that the studio's living game now gives its airlines memories of their own — the habit was already in the house.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>The systems</h2>
-
-  <div class="sys">
-    <p class="st">Working today</p>
-    <h3>Terrain &amp; geography</h3>
-    <p>Every world is generated from a seed: continents, mountain ranges, forests, plains
-    and frozen wastes. Landform decides fertility and movement, so civilizations thrive
-    where the land allows — and the terrain model was adopted only after a 100-seed
-    comparison showed it no worse than what it replaced, on every measure.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st">Working today</p>
-    <h3>Ecology</h3>
-    <p>Grazers eat, predators hunt, and both populations rise and fall by the actual food
-    web — no scripted booms or busts. Humans live inside the same web: villages forage
-    the land around them, and a stripped landscape starves real settlements.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st">Working today</p>
-    <h3>Settlements</h3>
-    <p>People found villages, raise houses (each house is a real structure on the map),
-    and stockpile food and wood. A village's territory follows its built footprint.
-    Houses can burn in raids; a village with empty stores for too long is abandoned,
-    and its people migrate or scatter.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st">Working today</p>
-    <h3>Kingdoms &amp; rulers</h3>
-    <p>Villages band into kingdoms under named rulers whose lifespans and succession are
-    part of the world's record. Each kingdom has a stability score built from things a
-    player can check — food stores, peace, calm borders, reign continuity — and low
-    stability has consequences: when a ruler dies at the wrong moment, a kingdom can
-    lose villages to rivals or watch its best-fed village break away as a new crown.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st">Working today</p>
-    <h3>Diplomacy</h3>
-    <p>Kingdoms that touch borders keep a relationship: grievances from wars and raids,
-    truces with reasons, alliances, and allies called to war. Every major event lands in
-    the chronicle with the motive that produced it, so a relationship's history can be
-    read rather than guessed.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st">Working today</p>
-    <h3>Warfare</h3>
-    <p>Wars are fought by mustered levies fed from the home granary — an army that
-    outruns its food stops being an army. Wars have declared goals (conquest of land,
-    or punishment), truces cost tribute, and sustained occupation annexes villages
-    outright. Distance and supply are real constraints, measured in the test panels.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st plan">Designed — implementation paused</p>
-    <h3>Living diplomacy</h3>
-    <p>Grievances that grow without any war — from contested borders and competition
-    for the same fields — and alliances that form around shared threats in ordinary
-    play. The design is complete and evidence-based; building it was waiting on the
-    observatory (below), so its behaviour could be properly measured — and both
-    now wait on the project's shelving: the design is preserved, unimplemented.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st plan">Planned</p>
-    <h3>Trade, settlements &amp; seasons</h3>
-    <p>Inter-kingdom trade and caravans; richer settlements with more building types,
-    roads and walls; seasons and climate acting on farming and survival; rivers with
-    mechanical effects. Each is sequenced behind the systems it must interact with —
-    trade needs money and professions, roads grow out of trade routes.</p>
-  </div>
-
-  <div class="sys">
-    <p class="st plan">Partly built — frozen at shelving (2026-10-31)</p>
-    <h3>The observatory</h3>
-    <p>Not a gameplay system: the instrument panel for all of them. A truth panel that
-    shows why every value holds, a permanent history record for every world, autopsy
-    tools for collapses, and long-horizon health monitoring across many worlds. It is
-    read-only by construction — it can never change the world it observes. Phase A
-    (the truth panel) is complete and merged; Phases B–E were not built when
-    development was shelved. See the <a href="roadmap.html">roadmap</a> for where
-    each phase stood.</p>
-  </div>
-
-  <h2>Design rules</h2>
-  <ul>
-    <li><strong>Determinism:</strong> one seed grows one world and one history,
-      reproducibly. That is what makes every claim on this site testable.</li>
-    <li><strong>Interaction over isolation:</strong> a new system must push on the
-      existing ones, or it does not ship.</li>
-    <li><strong>No scripted history:</strong> events happen because the rules produced
-      them, never because a timeline says so.</li>
-    <li><strong>Proportionate models:</strong> mathematics earns its place by producing
-      believable behaviour, not by looking sophisticated.</li>
-  </ul>
-
-  <footer>
-    <p>System statuses on this page follow the development record as it stood at
-    shelving (2026-10-31): “working today” means implemented and verified in a
-    development build; “planned” means designed or sequenced, not built. The page
-    is a preserved record; it changes only if the project resumes.</p>
-  </footer>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The chronicle's front page — the map plate, the state of the book, and the meaning of 'shelved' — waits in the Reading Room.</p>
+      <p><a class="btn white" href="index.html">Return to the reading room</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>

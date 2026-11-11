@@ -3,125 +3,111 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Verified evidence across the studio: what was run, on which state, with what result — and what has explicitly not been verified.">
-<title>Evidence — Development Center · Section Zero Interactive</title>
+<title>Development — The Evidence Annex — Section Zero Interactive</title>
+<meta name="description" content="The studio's evidence annex: how exhibits are produced (test lanes, proof camera, measurements) and the stand-repair chart drawn from the collision project's own census.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../index.html">Home</a>
-  <a href="../studio.html">Studio</a>
-  <a href="../projects/blacksite/index.html">Blacksite</a>
-  <a href="../projects/airportsim/index.html">AirportSim</a>
-  <a href="../projects/worldforge/index.html">WorldForge</a>
-  <a href="../projects/longshot/index.html">Longshot</a>
-  <a href="../engine-lab/index.html">Engine Lab</a>
-  <a class="here" href="index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="Development Center">
-  <span class="sect">Development</span>
-  <a href="index.html">Dashboard</a>
-  <a class="here" href="evidence.html">Evidence</a>
-  <a href="versions.html">Versions</a>
-  <a href="releases.html">Releases</a>
-  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill dev">AS 0.6.0-alpha.2 · Alpha</span><span class="pill shelved">WF · Shelved</span><span class="pill delayed">LS · Deferred</span></span>
-</nav>
-<main id="main">
-  <div class="projhero gold slim">
-    <h1>Verified evidence</h1>
-  <p class="tag">What was run, on which state, with what result — and what has explicitly not been verified.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img class="mark" src="../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../index.html">Front Door</a>
+      <a href="../studio.html">The Studio</a>
+      <a href="../projects/airportsim/">AirportSim</a>
+      <a href="../projects/blacksite/">Blacksite</a>
+      <a href="../projects/worldforge/">WorldForge</a>
+      <a href="../projects/longshot/">Longshot</a>
+      <a href="../development/" aria-current="page">Development</a>
+      <a href="../engine-lab/">Engine Lab</a>
+      <a href="../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE EVIDENCE ANNEX <b>★</b> EXHIBITS, NOT ADJECTIVES <b>★</b></span>
+  <span>THE EVIDENCE ANNEX <b>★</b> EXHIBITS, NOT ADJECTIVES <b>★</b></span>
+</div></div>
 
-  <p>Every figure below belongs to a named run on a named state, recorded in the
-  project's own records. A green suite proves the tested behaviour on that state;
-  it is never, by itself, proof a game is finished. Per-project detail lives on
-  each project's evidence/testing pages; this page is the studio roll-up.</p>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">DEVELOPMENT — THE RECORD ROOM</p>
+    <h1>The Evidence <span class='hl-blue'>Annex</span></h1>
+    <p class="sub">Where the exhibits behind the studio's claims are kept, and how each kind gets made: batteries for behaviour, cameras for appearance, and measuring instruments for everything in between.</p>
+  </section>
 
-  <h2>Blacksite</h2>
-  <table>
-    <tr><th>Run</th><th>Result</th></tr>
-    <tr><td>GitHub transfer verification (2026-11-01) — fresh clone: build · test suite · strict gate (<em>make check</em>)</td><td class="ok">Build passes · <strong>478 checks, 0 failed</strong> · gate passes (exit 0)</td></tr>
-    <tr><td>Continuous testing — first CI run on the transferred repository</td><td class="ok">Run 41276914585: success</td></tr>
-    <tr><td>Secrets scan before transfer · release-list check</td><td class="ok">Clean · no GitHub Release exists</td></tr>
-    <tr><td>Windows cross-build and Wine gates</td><td><strong>Not re-verified</strong> — the kit is absent in the current environment; verified at 1.5.0 build time per the changelog, recorded here as not re-run, not as failed</td></tr>
-  </table>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>Made by battery</h3>
+        <p>Behavioural claims come off the test lanes: full suites, memory-safety shadows, static scans, run on public machines with the results read at the source. A claim about what code does is only ever as good as the last green run of the exact code it describes.</p>
+      </div>
+      <div class="card">
+        <h3>Made by camera</h3>
+        <p>Appearance claims come off the proof camera: scheduled captures at fixed cameras, before-and-after pairs at identical positions, tight crops for whatever detail is under judgement. The photographs are inspected by eye — the studio's oldest instrument and still its least forgiving.</p>
+      </div>
+      <div class="card">
+        <h3>Made by measurement</h3>
+        <p>Everything else gets counted. The stand repair began as a census — every stand, every type, overlaps tallied — and ended as a second census proving the first one's problem was gone. Opinions were present at neither stage.</p>
+      </div>
+    </div>
+  </section>
+  <section class="act">
+    <figure class="shot">
+      <img src="img/stand-repair-chart.png" alt="Chart comparing aircraft stand positions before and after the AirportSim repair, drawn from the collision project's own measurements" loading="lazy">
+      <figcaption>EXHIBIT A — THE GREAT STAND REPAIR, BEFORE AND AFTER, DRAWN FROM THE COLLISION PROJECT'S OWN CENSUS FILES. 2,252 STANDS MOVED; THE WORST CROWDING PER AIRCRAFT TYPE FELL FROM FOUR FIGURES TO AT MOST 18.</figcaption>
+    </figure>
+  </section>
 
-  <h2>AirportSim</h2>
-  <p><strong>Current development-line addendum (2026-11-02):</strong> the five-stage Development Mode workstream and performance-baseline work package are reported complete — and, as of the completed 2026-11-02 integration, merged to the default branch; the integration's final gate row below is now the current default-branch evidence.</p>
-  <table>
-    <tr><th>Run</th><th>Result</th></tr>
-    <tr><td>Integration final gate (2026-11-02) — full gate on the integrated tree after all eleven packages and the Development Mode branch merged · all four CI job kinds on the final code</td><td class="ok">Gate exit 0 · <strong>162,701 checks, 0 failed</strong> · <strong>9,676, 0 failed</strong> · end-to-end OK · all four CI jobs pass · 72 test groups</td></tr>
-    <tr><td>Adoption baseline (2026-10-31) on v0.5.3 — build · simulation suite · interface suite · end-to-end (menu/swap/fuzz/load-loop) · sanitizer build + fuzz · launch</td><td class="ok"><strong>162,315 checks, 0 failed</strong> · <strong>9,676, 0 failed</strong> · all end-to-end passed · zero sanitizer reports · launches</td></tr>
-    <tr><td>M1 verification (2026-11-01) — strict gate from a fresh clone of merged master <em>181794d</em> · CI on <em>9ab96c39</em></td><td class="ok">Gate exit 0, zero warnings · counts at baseline · CI run 41272742474: success</td></tr>
-    <tr><td>Registry gate re-runs (2026-11-01) — the repository gate run twice more for the documentation-phase commits on their branch</td><td class="ok">Exit 0 both times · 162,315 / 0 · 9,676 / 0 · end-to-end OK</td></tr>
-    <tr><td>Development Mode integrated gate (2026-11-01/02) — F3 overlay, trace/invariant/delay panels, snapshot capture/compare</td><td><strong>Exit 2; not green.</strong> Focused non-interference and diagnostic-cost evidence is recorded. Matched base/current comparisons reproduced the two UI failure signatures, supporting pre-existing attribution; the original failure result is preserved.</td></tr>
-    <tr><td>Performance model work package</td><td>Measured step-cost model recorded. The aircraft-count coefficient is weakly identified because long-run windows confound world age with aircraft count; no optimization is claimed from that fit alone.</td></tr>
-    <tr><td>Windows build &amp; runtime · full 14-flow × 3-seed end-to-end matrix on v0.5.3 · performance at the largest hubs</td><td><strong>Not verified / not yet rerun / not measured</strong> — these remain open; no unsupported numbers are published.</td></tr>
-  </table>
-  <p><strong>Update (2026-11-03):</strong> the first of those three has since
-  closed — native Windows runtime is verified on every merge by the rig's
-  native Windows battery, and the save/reload divergence below (FND-002) is
-  fixed. The full end-to-end matrix rerun remains outstanding by design —
-  the last step before the Beta decision — and performance at the largest
-  hubs remains unmeasured. No unsupported numbers are published.</p>
-
-  <h2>AirportSim — the findings register (2026-11-03)</h2>
-  <p>Every finding the project carries, with its verdict and the evidence in
-  brief. The register is the record: a finding is closed only by a fix with
-  evidence, or classified — with the reason stated — never by silence.</p>
-  <table>
-    <tr><th>Finding</th><th>Verdict</th><th>Evidence in brief</th></tr>
-    <tr><td><strong>FND-002</strong> — a saved and reloaded game continued differently from one that never stopped</td><td><span class="pill closed">Closed</span></td><td>Cause attributed: per-minute weather was computed from the fraction of the minute, so a reload shifted the weather. The fix evaluates each minute's weather at its start; a reloaded game is byte-identical to an uninterrupted one. PR #24; GitHub issue #15 closed. Worked case on the <a href="../projects/airportsim/mathematics.html">mathematics page</a>.</td></tr>
-    <tr><td><strong>FND-011</strong> — the long simulation diverged on newer systems</td><td><span class="pill closed">Closed</span></td><td>The newer system library's more-accurate maths functions (correctly rounded where the older were off by one unit) split a 440-day simulation on day 20. The game now carries its own versions of the three functions, matching the old answers across billions of test values. PR #30.</td></tr>
-    <tr><td><strong>FND-015</strong> — test processes shared one save folder</td><td><span class="pill closed">Closed</span></td><td>Suite processes could see each other's saved games — a factory for intermittent failures. Each process's saves are now isolated. PR #41.</td></tr>
-    <tr><td><strong>Issue #14</strong> — long airline names cut off in the Business window</td><td><span class="pill closed">Closed</span></td><td>Fixed with a self-sizing column that grows to the longest name the data holds. PR #42.</td></tr>
-    <tr><td><strong>FND-005</strong> — three memory-recovery paths that could crash</td><td><span class="pill closed">Closed</span></td><td>All three paths fixed. PR #43.</td></tr>
-    <tr><td><strong>FND-006</strong> — three sibling memory sites, same pattern suspected</td><td><span class="pill closed">Closed — no change</span></td><td>Each site examined and judged guarded as it stands. Recorded as a judgment, not a fix.</td></tr>
-    <tr><td><strong>FND-008</strong> — departures starved behind arrival streams</td><td><span class="pill closed">Classified</span></td><td>Traced to runway assignment, which carried no load term: four runways sat idle while one jammed. Not a defect in the assignment's own terms — a missing capability. Its remedy is the departure queue (R2 of the ATC rework, PR #46). GitHub issue #18 closed.</td></tr>
-    <tr><td><strong>FND-012</strong> — aircraft drawn over terminal roofs</td><td><span class="pill closed">Closed — fixed</span></td><td>Measured to three stacked causes, not one: stand geometry that parked aircraft into buildings, a flat draw order, and aircraft drawn at 1.4× true size. The fix repairs all three — stand geometry repaired across the 26 baked layouts (2,252 of 6,315 stands moved, none removed), allocation refuses any stand whose true rectangle touches a building, and aircraft draw at true scale, depth-interleaved so buildings occlude what is behind them. Nose-penetrating stands fell from hundreds per aircraft type to nearly zero. Merged 2026-11-11 (PR #116) after a fully green four-lane battery.</td></tr>
-    <tr><td><strong>FND-013</strong> — jet bridges appear not to engage</td><td><span class="pill prog">Classified — visuals pass</span></td><td>Measured, not guessed: the bridges do engage at all 135 Detroit gate stands. They are nearly invisible doing it — a readability problem, scheduled with the visuals pass.</td></tr>
-    <tr><td><strong>FND-010</strong> — display scaling looked wrong on Windows</td><td><span class="pill prog">Half closed</span></td><td>The high-DPI half was already fixed in the code long ago (per-monitor DPI awareness, the SDL hint, the high-DPI window flag), and captured frames are pixel-identical across platforms. What remains: at interface scales above 100% the world view is drawn on a logical canvas and stretched — judged at the owner's hands-on test version.</td></tr>
-    <tr><td><strong>Brand names</strong> — real commercial names in the terminal inspector's flavour text</td><td><span class="pill closed">Closed</span></td><td>The owner's rule: no real commercial brand names in the game. Flavour names replaced with invented ones at the same list lengths; the test suite now fails permanently if a real brand appears in terminal text. PR #40. Airline names were initially not covered; the owner extended the rule to them on 2026-11-03, and the generator guard landed as the world update's opening change (PR #51).</td></tr>
-  </table>
-
-  <h2>WorldForge (record frozen at shelving, 2026-10-31)</h2>
-  <table>
-    <tr><th>Run</th><th>Result</th></tr>
-    <tr><td>M5 “Schism” closeout gate — fresh build, full suite</td><td class="ok"><strong>1,060 checks, 0 failed</strong></td></tr>
-    <tr><td>Observatory Phase A gate — fresh build, both build variants, save-format fuzz</td><td class="ok"><strong>1,143 checks, 0 failed</strong> · fuzz 400/0 · merged as PR #34</td></tr>
-    <tr><td>Diplomacy validation (Gate 1) — controlled panels: 40 seeds, contact-pair-day exposure measured exactly; warfare panels: 12 worlds × 30,000 days</td><td class="ok">Exposure exact (2,190 pair-days) · 896 war onsets, 80 conquests counted by instruments · one criterion (restraint) recorded as a standing limitation, not tuned away</td></tr>
-    <tr><td>Long-horizon behaviour (30,000-day worlds)</td><td><strong>Mixed, recorded as such</strong> — one seed's total ecological collapse (open case #33, cause unknown), one seed saturating; ecology judgment assigned to the unbuilt M9 and <em>not</em> resolved</td></tr>
-  </table>
-
-  <h2>LONGSHOT (announced 2026-11-10; deferred the same day; resumed and built for one night on 2026-11-11, then stopped again — banked)</h2>
-  <table>
-    <tr><th>Run</th><th>Result</th></tr>
-    <tr><td>Design bench self-check — the ported math tool against published reference values, 2026-11-10</td><td class="ok"><strong>12 of 12 reproduced</strong> — 400 km orbit period 92.41 vs 92.6 min · Earth–Mars transfer 258.9 vs 259 d · synodic 779.9 vs 780 d · LEO→Moon departure 3.084 vs 3.1 km/s</td></tr>
-    <tr><td>Game build</td><td><strong>Not verified — nothing to verify.</strong> The engine's first milestone was begun and deferred on 2026-11-10; no game build exists.</td></tr>
-  </table>
-
-  <h2>How to read this page</h2>
-  <p>Claims carry the studio's grades — <strong>Implemented</strong> /
-  <strong>Demonstrated</strong> / <strong>Established</strong> — on the project
-  pages where they belong. This roll-up reports runs, not grades. Where a row
-  says <em>not verified</em>, that is the finding; it stays until a run replaces
-  it.</p>
-
-  <footer>
-    <p>Sources: the Blacksite transfer report (2026-11-01), the AirportSim
-    adoption assessment and M1 report, the WorldForge milestone and gate
-    records. If this page and a project record disagree, the record is right.</p>
-  </footer>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The record room's front desk keeps the latest entry, the three drawers, and the specimen case.</p>
+      <p><a class="btn white" href="index.html">Return to the record room</a></p>
+    </div>
+  </section>
 </main>
-<script src="../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../projects/airportsim/">AirportSim</a></li>
+        <li><a href="../projects/blacksite/">Blacksite</a></li>
+        <li><a href="../projects/worldforge/">WorldForge</a></li>
+        <li><a href="../projects/longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../development/">Development</a></li>
+        <li><a href="../engine-lab/">Engine Lab</a></li>
+        <li><a href="../desktop.html">Studio Desktop</a></li>
+        <li><a href="../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
 </body>
 </html>

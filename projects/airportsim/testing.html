@@ -3,379 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How AirportSim is checked: the test rig, the merge rule, the dated record of gates and failures — including the ones that stayed failed.">
-<title>AirportSim — engineering &amp; testing · Section Zero Interactive</title>
+<title>AirportSim — The Proving — Section Zero Interactive</title>
+<meta name="description" content="How AirportSim changes earn their place: four public test lanes, an identity safeguard, and a proof camera whose photographs are inspected before any verdict.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a class="here" href="index.html">AirportSim</a>
-  <a href="../worldforge/index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="AirportSim">
-  <span class="sect">AirportSim</span>
-  <a href="index.html">Overview</a>
-  <a href="systems.html">Systems</a>
-  <a href="engine.html">Engine</a>
-  <a href="mathematics.html">Mathematics</a>
-  <a class="here" href="testing.html">Engineering &amp; testing</a>
-  <a href="versions.html">Versions</a>
-  <a href="roadmap.html">Roadmap</a>
-  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
-</nav>
-<main id="main">
-  <div class="projhero as slim">
-    <svg class="skybg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="skyfade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#96b9dc" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#96b9dc" stop-opacity="0.10"/>
-          <stop offset="1" stop-color="#96b9dc" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="skyblur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
-      </defs>
-      <rect class="skyterm" x="-480" y="-40" width="440" height="420" fill="url(#skyfade)"/>
-      <g fill="#cfe3f5">
-        <circle cx="80" cy="42" r="1.3" opacity="0.5"/><circle cx="210" cy="96" r="1" opacity="0.35"/>
-        <circle cx="330" cy="30" r="1.5" opacity="0.55"/><circle cx="470" cy="70" r="1" opacity="0.3"/>
-        <circle cx="590" cy="38" r="1.2" opacity="0.45"/><circle cx="720" cy="92" r="1" opacity="0.3"/>
-        <circle cx="845" cy="34" r="1.4" opacity="0.5"/><circle cx="965" cy="78" r="1" opacity="0.35"/>
-        <circle cx="1080" cy="44" r="1.2" opacity="0.45"/><circle cx="1145" cy="110" r="1" opacity="0.3"/>
-        <circle cx="150" cy="150" r="1" opacity="0.25"/><circle cx="660" cy="150" r="1" opacity="0.22"/>
-        <circle cx="1035" cy="170" r="1" opacity="0.25"/><circle cx="415" cy="120" r="1" opacity="0.2"/>
-      </g>
-      <path id="sky-r2" d="M-20,110 C320,30 760,190 1220,70" fill="none" stroke="#7fa8c9" stroke-opacity="0.34" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r3" d="M-20,322 C420,244 820,118 1220,238" fill="none" stroke="#7fa8c9" stroke-opacity="0.22" stroke-width="1.1" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r1" d="M-20,262 C280,140 640,300 1220,150" fill="none" stroke="#c9a227" stroke-opacity="0.38" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <g>
-        <circle cx="250" cy="232" r="2" fill="#c9a227" opacity="0.55"/><circle cx="700" cy="118" r="2" fill="#c9a227" opacity="0.5"/>
-        <circle cx="982" cy="252" r="2" fill="#c9a227" opacity="0.5"/><circle cx="520" cy="84" r="1.8" fill="#9cc0e8" opacity="0.5"/>
-      </g>
-      <g class="skycloud" opacity="0.055" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="210" cy="66" rx="95" ry="17"/><ellipse cx="265" cy="82" rx="60" ry="13"/>
-      </g>
-      <g class="skycloud c2" opacity="0.05" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="950" cy="288" rx="110" ry="19"/><ellipse cx="890" cy="272" rx="58" ry="12"/>
-      </g>
-      <g opacity="0.85">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#e6c65c"/>
-        <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r1"/></animateMotion>
-      </g>
-      <g opacity="0.7">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#bcd6ee" transform="scale(0.8)"/>
-        <animateMotion dur="38s" begin="-14s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r2"/></animateMotion>
-      </g>
-      <g>
-        <circle r="6.5" fill="#9cc0e8" opacity="0.18"/><circle r="2.6" fill="#cfe3f5" opacity="0.9"/>
-        <animateMotion dur="46s" begin="-31s" repeatCount="indefinite"><mpath href="#sky-r3"/></animateMotion>
-      </g>
-    </svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/" aria-current="page">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE PROVING <b>★</b> RED MEANS RED <b>★</b> THE CAMERA CROSS-EXAMINES <b>★</b></span>
+  <span>THE PROVING <b>★</b> RED MEANS RED <b>★</b> THE CAMERA CROSS-EXAMINES <b>★</b></span>
+</div></div>
 
-  <h2>How checking stands (2026-11-10)</h2>
-  <p>The account below is the route as it stood on 2026-11-03 — the owner's
-  rig era, kept as the record of its day. The route changed twice more that
-  week, and settled on 2026-11-10 by the owner's ruling: <strong>the four
-  Linux lanes</strong> (the full suite, two memory-safety lanes, static
-  analysis) run on GitHub-hosted machines, <strong>dispatched manually —
-  every run approved by the owner first</strong>. The rig is out of the
-  route entirely, and there is no Windows verification: the game is
-  Linux-only from here on, played through Ubuntu on WSL. The dated record
-  below stands as written.</p>
-  <h2>How checking works today (2026-11-03)</h2>
-  <p>Every check runs on the owner's own PC — a self-hosted test rig, one run
-  at a time — in two tiers:</p>
-  <table>
-    <tr><th>Tier</th><th>When</th><th>What runs</th></tr>
-    <tr><td><strong>The fast lane</strong></td><td>On every pull request</td><td>The full test suite (over 163,000 checks), one sanitizer lane, static analysis, the Windows cross-build, and the native Windows battery.</td></tr>
-    <tr><td><strong>The full battery</strong></td><td>On every merge to the default branch</td><td>Everything in the fast lane, with both sanitizer lanes — including the long soak, which alone takes about 25 minutes under sanitizers. The battery's length is that test's purpose: it exists to catch what shorter runs cannot.</td></tr>
-  </table>
-  <p><strong>The merge rule:</strong> a pull request merges only when its lane
-  is green <em>and</em> the passing run's commit matches the pull request
-  exactly — the head commit, the base, and the reviewed diff verified as one
-  identity. Any red, any unexplained failure, any unexpected diff stops the
-  line. After merging, the full battery verifies the result on the default
-  branch itself.</p>
-  <div class="card"><p class="st mid">Lesson — FND-015, fixed 2026-11-03 (PR #41)</p>
-    <h3>Test processes must not share a save folder</h3>
-    <p>The suite's test processes were sharing one save folder, so tests could
-    see — and be confused by — each other's saved games. It is the kind of
-    fault that manufactures intermittent failures and hides real ones. The
-    fix isolates each process's saves; it is recorded here because the lesson
-    generalizes: a test's environment is part of the test.</p></div>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">AIRPORTSIM — FIELD NOTES</p>
+    <h1>How an Airport <span class='hl-blue'>Earns Its Stripes</span></h1>
+    <p class="sub">Nothing merges on a promise. Proof here runs on public machines in four lanes — and then a camera cross-examines everything the lanes cannot see.</p>
+  </section>
 
-  <h2>Current development-line addendum (2026-11-02)</h2>
-  <p>The five-stage Development Mode workstream and the performance-baseline work package
-  are reported complete on the development line and, as of the completed 2026-11-02
-  integration, are merged to the default branch — see the integration addendum below.</p>
-  <table>
-    <tr><th>Work / check</th><th>Recorded result</th></tr>
-    <tr><td>Development Mode — integrated F3 diagnostic overlay</td><td>State identity, invariant status, delay explanation, trace inspection, snapshot capture/compare, and step-cost display integrated on the development line.</td></tr>
-    <tr><td>Trace non-interference</td><td>Trace-on/off paired trajectories were byte-identical; a planted RNG-draw negative control was detected.</td></tr>
-    <tr><td>Diagnostic cost</td><td>Full snapshot hashing measured at about 1.95 ms, so full identity refresh is on demand. Light invariant/delay refresh measured about 10 μs at 2 Hz.</td></tr>
-    <tr><td>Integrated full gate</td><td><strong>Exit code 2 — failed.</strong> The result remains failed in the record. Matched base/current comparisons reproduced the business-window truncation and topbar-overlap signatures, supporting attribution as pre-existing rather than a regression introduced by the diagnostic work.</td></tr>
-    <tr><td>Performance baseline</td><td>Model fitted for fixed overhead, active-aircraft count, and simulated time step. The aircraft-count coefficient remains weakly identified because world age and aircraft count are confounded in long-run windows; no optimization claim is made from the fit alone.</td></tr>
-  </table>
-  <p>The Development Mode branch's own integrated gate result above remains in the record as
-  failed. When the branch took its first trip through the full checks during the integration,
-  two further small defects surfaced — a Windows clock call that was not portable, and a memory
-  leak in a test, caught by the memory-safety run; both were fixed and re-verified before the
-  branch merged (see the integration addendum below).</p>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>The four lanes</h3>
+        <p>A full test suite whose checks run into the hundreds of thousands; two memory-safety batteries that shadow the program's allocations and pounce on the quiet corruptions; and a static analysis pass that reads the code the way a sceptical auditor reads accounts. A change runs all four, and the results are read lane by lane, at the source.</p>
+      </div>
+      <div class="card">
+        <h3>The identity safeguard</h3>
+        <p>The code that merges must be the very code that was tested — same commit, bit for bit. If a branch so much as twitches after its battery has run, the battery runs again. It is the studio's most pedantic rule and its most load-bearing one.</p>
+      </div>
+      <div class="card">
+        <h3>The camera's turn</h3>
+        <p>Tests cannot see a jet bridge stopping short of a door, or a sign too faint to read at approach speed. So the game is photographed on a schedule — wide frames for the scene, tight crops for the detail under judgement — and the photographs are inspected, by eye, before the verdict is written down.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>Integration addendum (2026-11-02)</h2>
-  <p>The merge sequence described above ran on 2026-11-02, under those rules. Results:</p>
-  <table>
-    <tr><th>Work / check</th><th>Recorded result</th></tr>
-    <tr><td>Final full gate (integrated tree)</td><td class="ok"><strong>Exit 0</strong> · 162,701 simulation checks, 0 failed · 9,676 interface checks, 0 failed · end-to-end menu/swap/fuzz/load-loop pass · all four CI jobs pass on the final code · test inventory: 72 test groups.</td></tr>
-    <tr><td>Integration progress</td><td><strong>Complete.</strong> All eleven packages merged to the default branch, each with fresh checks after its merge, then the Development Mode branch last; zero pull requests remain open. PR #8's first fresh check reproduced the documented intermittent signature (an unseeded test world) and was rerun once under the recorded rule — passed; both runs preserved. Two branch conflicts were resolved as unions and verified by full local gates before merging.</td></tr>
-    <tr><td>The intermittent failure</td><td>Root-caused to an unseeded test world and fixed for determinism: the game binary's test world is seeded in PR #13 (merged); the suite's half is PR #11 (merged as the recorded resolution — its seeding was already covered by PR #13). The related cosmetic defect — the Business window truncating long airline names — was tracked as issue #14 and fixed on 2026-11-03 with a self-sizing column (PR #42; issue closed).</td></tr>
-    <tr><td>Closed by the integration</td><td>The flickering layout test, the overlapping top bar, the frozen long-world clock, the 27-failure mystery run (explained as the flicker and the overlap occurring together), and a southern-hemisphere seeding quirk. Since then, all three of the day's follow-ups have landed (2026-11-02): the save/reload continuation mystery was solved — a minute's weather was being computed from the fractional clock, so a reload quietly changed the weather (fix merged, PR #24; issue #15 closed); the Windows test harness on GitHub's machines was built, passed its first full native session, and merged (PR #25); and the Development Mode build-out (WP-09) has begun, with Increment 1 — the inspection foundation and aircraft inspector — merged (PR #27, gate 162,730/0). WP-09 Increment 2 — the Mathematics Lab, a registry of the simulation's principal calculations with honest verification statuses, the step-cost reference model shown against measurement, and the per-minute weather mirror — has since merged (PR #28, gate 162,763/0, all six cloud checks green including the native Windows battery). Next in order: WP-09 Increment 3, the Test Lab (experiments in isolated processes). Since then (2026-11-02/03): all checks moved to the owner's self-hosted rig and the cloud runners were removed (PR #29, merged on the owner's instruction); a deterministic failure of the long soak on newer systems was traced to the platform math library — three functions became correctly rounded in glibc 2.43, and the simulation, tuned on the older answers, diverged — and fixed by the simulation owning those three functions bit-for-bit (FND-011, PR #30, merged; the failure is closed); the CI helper actions were bumped to the Node 24 generation, clearing the deprecation annotations (PR #31, merged; all six rig checks green with zero annotations); and Dependabot version updates for those helpers were enabled, monthly and grouped (its first proposal, a checkout bump, awaits its turn in the queue). Increment 3 is built: its full local gate passed (162,870 checks, 0 failed) and its pull request follows in the one-run-at-a-time rig queue. The exit-2 gate in the addendum above remains in the record as failed; nothing here rewrites it.</td></tr>
-  </table>
-
-  <div class="diagram" role="img" aria-label="Diagram: the verification pipeline — local strict gate, then four CI jobs, merge only on green">
-    <svg viewBox="0 0 660 178" width="660" style="max-width:100%">
-      <defs>
-        <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9a227"/></marker>
-      </defs>
-      <text x="10" y="18" fill="#c9a227" font-size="12">THE VERIFICATION PIPELINE — EVERY PACKAGE, EVERY MERGE</text>
-      <rect x="10" y="30" width="180" height="48" rx="6" fill="#171b26" stroke="#c9a227"/>
-      <text x="100" y="50" fill="#e8e4d8" font-size="12.5" text-anchor="middle">Local strict gate</text>
-      <text x="100" y="67" fill="#bdb8a6" font-size="10.5" text-anchor="middle">make check · zero warnings</text>
-      <line x1="192" y1="54" x2="216" y2="54" stroke="#c9a227" marker-end="url(#ar4)"/>
-      <rect x="220" y="30" width="200" height="48" rx="6" fill="#171b26" stroke="#4c5261"/>
-      <text x="320" y="50" fill="#e8e4d8" font-size="12.5" text-anchor="middle">Fresh checks on GitHub</text>
-      <text x="320" y="67" fill="#bdb8a6" font-size="10.5" text-anchor="middle">four CI jobs, below</text>
-      <line x1="422" y1="54" x2="446" y2="54" stroke="#c9a227" marker-end="url(#ar4)"/>
-      <rect x="450" y="30" width="200" height="48" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="550" y="50" fill="#e8e4d8" font-size="12.5" text-anchor="middle">Merge — only on green</text>
-      <text x="550" y="67" fill="#bdb8a6" font-size="10.5" text-anchor="middle">head &amp; base identity verified first</text>
-      <g font-size="11.5">
-        <rect x="10" y="102" width="150" height="36" rx="6" fill="#171b26" stroke="#4c5261"/><text x="85" y="124" fill="#e8e4d8" text-anchor="middle">Gate suite</text>
-        <rect x="173" y="102" width="150" height="36" rx="6" fill="#171b26" stroke="#4c5261"/><text x="248" y="124" fill="#e8e4d8" text-anchor="middle">Sanitizers</text>
-        <rect x="336" y="102" width="150" height="36" rx="6" fill="#171b26" stroke="#4c5261"/><text x="411" y="124" fill="#e8e4d8" text-anchor="middle">Static analysis</text>
-        <rect x="499" y="102" width="150" height="36" rx="6" fill="#171b26" stroke="#4c5261"/><text x="574" y="124" fill="#e8e4d8" text-anchor="middle">Windows build</text>
-      </g>
-      <text x="10" y="160" fill="#bdb8a6" font-size="11">The four CI jobs (tooling from PR #7, merged 2026-11-02; the Windows job is a staged cross-build — signal, never “Windows verification”).</text>
-    </svg>
-    <p class="cap"><strong>How a change earns a merge.</strong> The same pipeline
-    ran for every package in the 2026-11-02 integration; a red check stops the
-    sequence rather than being waved through.</p>
-  </div>
-
-  <figure>
-    <img src="img/gate-business-2026-11-02.png" alt="Business window in the layout-test world during the gate run of 2026-11-02">
-    <figcaption><strong>The layout-test world, Business window (gate capture,
-    2026-11-02).</strong> The test world deliberately signs airlines with
-    over-long names and feed lines “with a long tail to clip”, so the interface's
-    behaviour under stress is exercised every run. The known cosmetic defect —
-    long airline names truncating in this window — was what issue #14 tracked;
-    it was fixed on 2026-11-03 with a self-sizing column (PR #42). The
-    nondeterminism that once made this test intermittent is also fixed.
-    Captured headless on the dummy video driver from a development build.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/gate-cargo-2026-11-02.png" alt="Cargo window and airport view during the gate run of 2026-11-02">
-    <figcaption><strong>Cargo window over Detroit (KDTW), same gate run.</strong>
-    The feed at the bottom records the capture tooling saving its own screenshot
-    (“Screenshot saved: build/shots/…”) — the capture-reliability work of PR #9
-    (merged 2026-11-02, after a one-line Windows build fix in its own code). A MAYDAY call sits in the radio log: the
-    test world is a working simulation, not a static screen.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="img/gate-swap-2026-11-02.png" alt="World map during the airport-swap end-to-end flow, gate run of 2026-11-02">
-    <figcaption><strong>The airport-swap end-to-end flow.</strong> The scripted
-    flow sells Detroit (KDTW) and takes over Man (DIMN) — 1,399 flights airborne
-    on 1,705 routes in the test world at capture time. End-to-end flows like this
-    one drive the real game, which is what makes them evidence about gameplay
-    rather than about rules alone.</figcaption>
-  </figure>
-
-  <h2>How to read the grades</h2>
-  <p><strong>Implemented</strong> — the functionality exists in the code. This does not
-  establish that it behaves correctly.<br>
-  <strong>Demonstrated</strong> — a relevant test or reproducible scenario shows it
-  works under the tested conditions. Not automatically reliability everywhere.<br>
-  <strong>Established</strong> — evidence supports the behaviour across a meaningful
-  range of conditions or long-running tests, within the stated scope.</p>
-  <p>Two different kinds of testing support these grades, and they are not
-  interchangeable: <strong>unit/simulation tests</strong> exercise rules headlessly
-  (fast, exhaustive, blind to whether a player can actually do the thing), while
-  <strong>end-to-end flows</strong> drive the real game through scripted player-level
-  scenarios. A feature needs the second kind before it can be called demonstrated as
-  gameplay.</p>
-
-  <h2>The adoption baseline (2026-10-31)</h2>
-  <p>Measured on the recorded starting state (version 0.5.3) with the project's own
-  commands, and attributed to the adoption assessment. Every row was run; newer
-  evidence will supersede rows here, with the change noted.</p>
-  <table>
-    <tr><th>Check</th><th>Result</th></tr>
-    <tr><td>Build the game</td><td class="ok">Passes</td></tr>
-    <tr><td>Unit &amp; simulation tests</td><td class="ok">162,315 checks — 0 failed</td></tr>
-    <tr><td>Interface tests</td><td class="ok">9,676 checks — 0 failed</td></tr>
-    <tr><td>End-to-end: menu · airport swap · fuzz · save/load loop</td><td class="ok">All passed</td></tr>
-    <tr><td>Memory-safety (AddressSanitizer) build + fuzz</td><td class="ok">Passed — zero reports</td></tr>
-    <tr><td>Linux launch verification</td><td class="ok">Launches; sessions screenshotted and inspected</td></tr>
-    <tr><td>Strict release gate (<em>make check</em>)</td><td class="bad">At adoption: failed — one warning-as-error under GCC 13.3</td></tr>
-    <tr><td>GitHub CI</td><td class="bad">At adoption: reproduced the same gate failure</td></tr>
-    <tr><td>Windows build &amp; runtime</td><td class="bad">Not verified — never run <em>(at adoption; narrowed 2026-11-02 — see K3 below)</em></td></tr>
-    <tr><td><strong>Post-M1 verification (2026-11-01)</strong></td><td class="ok"><strong>Strict gate on the default branch, fresh clone of merge commit 181794d: exit 0, zero warnings · 162,315 checks, 0 failed · 9,676 checks, 0 failed · end-to-end menu/swap/fuzz/load-loop pass · CI green on the fix commit 9ab96c39</strong></td></tr>
-  </table>
-  <p>The gate failure is a format-truncation warning promoted to an error at one line
-  of the layout code (src/layout.c:416). It passed on the original developer's
-  toolchain. It does not stop the game building or playing — it stops anyone from
-  <em>proving</em> a later change is safe, which is why fixing it is milestone M1.</p>
-  <p><strong>Strongest evidence on record:</strong> save migration (Established —
-  fixtures spanning save versions 4 through 13 load in-suite, memory-safety clean)
-  and multi-day traffic stability soaks (Established within the tested scope).</p>
-  <p><strong>Not yet measured at all:</strong> performance at the largest hubs. No
-  number exists, so none is published.</p>
-
-  <h2>Known issues register (K1–K8)</h2>
-  <p>Status as at the adoption assessment; each entry names its kind honestly —
-  a known limitation is not a defect, and an unverified behaviour is not either.</p>
-
-  <div class="card"><p class="st ok">K1 · Repository · CLOSED 2026-11-01</p>
-    <h3>The default branch is a placeholder</h3>
-    <p>Was: the branch GitHub showed by default contained a one-commit stub; the game
-    lived on another branch. <em>Closed:</em> the owner directed the default branch be
-    set to the game's branch; verified by API and by fresh clones landing on it —
-    most recently the post-merge clone at commit 181794d used for the gate run.</p></div>
-
-  <div class="card"><p class="st ok">K2 · Reproduced failure · CLOSED 2026-11-01</p>
-    <h3>The strict release gate fails on current toolchains</h3>
-    <p>Was: one warning-as-error at src/layout.c:416, reproduced locally and in CI.
-    <em>Closed:</em> one-line fix; the gate passes in CI on the fix commit and from a
-    fresh clone of the merged default branch (exit 0, zero warnings, counts at
-    baseline).</p></div>
-
-  <div class="card gap"><p class="st">K3 · Demonstrated 2026-11-02 — reliability record in progress</p>
-    <h3>Windows runtime: the current code now runs natively, by script, on every change</h3>
-    <p>Cross-compiling is not verification — so the project built the real
-    thing. On 2026-11-02 the scripted native harness merged (PR #25): on every
-    change, a Windows machine at GitHub runs the actual game — version
-    identity, the full interface suite, scripted scenarios, saves written to
-    the real Windows save location (%APPDATA%) and reloaded by a second
-    launch, and automated frame capture. Its first full session on the
-    current code (0.6.0-alpha.1) passed end to end, and it has passed on
-    every run since. Earlier the same day the owner had played a pre-adoption
-    build (0.5.4) for about an hour at Detroit — gameplay provisionally
-    demonstrated for that older build; saves were not tested there, and the
-    harness has since covered them on the current code. <em>Closes when:</em>
-    the harness has a reliability record long enough to graduate from
-    non-scoring to scoring, and its battery also covers a starter-layout
-    airport.</p></div>
-
-  <div class="card gap"><p class="st">K4 · Documented, not reproduced serially</p>
-    <h3>Pilot end-to-end test can flake under parallel load</h3>
-    <p>Recorded in the project's own debugging notes. During adoption it did not
-    reproduce when run serially, so it is carried as a documented flake risk, not a
-    confirmed defect. <em>Closes when:</em> reproduced and fixed with a regression
-    test, or cleared by repeated serial and parallel runs.</p></div>
-
-  <div class="card"><p class="st ok">K5 · Documentation · CLOSED 2026-11-01</p>
-    <h3>Five documentation-drift items</h3>
-    <p>All five reconciled against the code during M1 — including the stale check
-    count (corrected to 162,315) and the regression-test contradiction, which commit
-    history resolved in favour of the debugging notes: the tests existed; the
-    project-state sentence was stale.</p></div>
-
-  <div class="card gap"><p class="st">K6 · Open — currency of proof</p>
-    <h3>Full end-to-end matrix not yet rerun on v0.5.3</h3>
-    <p>The complete 14-flow × 3-seed scripted matrix last ran on the previous
-    version's code. The flows spot-checked at adoption pass; the full matrix is owed.
-    <em>Closes when:</em> the full matrix runs green on the current version and is
-    recorded.</p></div>
-
-  <div class="card gap"><p class="st">K8 · Open — replacement in design (2026-11-07)</p>
-    <h3>The save format itself is fragile — a clean-sheet replacement is in design</h3>
-    <p>The survey behind this entry (2026-11-07) measured the format as it is:
-    a save file is the game's live state written to disk as one raw memory
-    dump, and compatibility across its thirteen versions rests on frozen
-    size numbers and byte-shifting patches — there are no per-version
-    migrations at all. Three of the last four version bumps exist only
-    because state hiding outside the saved block was found lost, or a field
-    changed width mid-structure. Worst, a save from the 0.4 era passes the
-    file's own integrity check and then crashes the loader — and because
-    the load screen previews every save to draw its list, a player with
-    such a file crashes by merely opening that screen. The owner's ruling:
-    no patch on the old design. A replacement is in design — named,
-    individually versioned sections written field by field; a loader that
-    cannot crash, on load or on preview; damage contained to the damaged
-    section, with a warning, while the rest loads; and one one-way importer
-    for every old version, after which the old format retires. The current
-    format keeps working, guarded by the existing tests, until the
-    replacement lands. <em>Closes when:</em> the new system ships with the
-    full fixture corpus — every old version, plus the hostile-file set —
-    importing or refusing cleanly, and the crash class is closed by
-    construction, not by another guard.</p></div>
-
-  <div class="card"><p class="st ok">K7 · Missing capability · CLOSED 2026-11-03</p>
-    <h3>ATC lacked final speed control — now assigned by the controller</h3>
-    <p>Approach speeds in the final segment were not managed by air traffic
-    control — documented by the original project itself; not a defect, a
-    missing capability. It was built on 2026-11-03 as DEF-007, the foundation
-    of the ATC rework (PR #44, battery green): the controller now assigns
-    speeds on final. The rework's remaining steps are recorded on the
-    <a href="systems.html">systems page</a>.</p></div>
-
-  <h2>Open design questions — visible, undecided</h2>
-  <ul>
-    <li><strong>Map data:</strong> keep layouts baked into the game, or fetch map data
-      at runtime? Undecided.</li>
-    <li><strong>Mod support:</strong> whether, and what scope? Undecided.</li>
-    <li><strong>Windows verification route:</strong> <em>decided 2026-11-02</em> —
-      the GitHub-hosted Windows runners, extended into a scripted native test
-      harness; the owner's PC stays out until release. Recorded here because this
-      list is where the question lived; it is no longer undecided.
-      <em>Superseded later the same day, on the owner's instruction:</em> the
-      hosted allowance proved too small for one day of real work, so all checks —
-      the native battery included — moved to a self-hosted rig on the owner's PC
-      (PR #29), and the cloud runners were removed. The owner's PC runs
-      unattended test batteries only; hands-on use stays out until release.
-      <em>Settled in its current form on 2026-11-07:</em> the rig is retired
-      from routine testing. The long Linux lanes run on GitHub-hosted
-      machines from the plan's included allowance — dispatched only when a
-      gate calls for them, never automatically — and Windows verification
-      lives in the local gates (a cross-build plus a Wine smoke run), with
-      native Windows itself remaining the gate of the owner's hands-on
-      test build.</li>
-    <li><strong>Tutorial design:</strong> how a new player is taught a deep simulation
-      — Phase 1 work, not yet designed.</li>
-    <li><strong>The ambient world:</strong> should the player be able to influence the
-      global network itself, beyond their own airport? An open design question, not a
-      hidden plan.</li>
-  </ul>
-  <p>None of these will be silently resolved by a website edit or a quiet code change;
-  each closes with a recorded decision and its reasons.</p>
-
-  <footer>
-    <p>Grades and statuses change only on recorded evidence. If this page and the
-    development record disagree, the record is right and this page gets corrected.</p>
-  </footer>
-  <script>
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('svg.skybg').forEach(function (s) { if (s.pauseAnimations) { s.pauseAnimations(); } });
-  }
-  </script>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The airfield itself — diagram, airlines, photographs and one small landing strip — waits on the main page of this hall.</p>
+      <p><a class="btn white" href="index.html">Return to the airfield</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>

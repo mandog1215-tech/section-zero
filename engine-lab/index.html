@@ -3,168 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The Engine Laboratory: what each Section Zero game's engine actually is — names, versions, lineage, and what the evidence does not establish.">
-<title>Engine Laboratory — Section Zero Interactive</title>
+<title>Engine Lab — Section Zero Interactive</title>
+<meta name="description" content="The Engine Lab is where Section Zero's game engines are built by hand: a hand-rolled C core for AirportSim, an SDL3 standard shared with LONGSHOT, and determinism as a house virtue.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../index.html">Home</a>
-  <a href="../studio.html">Studio</a>
-  <a href="../projects/blacksite/index.html">Blacksite</a>
-  <a href="../projects/airportsim/index.html">AirportSim</a>
-  <a href="../projects/worldforge/index.html">WorldForge</a>
-  <a href="../projects/longshot/index.html">Longshot</a>
-  <a class="here" href="../engine-lab/index.html">Engine Lab</a>
-  <a href="../development/index.html">Development</a>
-</nav>
-<main id="main">
-  <div class="projhero gold slim">
-    <h1>The Engine Laboratory</h1>
-  <p class="tag">What each game's engine actually is — from the studio Engine Registry, the authoritative record.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img class="mark" src="../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../index.html">Front Door</a>
+      <a href="../studio.html">The Studio</a>
+      <a href="../projects/airportsim/">AirportSim</a>
+      <a href="../projects/blacksite/">Blacksite</a>
+      <a href="../projects/worldforge/">WorldForge</a>
+      <a href="../projects/longshot/">Longshot</a>
+      <a href="../development/">Development</a>
+      <a href="../engine-lab/" aria-current="page">Engine Lab</a>
+      <a href="../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE ENGINE LAB <b>★</b> GLOVES OPTIONAL, PRECISION NOT <b>★</b> HAND-ROLLED IN C <b>★</b> ONE FOUNDATION, TWO GAMES <b>★</b></span>
+  <span>THE ENGINE LAB <b>★</b> GLOVES OPTIONAL, PRECISION NOT <b>★</b> HAND-ROLLED IN C <b>★</b> ONE FOUNDATION, TWO GAMES <b>★</b></span>
+</div></div>
 
-  <p>Two of the studio's games carry the name <strong>Halcyon</strong> on their
-  engine layer. This page exists so that name is never allowed to imply more
-  than the evidence supports. The registry's standing finding, in full:</p>
+<main class="wrap">
 
-  <div class="callout">
-    <p><strong>The three games' rendering/engine layers are maintained as
-    independent implementations.</strong></p>
-    <p><strong>Verified:</strong> a comparison of every source file across the
-    three projects (MD5, whole files) found <strong>no byte-identical source
-    files</strong> in any pairing.</p>
-    <p><strong>Not established:</strong> whether fragment-level reuse, adapted
-    code, or common code ancestry exists between the projects. The comparison
-    compared whole files byte-for-byte; it cannot rule out copied or adapted
-    fragments, and no fragment-level investigation has been performed.</p>
-    <p><strong>Conclusion:</strong> a cross-project audit (2026-11-01) found
-    <strong>no evidence establishing a shared engine codebase or a common code
-    lineage</strong>. That is the accurate claim — it is not a proof that no
-    code was ever copied or adapted.</p>
-  </div>
+  <section class="masthead">
+    <p class="over">UNDER THE FLOORBOARDS</p>
+    <h1>The Engine <span class="hl-teal">Lab</span></h1>
+    <p class="sub">No off-the-shelf engine hums under this studio's games. The machinery is written by hand, in C, by the people who have to answer for it — which makes the lab less a department and more a promise: if it moves, somebody here can explain exactly why.</p>
+  </section>
 
-  <p>Sharing the Halcyon name does <strong>not</strong> establish shared code,
-  shared ancestry of code, portability of fixes, or comparability of version
-  numbers: a version number in one game implies nothing about any other game.
-  What the games genuinely share is conventions — C11 throughout (SDL2 in
-  these three; the newest game, LONGSHOT, builds on SDL3), procedural
-  assets only, and the Section Zero boot card — each implemented
-  independently, three times.</p>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>Built, not bought</h3>
+        <p>AirportSim runs on a hand-rolled engine: its world — aircraft, contracts, weather, money, memory — is simulated in plain C, kept deliberately separate from the machinery that draws it. That separation is the lab's favourite trick. The world can be exercised headlessly, thousands of times, by test batteries that never open a window.</p>
+      </div>
+      <div class="card">
+        <h3>The SDL3 standard</h3>
+        <p>LONGSHOT set the studio's modern foundation: C11 on SDL3, pinned and carried with the project. Tonight AirportSim is being moved onto that same foundation, retiring its SDL2 underpinnings. Two living games, one base — every lesson learned on either bench then belongs to both.</p>
+      </div>
+      <div class="card">
+        <h3>Same seed, same world</h3>
+        <p>Randomness in the lab is a tool with a serial number. Worlds are dealt from seeds, so any scene a photograph captures can be dealt again, exactly, for the re-test — and a guard exists to prove the dealing hasn't drifted. Chance is welcome in the games; it is not welcome in the evidence.</p>
+      </div>
+      <div class="card">
+        <h3>The bench that checked itself</h3>
+        <p>LONGSHOT's design bench was validated the hard way: its outputs were compared against twelve published values from the real literature of its subject, and it reproduced all twelve. That is the lab's idea of a reference shelf — don't trust the instrument until the instrument has been caught being right.</p>
+      </div>
+    </div>
+    <blockquote class="pull">An engine you wrote yourself can still surprise you — but it can never hide from you.</blockquote>
+  </section>
 
-  <h2>The registry, in summary</h2>
-  <table>
-    <tr><th>Game</th><th>Engine identity</th><th>Version (source of truth)</th><th>Technique</th></tr>
-    <tr><td><a href="../projects/blacksite/index.html">Blacksite</a></td><td>Halcyon Engine</td><td>3.0 — <em>HALCYON_VERSION</em> in <em>src/engine.h</em></td><td>Threaded DDA raycaster, floor/ceiling casting, baked lightmaps</td></tr>
-    <tr><td>AirportSim</td><td>Halcyon 2.5D</td><td>2.5.0 — <em>HALCYON_VERSION</em> in <em>src/engine/halcyon.h</em></td><td>SDL triangle batcher, isometric projection (the "engine" directory itself is a boot/branding layer)</td></tr>
-    <tr><td>WorldForge</td><td><em>none — unnamed</em></td><td>— (versions with the game)</td><td>Tile renderer in flat <em>src/</em>, written for that game</td></tr>
-    <tr><td><a href="../projects/longshot/index.html">LONGSHOT</a></td><td><em>new — no registry entry yet</em></td><td>— (begun 2026-11-10; deferred the same day)</td><td>Analytic orbital propagator at the core; one continuous-zoom 2.5D scene (SDL3)</td></tr>
-  </table>
-  <p><strong>A note on the fourth row.</strong> LONGSHOT's engine is Diesel's,
-  new, and unfinished: its first milestone was begun on 2026-11-10 and
-  deferred the same day. This Lab records engines from evidence — constants
-  in code, closeout verdicts — and there is not yet enough of either. Its
-  registry entry will be established from its first milestone closeout, not
-  backfilled from its design. The design's own claim for it is recorded on
-  the <a href="../projects/longshot/index.html">project page</a>, labelled as
-  a claim.</p>
+  <section class="act">
+    <div class="dark">
+      <h2>Currently on the bench</h2>
+      <p>One engine transplant, in progress tonight: AirportSim's move from SDL2 to SDL3, carried out in slices small enough to prove individually, with the full test battery and the proof camera attending every step. The patient is expected not merely to survive but to come off the table standing on the studio's standard foundation.</p>
+      <p><a class="btn" href="../projects/airportsim/engine.html">Read the AirportSim engine notes</a> <a class="btn white" href="../projects/longshot/">Visit the other bench</a></p>
+    </div>
+  </section>
 
-  <h2>Per-engine records</h2>
-  <div class="card"><p class="st ok">Lineage — documented</p>
-    <h3>Blacksite — Halcyon Engine 3.0</h3>
-    <p>Grok Bot's engine for Blacksite, with a recorded lineage in the game's
-    changelog: <strong>Claudio Engine 1.0 → Claudio Engine 2.0 → Halcyon Engine
-    3.0</strong> (renamed at game 1.5.0, commit <em>8836b9a</em>). Limit, stated
-    in the registry: this repository's history begins at the 1.3.0 transfer
-    snapshot, so the 1.0/2.0 era is attested by the changelog rather than by
-    commits in the repo — partially verified. One recorded wart: a comment in
-    the engine header calls the predecessor "Halcyon Engine 2.0" where the
-    changelog and rename commit say Claudio 2.0. It is recorded here, not
-    polished away. Detail: <a href="../projects/blacksite/systems.html">Blacksite —
-    game &amp; engine</a>.</p></div>
-
-  <div class="card"><p class="st mid">Lineage — none recorded</p>
-    <h3>AirportSim — Halcyon 2.5D, version 2.5.0</h3>
-    <p>The name arrived as a boot/branding module (<em>src/engine/</em> =
-    <em>halcyon.h</em> + <em>boot.c</em>: studio card, dev overlay, credits)
-    added to an already-working renderer, in commit <em>626ec77</em>
-    (2026-10-29). The version constant has exactly one commit in its history:
-    it was "2.5.0" from its first commit and has never changed. <strong>No 1.0
-    or 2.0 exists anywhere in that project's history or changelog — the number
-    has no recorded lineage</strong>, and why it was chosen is not recorded.
-    It is not a point on Blacksite's scale.</p></div>
-
-  <div class="card"><p class="st low">Shelved project — inspected, not developed</p>
-    <h3>WorldForge — no engine name</h3>
-    <p>The word "Halcyon" appears nowhere in WorldForge's code or records. Its
-    rendering layer is its own, written for that game from its founding commit.
-    The registry deliberately assigns it no name: naming a shelved, frozen
-    codebase from outside would invent history. If development ever resumes,
-    naming its layer is a decision for that time.</p></div>
-
-  <h2>The engine verdict — AirportSim, 2026-11-01</h2>
-  <p>Alongside the registry, the studio ran a full engine assessment and
-  mathematics audit of AirportSim on 2026-11-01 — the engine's structure, the
-  simulation's mathematics, and the evidence beneath both examined end to
-  end. The verdict was <strong>RETAIN the engine</strong>: keep the existing
-  engine and simulation architecture, and build on it. That verdict stands
-  behind everything the current programme has done since — Development Mode
-  was grown onto the retained engine, not written around a replacement.</p>
-
-  <h2>Evidence classes — a native-Windows product, developed on Linux</h2>
-  <p>The studio's games are native Windows products developed on Linux, so
-  engine and game claims are graded by the evidence class that supports
-  them. Four classes, in ascending order of weight:</p>
-  <table>
-    <tr><th>Evidence class</th><th>What it establishes</th></tr>
-    <tr><td><strong>Linux tests</strong></td><td>The code's behaviour under the full test suites on the development platform — the everyday gate every change passes.</td></tr>
-    <tr><td><strong>MinGW cross-compile</strong></td><td>Producibility only: the Windows binary can be built from the source. It says nothing about how the game runs.</td></tr>
-    <tr><td><strong>Wine</strong></td><td>Preliminary runtime evidence under a compatibility layer. It is never called Windows verification, on this site or anywhere else.</td></tr>
-    <tr><td><strong>Native Windows runtime</strong></td><td>The product running on its actual platform. This is a <strong>release gate</strong> — for AirportSim it was exercised by the native Windows battery on the owner's test rig, on every merge, until 2026-11-10, when the owner made the game Linux-only and retired the gate; its checks now run on GitHub-hosted Linux machines. (LONGSHOT is a Linux product from its first day, so for it the native-runtime class is Linux itself.)</td></tr>
-  </table>
-  <p>The grading discipline is the point: a claim is only ever stated at the
-  class its evidence earned. The studio's five engineering principles —
-  simulation-first engineering, evidence over appearances, causality over
-  superficial functionality, autonomous execution with explicit authority,
-  and one methodology with game-specific engineering — are recorded on the
-  <a href="../studio.html">studio page</a>.</p>
-
-  <h2>How the registry is kept</h2>
-  <ul>
-    <li><strong>Constants are authoritative; the registry mirrors.</strong> Each
-      game's in-code version constant is the source of truth; the registry is
-      updated at milestone closeouts — never the reverse.</li>
-    <li><strong>No propagation.</strong> Because no shared engine codebase is
-      established and the implementations are maintained independently, an
-      engine change in one game neither needs nor gets porting. A defect
-      pattern genuinely appearing in two games is handled as a studio advisory,
-      fixed per game under that game's own gate.</li>
-    <li><strong>No synchronized versions, no engine codenames, no backfilled
-      history</strong> — each solves a problem the evidence does not show.</li>
-    <li><strong>The unification tripwire.</strong> If future work ever proposes
-      sharing an actual code component between games, that proposal must supply
-      its own engine-level tests, version pinning, per-game integration
-      evidence, and a priced cost analysis. Until then, there is nothing to
-      safeguard, and nothing is built for it.</li>
-  </ul>
-
-  <footer>
-    <p>Source of truth: the studio Engine Registry (established 2026-11-01),
-    itself grounded in the cross-project Halcyon audit and its review of the
-    same date. Per-engine architecture pages and the versioning-conventions
-    page join this Lab as the site grows; the registry summary above is
-    complete as it stands.</p>
-  </footer>
 </main>
-<script src="../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../projects/airportsim/">AirportSim</a></li>
+        <li><a href="../projects/blacksite/">Blacksite</a></li>
+        <li><a href="../projects/worldforge/">WorldForge</a></li>
+        <li><a href="../projects/longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../development/">Development</a></li>
+        <li><a href="../engine-lab/">Engine Lab</a></li>
+        <li><a href="../desktop.html">Studio Desktop</a></li>
+        <li><a href="../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
 </body>
 </html>

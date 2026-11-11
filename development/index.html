@@ -3,99 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The Development Center dashboard: every Section Zero project as it stands — AirportSim in development, LONGSHOT deferred, WorldForge shelved, Blacksite cancelled.">
-<title>Development Center — Section Zero Interactive</title>
+<title>Development — The Record Room — Section Zero Interactive</title>
+<meta name="description" content="How Section Zero keeps its development record: a status board that moves only on evidence, an evidence annex, a release ledger and a version ledger.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../index.html">Home</a>
-  <a href="../studio.html">Studio</a>
-  <a href="../projects/blacksite/index.html">Blacksite</a>
-  <a href="../projects/airportsim/index.html">AirportSim</a>
-  <a href="../projects/worldforge/index.html">WorldForge</a>
-  <a href="../projects/longshot/index.html">Longshot</a>
-  <a href="../engine-lab/index.html">Engine Lab</a>
-  <a class="here" href="index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="Development Center">
-  <span class="sect">Development</span>
-  <a class="here" href="index.html">Dashboard</a>
-  <a href="evidence.html">Evidence</a>
-  <a href="versions.html">Versions</a>
-  <a href="releases.html">Releases</a>
-  <span class="status-chip"><span class="pill held">BS 1.5.0 · Held</span><span class="pill dev">AS 0.6.0-alpha.2 · Alpha</span><span class="pill shelved">WF · Shelved</span><span class="pill delayed">LS · Deferred</span></span>
-</nav>
-<main id="main">
-  <div class="projhero gold slim">
-    <h1>The Development Center</h1>
-  <p class="tag">One dashboard for the studio — every status below traces to a project record, dated.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img class="mark" src="../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../index.html">Front Door</a>
+      <a href="../studio.html">The Studio</a>
+      <a href="../projects/airportsim/">AirportSim</a>
+      <a href="../projects/blacksite/">Blacksite</a>
+      <a href="../projects/worldforge/">WorldForge</a>
+      <a href="../projects/longshot/">Longshot</a>
+      <a href="../development/" aria-current="page">Development</a>
+      <a href="../engine-lab/">Engine Lab</a>
+      <a href="../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE RECORD ROOM <b>★</b> EVERYTHING FILED, NOTHING EMBROIDERED <b>★</b> STATUS MOVES ONLY WHEN THE EVIDENCE DOES <b>★</b></span>
+  <span>THE RECORD ROOM <b>★</b> EVERYTHING FILED, NOTHING EMBROIDERED <b>★</b> STATUS MOVES ONLY WHEN THE EVIDENCE DOES <b>★</b></span>
+</div></div>
 
-  <h2>Status dashboard (as of 2026-11-11)</h2>
-  <table>
-    <tr><th>Project</th><th>Version</th><th>Status</th><th>Latest verified evidence</th></tr>
-    <tr>
-      <td><a href="../projects/blacksite/index.html"><strong>Blacksite</strong></a></td>
-      <td>1.5.0</td>
-      <td><span class="pill held">Held</span> Development cancelled by the owner's decision of 2026-11-02; the built 1.5.0 release decision is the owner's, unscheduled.</td>
-      <td>2026-11-01 — GitHub transfer verified: fresh clone builds, 478 checks / 0 failed, strict gate passes, CI green (run 41276914585).</td>
-    </tr>
-    <tr>
-      <td><a href="../projects/airportsim/index.html"><strong>AirportSim</strong></a></td>
-      <td>0.6.0-alpha.2</td>
-      <td><span class="pill dev">In development</span> Development Mode complete; the ATC rework complete; the planet geography in and its far view approved; HL-SAVE 1 landed; the fleet at 58 types; 246 real airport layouts in. Parked by the owner's decision on the morning of 2026-11-10 — status “delayed” for under an hour — then <strong>resumed the same morning</strong>. The collision fix passed its full battery and merged on 2026-11-11; a full-control transformation run is underway (playability first: jet bridges, cargo, seeded randomness, ground markings, interface renewal, and the game's new signature — airlines that remember), with the closed dev beta 7.0 “Latitude” ahead of it. A complete overhaul design, finished the same week, is banked unstarted. No release is authorized.</td>
-      <td>Latest recorded full run: <strong>192,063 checks, 0 failed</strong> (tally of 2026-11-09; the 2026-11-08 master battery ran 192,032 / 0, fully green on all seven rig jobs of that era). Checking has since moved: by the owner's ruling of 2026-11-10 the lanes are now the four Linux lanes on GitHub-hosted machines, dispatched manually — each run approved by the owner first — and the game is Linux-only: the owner's rig and all Windows verification are out of the route.</td>
-    </tr>
-    <tr>
-      <td><a href="../projects/worldforge/index.html"><strong>WorldForge</strong></a></td>
-      <td>0.5.0-dev</td>
-      <td><span class="pill shelved">Shelved</span> Shelved by the owner 2026-10-31 after M5. Not in active development.</td>
-      <td>2026-10-31 — M5 gate: suite 1,060 / 0 on a fresh build; Observatory Phase A merged (1,143 / 0) the same day, before the shelve. A fresh survey of the whole project was written and banked on 2026-11-10, the night the owner briefly revived and re-parked it.</td>
-    </tr>
-  <tr>
-      <td><a href="../projects/longshot/index.html"><strong>LONGSHOT</strong></a> <span class="mono">(codename)</span></td>
-      <td>—</td>
-      <td><span class="pill delayed">Deferred</span> Announced 2026-11-10: research and a full engine-first design completed, the math bench ported and verified, a private repository created, and the first engine milestone begun — then deferred by the owner the same day, “for another time”. Banked, not cancelled.</td>
-      <td>2026-11-10 — the ported design bench reproduced <strong>12 of 12 published reference values</strong> from its own laws (orbit periods, transfer times, fuel prices) before game code existed. No game build exists; there is nothing else to verify yet.</td>
-    </tr>
-  </table>
-  <p><strong>Where the studio stands tonight.</strong> One game is in
-  development — AirportSim, resumed this morning after a delay that lasted
-  under an hour, its road continuing at collision on its way to the closed dev
-  beta 7.0 “Latitude” (internal testing only, never a public release; the
-  owner's 2026-11-03 policy stands: copy protection in place, packages of
-  binaries and game data only). One game is deferred — LONGSHOT, announced
-  today and banked the same day with its design, its bench and an engine start
-  intact. WorldForge stays shelved, surveyed afresh tonight; Blacksite stays
-  cancelled, its 1.5.0 held. Nothing the studio has made is published. That is
-  the whole of it.</p>
-  <h2>The rooms</h2>
-  <div class="card"><h3><a href="evidence.html">Evidence</a></h3>
-    <p>The verified build and test record across the studio — what was run, on
-    which commit, with what result, and what has explicitly <em>not</em> been
-    verified.</p></div>
-  <div class="card"><h3><a href="versions.html">Versions</a></h3>
-    <p>Version and codename records for all four projects, in one place — drawn
-    from each project's own registry.</p></div>
-  <div class="card"><h3><a href="releases.html">Releases</a></h3>
-    <p>Release status, kept blunt: what has been published (nothing), and the two
-    held builds, with their records.</p></div>
+<main class="wrap">
 
-  <footer>
-    <p>This dashboard updates at milestone closeouts and owner decisions — never
-    ahead of the evidence. Project records outrank this page.</p>
-  </footer>
+  <section class="masthead">
+    <p class="over">DEVELOPMENT — THE PAPER TRAIL</p>
+    <h1>The Record <span class="hl-blue">Room</span></h1>
+    <p class="sub">Studios run on stories, and stories drift. This one runs on a board: every piece of work carries a state — not started, building, proving, done — and a state is only allowed to change when somebody has checked the evidence with their own eyes, in that moment.</p>
+  </section>
+
+  <section class="act" aria-labelledby="tonight-rec-h">
+    <div class="act-head">
+      <span class="kicker">LATEST ENTRY</span>
+      <h2 id="tonight-rec-h">Filed under 11 November 2026</h2>
+    </div>
+    <div class="card">
+      <p class="lede">One long night, two big motions. First: AirportSim's transformation run — the standing programme to carry the game from a systems workshop to a finished, playable article, worked autonomously through the night in proven slices. Second: an engine change, moving AirportSim from SDL2 onto SDL3 so it shares a foundation with LONGSHOT.</p>
+      <p>Also in the day's file: LONGSHOT was set aside in good order, and this website was torn down to the studs and rebuilt — the rebuild you are reading, written fresh from the records rather than carried over from the old place.</p>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="drawers-h">
+    <div class="act-head">
+      <span class="kicker">THE THREE DRAWERS</span>
+      <h2 id="drawers-h">What the room keeps</h2>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <h3>📈 The Evidence Annex</h3>
+        <p>Charts, counts and photographs: the exhibits behind the claims, including the great stand repair drawn before-and-after.</p>
+        <p><a class="btn blue" href="evidence.html">Open the annex</a></p>
+      </div>
+      <div class="card">
+        <h3>🏷️ The Release Ledger</h3>
+        <p>What this studio has actually released, what it has finished but holds, and why those are separate lists.</p>
+        <p><a class="btn blue" href="releases.html">Read the ledger</a></p>
+      </div>
+      <div class="card">
+        <h3>🔢 The Version Ledger</h3>
+        <p>Every world's current number, what state that number represents, and who gets to change it.</p>
+        <p><a class="btn blue" href="versions.html">Check the numbers</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="specimen-h">
+    <div class="act-head">
+      <span class="kicker">SPECIMEN</span>
+      <h2 id="specimen-h">One exhibit, by way of introduction</h2>
+    </div>
+    <figure class="shot">
+      <img src="img/stand-repair-chart.png" alt="Chart comparing aircraft stand positions before and after the AirportSim repair, showing noses clear of the terminal after the fix" loading="lazy">
+      <figcaption>THE GREAT STAND REPAIR, DRAWN FROM THE PROJECT'S OWN MEASUREMENTS — BEFORE ON THE LEFT, AFTER ON THE RIGHT. THE FULL STORY LIVES IN THE <a href="evidence.html">EVIDENCE ANNEX</a>.</figcaption>
+    </figure>
+  </section>
+
 </main>
-<script src="../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../projects/airportsim/">AirportSim</a></li>
+        <li><a href="../projects/blacksite/">Blacksite</a></li>
+        <li><a href="../projects/worldforge/">WorldForge</a></li>
+        <li><a href="../projects/longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../development/">Development</a></li>
+        <li><a href="../engine-lab/">Engine Lab</a></li>
+        <li><a href="../desktop.html">Studio Desktop</a></li>
+        <li><a href="../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
 </body>
 </html>

@@ -3,127 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The evidence behind Blacksite's record: what was run, on which build, with what result.">
-<title>Blacksite — evidence &amp; known items · Section Zero Interactive</title>
+<title>Blacksite — The Record — Section Zero Interactive</title>
+<meta name="description" content="The Blacksite record: what the studio shows (existence, authorship, version, completeness, the hold) and what it deliberately does not.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a class="here" href="../../projects/blacksite/index.html">Blacksite</a>
-  <a href="../../projects/airportsim/index.html">AirportSim</a>
-  <a href="../../projects/worldforge/index.html">WorldForge</a>
-  <a href="../../projects/longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="Blacksite">
-  <span class="sect">Blacksite</span>
-  <a href="index.html">Overview</a>
-  <a href="systems.html">Game &amp; engine</a>
-  <a href="history.html">History</a>
-  <a class="here" href="evidence.html">Evidence</a>
-  <a href="roadmap.html">Roadmap</a>
-  <span class="pill held status-chip">1.5.0 · Held</span>
-</nav>
-<main id="main">
-  <div class="projhero bs slim">
-    <h1>Evidence &amp; known items</h1>
-  <p class="tag">The repository transfer, verified — and what remains unverified, said plainly.</p>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/">AirportSim</a>
+      <a href="../blacksite/" aria-current="page">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>CASE FILE ANNEX <b>★</b> SOME EXHIBITS STAY SEALED <b>★</b></span>
+  <span>CASE FILE ANNEX <b>★</b> SOME EXHIBITS STAY SEALED <b>★</b></span>
+</div></div>
 
-  <h2>Transfer verification (2026-11-01)</h2>
-  <table>
-    <tr><th>Check</th><th>Result</th></tr>
-    <tr><td>Repository created (private, studio account)</td><td class="ok"><a href="https://github.com/mandog1215-tech/Blacksite">github.com/mandog1215-tech/Blacksite</a> (private repository) — default branch: main</td></tr>
-    <tr><td>History preserved</td><td class="ok">59 historical commits pushed as-is (plus one clearly-dated registry/CI seed commit); original local tree left untouched and verified clean</td></tr>
-    <tr><td>Fresh clone: build</td><td class="ok">Passes (exit 0)</td></tr>
-    <tr><td>Fresh clone: test suite</td><td class="ok">478 checks — 0 failed</td></tr>
-    <tr><td>Fresh clone: strict gate (<em>make check</em>)</td><td class="ok">Passes (exit 0)</td></tr>
-    <tr><td>Continuous testing (CI)</td><td class="ok">First run green — run 41276914585, success on the seed commit</td></tr>
-    <tr><td>Secrets scan before transfer</td><td class="ok">Clean — filenames and content patterns, zero matches</td></tr>
-    <tr><td>Large files</td><td class="ok">None over 5 MB in the project; no special storage needed</td></tr>
-    <tr><td>Release status protection</td><td class="ok">No GitHub Release exists (release list verified empty); the 1.5.0 package was never uploaded</td></tr>
-  </table>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">BLACKSITE — ATTACHED PAPERS</p>
+    <h1>What the Record <span class='hl-red'>Shows</span></h1>
+    <p class="sub">Evidence discipline has two halves: proving what you claim, and knowing which exhibits stay in their envelopes.</p>
+  </section>
 
-  <h2>The held release — the evidence for “held”</h2>
-  <p>Version 1.5.0 was built and packaged on 2026-10-28 (game archive, 2,546,319
-  bytes, checksum recorded in the project's releases registry) and the project owner
-  placed it on hold the same day. The build tag <em>v1.5.0</em> exists in the
-  repository as a historical marker of that build; the registry states explicitly
-  that it is <strong>not a published release</strong>. The package itself remains in
-  local studio storage only.</p>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>Shown</h3>
+        <p>Existence. Authorship — Grok Bot's bench. Form — a first-person shooter. Version — 1.5.0. Condition — complete. And the hold itself, with its reason stated in plain words on the case file's front page. Each item traces to the studio's project records.</p>
+      </div>
+      <div class="card">
+        <h3>Not shown</h3>
+        <p>The game: its places, its arsenal, its story. Deliberately, and for as long as the hold lasts. A studio that publishes its evidence for everything else can afford one honest 'this stays shut' — and visitors can afford to believe the rest of the record because of it.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>The closing state (2026-11-02)</h2>
-  <p>Development was cancelled by the owner's decision of 2026-11-02 — a
-  concentration decision: the studio's effort goes to AirportSim, and
-  WorldForge was shelved at the same time (2026-10-31). The project's final
-  state, preserved as it stands: the private repository and the working tree
-  at commit <span class="mono">98e8bca</span>; version 1.5.0 built, packaged,
-  and <strong>held</strong> — never published, no GitHub Release, no download.
-  The tree and its records are retained as a design reference. Nothing in this
-  section is a work in progress, and nothing here will quietly change: a
-  status change would take an owner's decision and new evidence, in that
-  order.</p>
-
-  <h2>Known items — shown, not hidden</h2>
-  <div class="card gap"><p class="st">History · Partial by construction</p>
-    <h3>The repository's history begins at the 1.3.0 transfer</h3>
-    <p>The pushed history's root commit is the snapshot transferred into this
-    development line in October. The original Grok-era development (up to 1.2.2) is
-    preserved as that snapshot and in studio-side records — not as a full commit
-    history, because that history was never in this tree. Nothing was fabricated to
-    fill the gap; if a fuller original history is ever recovered, it will be added
-    as evidence, not woven in silently.</p></div>
-
-  <div class="card gap"><p class="st">Unverified in this environment</p>
-    <h3>Windows build gates not re-run</h3>
-    <p>The Windows cross-build and its Wine test gates were verified when 1.5.0 was
-    built (per the project changelog) but could not be re-run during the transfer —
-    the cross-compilation kit and Wine are not present in the current environment.
-    Recorded as not re-verified, not as failed.</p></div>
-
-  <div class="card gap"><p class="st">Documentation · Stale</p>
-    <h3>The in-tree agent instructions describe a retired workflow</h3>
-    <p>The project's internal instructions still reference a virtual-machine
-    workflow that the studio retired. A documentation refresh is recommended as a
-    future, separate step; the transfer deliberately changed no project documents
-    beyond adding the releases registry and CI.</p></div>
-
-  <div class="card gap"><p class="st">Platform limitation</p>
-    <h3>Branch protection is unavailable on the account plan</h3>
-    <p>As with the studio's other repositories, enforced branch protection returns
-    an authorization error on the current GitHub plan; the control is convention —
-    changes land through reviewed pull requests. Recorded so nobody assumes a
-    technical enforcement that does not exist.</p></div>
-
-  <h2>Authoritative records</h2>
-  <p>The repository's records outrank this website. The records the project is run
-  from (in the private development repository; named so their existence and role are
-  public):</p>
-  <ul>
-    <li><strong>README.md &amp; MANUAL.txt</strong> — what the game is and how to play it</li>
-    <li><strong>CHANGELOG.md</strong> — the version history, including the engine lineage</li>
-    <li><strong>RELEASES.md</strong> — the releases registry: 1.5.0 recorded as HELD with its build commit and package checksum</li>
-    <li><strong>STORY.md / ROADMAP.md</strong> — the design records (noted in the registry as partially stale against the shipped 1.5.0; the changelog is authoritative where they differ)</li>
-    <li><strong>The transfer report (2026-11-01)</strong> — the migration's evidence record</li>
-  </ul>
-
-  <footer>
-    <p>Claims here trace to the transfer report and the repository itself. If this
-    page and the record disagree, the record is right and the page gets corrected.</p>
-  </footer>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The case file's front page carries the summary, the stamp, and the studio's reasons for keeping a finished game home.</p>
+      <p><a class="btn white" href="index.html">Return to the case file</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>

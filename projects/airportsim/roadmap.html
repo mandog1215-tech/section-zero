@@ -3,586 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AirportSim's road as it stands on 2026-11-10: world, saves, layouts and fleet done; collision under construction; markings, the interface renewal and the 7.0 handover ahead.">
-<title>AirportSim — visual roadmap · Section Zero Interactive</title>
+<title>AirportSim — The Road — Section Zero Interactive</title>
+<meta name="description" content="AirportSim's remaining road: the roster and catalogue behind it, the transformation under way, and a final handover gate only the owner can open.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=98">
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sz-emblem" viewBox="0 0 240 240"><defs><pattern id="szhatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C9A227" stroke-width="9"/></pattern></defs><path d="M 217.54 149.82 A 102.00 102.00 0 1 1 217.54 90.18" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 190.77 141.64 A 74.00 74.00 0 1 1 190.77 98.36" fill="none" stroke="#C9A227" stroke-width="25"/><path d="M 217.54 149.82 A 102.00 102.00 0 0 1 212.44 163.11 L 187.07 151.27 A 74.00 74.00 0 0 0 190.77 141.64 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><path d="M 212.44 76.89 A 102.00 102.00 0 0 1 217.54 90.18 L 190.77 98.36 A 74.00 74.00 0 0 0 187.07 88.73 Z" fill="url(#szhatch)" stroke="#C9A227" stroke-width="25"/><circle cx="120.00" cy="120.00" r="52.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="38.00" fill="none" stroke="#C9A227" stroke-width="15"/><circle cx="120.00" cy="120.00" r="14.00" fill="none" stroke="#C9A227" stroke-width="12.5"/><circle cx="120.00" cy="120.00" r="8.00" fill="#C9A227" stroke="#C9A227" stroke-width="0"/></symbol></defs></svg>
-<a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Studio">
-  <span class="brandset"><span class="brandmark"><svg class="emblem" width="30" height="30" aria-hidden="true"><use href="#sz-emblem"></use></svg></span><span class="brand">Section Zero Interactive</span></span>
-  <a href="../../index.html">Home</a>
-  <a href="../../studio.html">Studio</a>
-  <a href="../blacksite/index.html">Blacksite</a>
-  <a class="here" href="index.html">AirportSim</a>
-  <a href="../worldforge/index.html">WorldForge</a>
-  <a href="../longshot/index.html">Longshot</a>
-  <a href="../../engine-lab/index.html">Engine Lab</a>
-  <a href="../../development/index.html">Development</a>
-</nav>
-<nav class="sub" aria-label="AirportSim">
-  <span class="sect">AirportSim</span>
-  <a href="index.html">Overview</a>
-  <a href="systems.html">Systems</a>
-  <a href="engine.html">Engine</a>
-  <a href="mathematics.html">Mathematics</a>
-  <a href="testing.html">Engineering &amp; testing</a>
-  <a href="versions.html">Versions</a>
-  <a class="here" href="roadmap.html">Roadmap</a>
-  <span class="pill dev status-chip">0.6.0-alpha.2 · Alpha</span>
-</nav>
-<main id="main" class="rm-gates">
-  <div class="projhero as slim">
-    <svg class="skybg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="skyfade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#96b9dc" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#96b9dc" stop-opacity="0.10"/>
-          <stop offset="1" stop-color="#96b9dc" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="skyblur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
-      </defs>
-      <rect class="skyterm" x="-480" y="-40" width="440" height="420" fill="url(#skyfade)"/>
-      <g fill="#cfe3f5">
-        <circle cx="80" cy="42" r="1.3" opacity="0.5"/><circle cx="210" cy="96" r="1" opacity="0.35"/>
-        <circle cx="330" cy="30" r="1.5" opacity="0.55"/><circle cx="470" cy="70" r="1" opacity="0.3"/>
-        <circle cx="590" cy="38" r="1.2" opacity="0.45"/><circle cx="720" cy="92" r="1" opacity="0.3"/>
-        <circle cx="845" cy="34" r="1.4" opacity="0.5"/><circle cx="965" cy="78" r="1" opacity="0.35"/>
-        <circle cx="1080" cy="44" r="1.2" opacity="0.45"/><circle cx="1145" cy="110" r="1" opacity="0.3"/>
-        <circle cx="150" cy="150" r="1" opacity="0.25"/><circle cx="660" cy="150" r="1" opacity="0.22"/>
-        <circle cx="1035" cy="170" r="1" opacity="0.25"/><circle cx="415" cy="120" r="1" opacity="0.2"/>
-      </g>
-      <path id="sky-r2" d="M-20,110 C320,30 760,190 1220,70" fill="none" stroke="#7fa8c9" stroke-opacity="0.34" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r3" d="M-20,322 C420,244 820,118 1220,238" fill="none" stroke="#7fa8c9" stroke-opacity="0.22" stroke-width="1.1" stroke-dasharray="3 7" class="skyroute"/>
-      <path id="sky-r1" d="M-20,262 C280,140 640,300 1220,150" fill="none" stroke="#c9a227" stroke-opacity="0.38" stroke-width="1.2" stroke-dasharray="3 7" class="skyroute"/>
-      <g>
-        <circle cx="250" cy="232" r="2" fill="#c9a227" opacity="0.55"/><circle cx="700" cy="118" r="2" fill="#c9a227" opacity="0.5"/>
-        <circle cx="982" cy="252" r="2" fill="#c9a227" opacity="0.5"/><circle cx="520" cy="84" r="1.8" fill="#9cc0e8" opacity="0.5"/>
-      </g>
-      <g class="skycloud" opacity="0.055" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="210" cy="66" rx="95" ry="17"/><ellipse cx="265" cy="82" rx="60" ry="13"/>
-      </g>
-      <g class="skycloud c2" opacity="0.05" fill="#dfeaf5" filter="url(#skyblur)">
-        <ellipse cx="950" cy="288" rx="110" ry="19"/><ellipse cx="890" cy="272" rx="58" ry="12"/>
-      </g>
-      <g opacity="0.85">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#e6c65c"/>
-        <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r1"/></animateMotion>
-      </g>
-      <g opacity="0.7">
-        <path d="M11,0 L2,-2.2 L-6,-9.5 L-8.6,-9 L-5.4,-2 L-10.5,-1.6 L-12.5,-5.2 L-14.6,-5 L-13.9,0 L-14.6,5 L-12.5,5.2 L-10.5,1.6 L-5.4,2 L-8.6,9 L-6,9.5 L2,2.2 Z" fill="#bcd6ee" transform="scale(0.8)"/>
-        <animateMotion dur="38s" begin="-14s" repeatCount="indefinite" rotate="auto"><mpath href="#sky-r2"/></animateMotion>
-      </g>
-      <g>
-        <circle r="6.5" fill="#9cc0e8" opacity="0.18"/><circle r="2.6" fill="#cfe3f5" opacity="0.9"/>
-        <animateMotion dur="46s" begin="-31s" repeatCount="indefinite"><mpath href="#sky-r3"/></animateMotion>
-      </g>
-    </svg>
-  </div>
 
-  <p>The M1 baseline is established: a fresh clone of the default branch passed the
-  strict gate on 2026-11-01. Development Mode and the performance-baseline work
-  completed on the development line. On 2026-11-02 the owner-authorized integration
-  sequence ran in dependency order: all eleven packages and the Development
-  Mode branch are merged to the default branch, each verified after merging,
-  and the final full gate on the integrated tree has passed.
-  Phase status below distinguishes completed work from integration and from work
-  not yet started. Gates, not calendar dates, determine progression.</p>
-
-  <div class="legend">
-    <span class="lg-done">Completed &amp; verified</span>
-    <span class="lg-now">Current position</span>
-    <span class="lg-gate">Decision gate</span>
-    <span class="lg-next">Planned — not yet started</span>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/" aria-current="page">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../longshot/">Longshot</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
   </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>THE ROAD <b>★</b> WALKED IN THE OPEN <b>★</b> THE LAST GATE OPENS FROM THE OWNER'S SIDE <b>★</b></span>
+  <span>THE ROAD <b>★</b> WALKED IN THE OPEN <b>★</b> THE LAST GATE OPENS FROM THE OWNER'S SIDE <b>★</b></span>
+</div></div>
 
-  <div class="stage done">
-    <p class="st">Completed &amp; verified</p>
-    <h3>The existing game — version 0.5.3</h3>
-    <p>The full world simulation, airport ownership, ground ops, ATC, eight roles,
-    weather, saves. Baseline recorded at adoption: 162,315 checks passing, game
-    launches and plays. Every later phase is measured against this “before”.</p>
-  </div>
-  <div class="arrow">↓</div>
+<main class="wrap">
+  <section class="masthead">
+    <p class="over">AIRPORTSIM — FIELD NOTES</p>
+    <h1>The Road to the <span class='hl-blue'>Finished Article</span></h1>
+    <p class="sub">AirportSim's remaining distance, walked in public: what already stands behind it, what is being built this season, and the gate at the end of the road that only the owner can open.</p>
+  </section>
 
-  <div class="stage done">
-    <p class="st">Completed 2026-10-31</p>
-    <h3>Adoption assessment</h3>
-    <p>Repository audited; baseline build/launch/tests recorded; every system graded;
-    defects registered K1–K7; documentation organized. This roadmap is its output.</p>
-  </div>
-  <div class="arrow">↓</div>
+  <section class="act">
+    <div class="grid two">
+      <div class="card">
+        <h3>Already behind us</h3>
+        <p>The roster stands at 58 aircraft types wearing their airlines' colours. The catalogue of real-world airports has grown past its proven 246 to 253 fields. The great stand repair is closed — measured, photographed and merged — and freight has taken its seat on the contract board.</p>
+      </div>
+      <div class="card">
+        <h3>Under construction now</h3>
+        <p>The transformation programme: ground markings painted to real-world dimensions, signage meant to be read at speed, an interface renewed at its core, and the airline-memory systems that turn customers into opponents worth respecting.</p>
+      </div>
+      <div class="card">
+        <h3>The engine milestone</h3>
+        <p>Mid-road, the game changes its foundations — SDL2 out, SDL3 in — so it covers the last stretch standing on the same base as LONGSHOT, where the studio's engine lessons are shared property.</p>
+      </div>
+      <div class="card">
+        <h3>The final gate</h3>
+        <p>The road ends at a handover: a finished test copy, inspected by the developer, played long and honestly, reported on in full — and then judged by Andrew. That last step belongs to the owner alone and is not delegated, scheduled around, or hurried.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="stage done">
-    <p class="st">Phase 0 · Completed &amp; verified 2026-11-01 — all eight criteria passed</p>
-    <h3>M1 — Green gate &amp; safe repository</h3>
-    <p><strong>Result:</strong> merged to the default branch (merge commit 181794d);
-    fresh clone of that branch passes the strict gate (exit 0, zero warnings) with
-    test counts at baseline; CI green on the fix commit; K1, K2 and K5 closed.</p>
-    <p><strong>Scope:</strong> fix the single warning-as-error at src/layout.c:416
-    (the only approved code change, plus specifically justified kin); close the
-    default-branch trap by the owner's approved route; obtain a green automated (CI)
-    run; reconcile the five documentation discrepancies; record the measured baseline
-    in the project-state document.</p>
-    <p><strong>Acceptance — all eight required:</strong></p>
-    <ol>
-      <li>A clean clone of the default branch runs the strict gate successfully</li>
-      <li>Simulation tests ≥ 162,315 checks, zero failures</li>
-      <li>Interface tests ≥ 9,676 checks, zero failures</li>
-      <li>Menu, swap, fuzz and save/load-loop end-to-end tests pass</li>
-      <li>CI passes on the same commit</li>
-      <li>The source diff contains only the approved gate fix (+ justified kin)</li>
-      <li>The five documentation discrepancies are reconciled</li>
-      <li>The default-branch problem is closed via the owner's approved route</li>
-    </ol>
-    <p><strong>Blocker, resolved:</strong> item 8 needed the project owner's GitHub
-    settings decision (issue K1) — taken and verified 2026-11-01.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed — merged to the default branch last in the 2026-11-02 integration</p>
-    <h3>WP-03 — Development Mode</h3>
-    <p>Five stages integrated the F3 diagnostic overlay, state identity, invariant status,
-    delay explanation, trace inspection, snapshot capture/compare, and measured step cost.
-    Non-interference was tested with trace enabled and disabled, including a planted-draw
-    negative control. Snapshot hashing was measured at about 1.95 ms, so full identity
-    refresh is on demand rather than placed in the normal frame path.</p>
-    <p><strong>Qualification:</strong> the integrated full gate exited 2. Matched base/current
-    comparisons reproduced the business-window and topbar-overlap failure signatures,
-    supporting attribution as pre-existing defects; this does not turn the original gate
-    into a pass. Both signatures were later addressed in the integration: the top-bar
-    overlap is fixed (PR #13, merged) and the nondeterminism behind the intermittent
-    business-window failures is fixed by seeding the test worlds (PR #13 merged;
-    PR #11 merged as the recorded resolution — its seeding was already covered by
-    PR #13); the remaining cosmetic truncation of long airline names in the
-    Business window was fixed on 2026-11-03 (PR #42; issue #14 closed).</p>
-  </div>
-  <div class="arrow">↓</div>
-  <div class="stage done">
-    <p class="st">Completed 2026-11-03 — all eight increments merged, each verified by a full post-merge battery</p>
-    <h3>WP-09 — Comprehensive Development Mode</h3>
-    <p>The diagnostic environment grew from the WP-03 overlay into a full laboratory suite,
-    in eight increments: visual inspection; the Mathematics Lab (a registry of the game's core
-    calculations with independent checks); the Test Lab (experiments run as separate processes
-    and compared against recorded references); the Performance Lab (live step-cost verdicts
-    against the accepted budgets); the Replay Lab (re-running a saved moment in a child process
-    and comparing the outcome exactly); investigation history (every air-traffic-control decision
-    recorded with its reason); an integrity trio (on-demand save-integrity check, a determinism
-    lamp judged against a recorded reference, and an evidence-gaps panel that lists what is not
-    yet instrumented); and the economy breakdown (each day's money recorded line by line, with
-    the lines re-added and checked against the day's profit). Four of the Mathematics Lab's six
-    registered calculations are now independently checked; separation minima and demand/pricing
-    remain openly uninstrumented. On completion the build advanced to
-    <strong>0.6.0-alpha.2 “Threshold”</strong> (internal identity only).</p>
-  </div>
-  <div class="arrow">↓</div>
-  <div class="stage done">
-    <p class="st">Completed on the development line — evidence recorded through 2026-11-02</p>
-    <h3>WP-04 — Performance baselines</h3>
-    <p>A measured step-cost model was recorded: fixed overhead, active-aircraft count,
-    and simulated time step. The fit is useful as a baseline, not yet a license to optimize:
-    the aircraft-count coefficient is weakly identified because long-run windows confound
-    world age with aircraft count. Performance budgets are accepted for future comparisons
-    (owner-accepted 2026-11-02: step cost at or below 45 µs against a measured median of
-    14.1 µs per call; at or below 1.7 s per simulated clock-day against a measured
-    0.56 s); no unmeasured largest-hub performance claim is made.</p>
-  </div>
-  <div class="stage done">
-    <p class="st">Completed 2026-11-02 — final gate passed</p>
-    <h3>Integration — complete: all eleven packages and the Development Mode branch merged</h3>
-    <p>The owner-authorized merge stack was integrated in dependency order, with
-    checks rerun after each merge and the mandatory stop conditions honoured:
-    PR #8's first fresh check reproduced the documented intermittent signature and
-    was rerun once under the recorded rule (it passed; both runs are preserved);
-    two branch conflicts — a build-file overlap and a test-registration overlap —
-    were resolved as unions and verified by full local gates before merging.</p>
-    <p><strong>Merged:</strong> PR #3 (OwnerBook save/load fix, save v11), PR #5
-    (FleetBook accumulator fix, save v12), PR #6 (cargo save/reload audit), PR #8
-    (whole-world reproducibility tests), PR #10 (simulation-clock widening, save
-    v13), PR #12 (save-loader fuzz harness), PR #4 (adoption framework documents),
-    PR #7 (test tooling — CI now runs four jobs), PR #13 (three fixes:
-    deterministic test worlds for the game binary, top-bar overlap, latitude
-    conversion), PR #9 (screenshot-capture reliability — merged after its checks
-    caught a Windows build failure in its own capture code; a one-line fix, made
-    and re-verified the same day), PR #11 (test-world seeding for the suite —
-    merged as the recorded resolution; its seeding was already covered by PR #13),
-    and the Development Mode branch last (stages 1–5 plus save-loader hardening;
-    two small fixes on its first trip through the full checks — a Windows clock
-    call made portable, and a memory leak in a test caught by the memory-safety
-    run — both fixed and re-verified before merging). The <strong>final full gate
-    on the integrated tree passed</strong>: 162,701 simulation checks and 9,676
-    interface checks, zero failed, end-to-end flows green, and all four CI jobs
-    passing on the final code. No pull requests remain open. The integrated build
-    is named <strong>0.6.0-alpha.1 “Threshold”</strong> — the project's first Alpha,
-    its name approved by the owner on 2026-11-02 (under the build-labelling
-    ladder the owner adopted the same day, development builds are named by
-    date + commit; Beta waits on native Windows verification, the save/reload
-    fix, and a full end-to-end matrix rerun).</p>
-  </div>
-
-  <div class="diagram" role="img" aria-label="Diagram: the 2026-11-02 integration sequence — all eleven packages and the Development Mode branch merged, final gate passed">
-    <svg viewBox="0 0 660 208" width="660" style="max-width:100%">
-      <defs>
-        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9a227"/></marker>
-      </defs>
-      <text x="10" y="18" fill="#c9a227" font-size="12">THE INTEGRATION SEQUENCE — COMPLETED 2026-11-02</text>
-      <text x="10" y="42" fill="#3f7d46" font-size="11.5">MERGED TO THE DEFAULT BRANCH — EACH VERIFIED AFTER ITS MERGE</text>
-      <g font-size="12">
-        <rect x="10" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="41" y="71" fill="#e8e4d8" text-anchor="middle">#3 ✓</text>
-        <rect x="82" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="113" y="71" fill="#e8e4d8" text-anchor="middle">#5 ✓</text>
-        <rect x="154" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="185" y="71" fill="#e8e4d8" text-anchor="middle">#6 ✓</text>
-        <rect x="226" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="257" y="71" fill="#e8e4d8" text-anchor="middle">#8 ✓</text>
-        <rect x="298" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="329" y="71" fill="#e8e4d8" text-anchor="middle">#10 ✓</text>
-        <rect x="370" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="401" y="71" fill="#e8e4d8" text-anchor="middle">#12 ✓</text>
-        <rect x="442" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="473" y="71" fill="#e8e4d8" text-anchor="middle">#4 ✓</text>
-        <rect x="514" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="545" y="71" fill="#e8e4d8" text-anchor="middle">#7 ✓</text>
-        <rect x="586" y="50" width="62" height="34" rx="6" fill="#171b26" stroke="#3f7d46"/><text x="617" y="71" fill="#e8e4d8" text-anchor="middle">#13 ✓</text>
-      </g>
-      <text x="10" y="106" fill="#3f7d46" font-size="11.5">THEN — IN ORDER</text>
-      <rect x="10" y="114" width="130" height="40" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="75" y="131" fill="#e8e4d8" font-size="12" text-anchor="middle">#9 · capture ✓</text>
-      <text x="75" y="147" fill="#bdb8a6" font-size="10.5" text-anchor="middle">one-line Windows fix</text>
-      <rect x="160" y="114" width="130" height="40" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="225" y="131" fill="#e8e4d8" font-size="12" text-anchor="middle">#11 · suite seed ✓</text>
-      <text x="225" y="147" fill="#bdb8a6" font-size="10.5" text-anchor="middle">recorded resolution</text>
-      <rect x="310" y="114" width="180" height="40" rx="6" fill="#171b26" stroke="#3f7d46"/>
-      <text x="400" y="131" fill="#e8e4d8" font-size="12" text-anchor="middle">Development Mode branch ✓</text>
-      <text x="400" y="147" fill="#bdb8a6" font-size="10.5" text-anchor="middle">stages 1–5 · merged last</text>
-      <line x1="492" y1="134" x2="516" y2="134" stroke="#c9a227" marker-end="url(#ar3)"/>
-      <rect x="520" y="114" width="130" height="40" rx="6" fill="#171b26" stroke="#c9a227" stroke-width="2"/>
-      <text x="585" y="131" fill="#e8e4d8" font-size="12" text-anchor="middle">Final full gate ✓</text>
-      <text x="585" y="147" fill="#c9a227" font-size="10.5" text-anchor="middle">passed · 162,701 / 0</text>
-      <text x="10" y="182" fill="#bdb8a6" font-size="11">Green: merged and verified. Gold: the final gate that completed integration — passed.</text>
-      <text x="10" y="198" fill="#bdb8a6" font-size="11">This diagram is a state snapshot, not a promise — it is redrawn at the next closeout.</text>
-    </svg>
-    <p class="cap"><strong>The integration, drawn.</strong> All eleven packages
-    and the Development Mode branch are in, and the final full gate passed on
-    everything together — the sequence is complete.</p>
-  </div>
-
-  <h2>The current programme — the chained queue (2026-11-03)</h2>
-  <p>The work now runs as one chained queue: each item lands before the next
-  begins, and each merge waits for its green battery. What has landed, what is
-  landing, and what stands behind it:</p>
-
-  <div class="stage now">
-    <p class="st">Where the road stands — 2026-11-10</p>
-    <h3>The short version, before the long one</h3>
-    <p>Since this queue was drawn: the world phase finished (the planet pack
-    wired in, the far view approved on 2026-11-06); the new save system below
-    landed as HL-SAVE 1 (2026-11-07); the fleet grew to 58 types (2026-11-08);
-    and real airport layouts landed — 246 airports (2026-11-09). The current
-    work is <strong>collision</strong>: the finding that aircraft can overlap
-    terminal roofs was measured and traced to three stacked causes — stand
-    geometry, a flat draw order, and aircraft drawn at 1.4× true size — and
-    its fix is designed and under construction. Behind it: ground markings,
-    three small investigations, the interface renewal, and the final replay
-    proof before the 7.0 “Latitude” handover. The programme was delayed on
-    the morning of 2026-11-10 and resumed within the hour; a complete
-    overhaul design was banked the same week, unstarted. Checking now runs
-    on the four GitHub-hosted Linux lanes, each run approved by the owner
-    first; the game is Linux-only.</p>
-    <p><span class="pill prog">In development</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed 2026-11-03</p>
-    <h3>The reckoning — every system audited</h3>
-    <p>All ten major systems checked against the creator's design notes, the
-    code, and their own mathematics, and ranked healthiest to weakest:
-    simulation core, weather, economy &amp; finance, ground operations,
-    construction &amp; layout, airlines/routes/network, staff &amp; roles,
-    events &amp; emergencies, passengers/demand/pricing, ATC &amp; aircraft
-    movement. Its five weakest points — ATC with no brain, load factor as a
-    dice roll, money that does not reconcile, depth that changes nothing, and
-    the same thing modelled twice, disagreeing — choose the big updates
-    below. Full record on the <a href="systems.html">systems page</a>.</p>
-    <p><span class="pill done">Done</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed 2026-11-03</p>
-    <h3>The issues pass — every open item, one by one</h3>
-    <p>Fixed: test processes sharing one save folder (FND-015, PR #41); long
-    airline names cut off in the Business window (issue #14, PR #42); three
-    memory-recovery paths that could crash (FND-005, PR #43); and the owner's
-    brand rule enforced in code and tests — no real commercial brand names in
-    the game (PR #40; airline names were not covered and stay an open
-    question for the owner). Classified with their evidence: three sibling
-    memory sites judged guarded (FND-006, no change); departure starvation
-    traced to runway assignment (FND-008 — its remedy is the departure queue
-    in the rework below); aircraft drawn over terminal roofs, fix designed
-    (FND-012, visuals pass); jet bridges present at all 135 Detroit stands
-    but nearly invisible (FND-013, visuals pass); display scaling's remaining
-    question held for the owner's hands-on (FND-010).</p>
-    <p><span class="pill done">Done</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed 2026-11-03 — all five steps merged, each verified by a full post-merge battery</p>
-    <h3>The ATC rework</h3>
-    <p>On the owner's direction, the weakest system was rebuilt in five steps:
-    controller-assigned speeds on final (DEF-007, PR #44); one separation law
-    everywhere (R1, PR #45); a real departure queue (R2, PR #46); arrival
-    sequencing (R3, PR #47); and ground separation by aircraft size, with
-    separation measured live in Development Mode (R4 + R5, PRs #48, #49).
-    Full record on the
-    <a href="systems.html">systems page</a>.</p>
-    <p><span class="pill done">DEF-007</span> <span class="pill done">R1</span> <span class="pill done">R2</span> <span class="pill done">R3</span> <span class="pill done">R4</span> <span class="pill done">R5</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage now">
-    <p class="st">Current — the owner's direction, 2026-11-03: “Not someday. Now.”</p>
-    <h3>The continuous world</h3>
-    <p>The 9 km tile becomes one continuous world: scroll or fly anywhere,
-    airport to airport; one fully simulated airport at a time, the rest
-    living statistical lives until the player arrives. Seven steps:
-    <strong>W1, the world frame and geography packs — merged</strong>
-    (PR #51: double-precision frame, APGEO packs, a real-data validation
-    pack, full suite 163,643/0 with soak hashes byte-identical, full
-    battery green); <strong>W2, the camera leaves the fence — merged</strong>
-    (PR #52: the view opens to a 150 km envelope and real geography
-    renders to the horizon — rivers, lakes, neighbouring airfields —
-    with the post-merge battery fully green); <strong>W3, the
-    fence becomes a hand-off — merged</strong> (PR #61: every
-    arriving flight's identity is worked out when it is scheduled, and
-    departures hand off into onward tracks, running in shadow and proven
-    bit-for-bit identical to the old behaviour; PR #62: the switch —
-    arrivals now materialise from those identities, and the step's own
-    gate caught and fixed an older save/reload tower bug; post-merge
-    battery fully green, suite 166,812/0; PR #63: the re-baselining —
-    the new traffic judged against the pre-world baseline at the firm
-    standard, pass line frozen before the sample ran: FIRM PASS on all
-    nine measures, with one movement margin narrowed and now watched by
-    name; post-merge battery fully green, suite 166,821/0); W4, the second airport spins up; W5, the
-    background law for far airports (airport buying is transformed here —
-    owned airports live their own days); W6, continuous pilot flight, with
-    the Pilot and Passenger roles deepening inside it; W7, the owner in
-    the world, with ATC growing sectors and two-ended traffic. The
-    geography was measured first, and the full planet pack is now built
-    and verified at 1.46 GB against a 2.5–3.0 GB working budget, from
-    licence-clean sources (ETOPO 2022, Natural Earth, WorldCover,
-    Copernicus — attribution carried in the game's credits); wiring it
-    into the game is its own step, judged by screenshots. Inside the
-    same phase, the Development Mode skeleton view — the running
-    simulation stripped to its structure — merged as PR #64 (suite
-    166,860/0, post-merge battery fully green), and airfield markings —
-    painted stand numbers and runway numbers at every airport — merged
-    as PR #66 (suite 167,140/0, post-merge battery fully green).
-    The CI underneath was rebuilt as PR #67: one bundled battery
-    per run, the memory-safety lanes covering all 97 test groups,
-    per-run summaries, and four required checks. <strong>The full
-    geography pack is now wired into the game — and on 2026-11-06 the
-    owner approved the far view and closed the geography set:</strong>
-    the approved look is real geography, smooth and clean at distance,
-    computed from the real data. The interface overhaul followed inside
-    the same phase: the full status board is merged, and the in-game
-    frame is in progress. The suite's latest recorded full run stands at
-    192,063 checks, 0 failed. The test lanes moved twice more after this
-    was written — briefly to GitHub-hosted machines, then back to the
-    owner's rig in full — before settling on 2026-11-10: the four Linux
-    lanes on GitHub-hosted machines, each run approved by the owner, and
-    the game Linux-only.</p>
-    <p><span class="pill done">W1</span> <span class="pill done">W2</span> <span class="pill done">W3</span> <span class="pill queue">W4</span> <span class="pill queue">W5</span> <span class="pill queue">W6</span> <span class="pill queue">W7</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed 2026-11-07 — HL-SAVE 1</p>
-    <h3>The new save system</h3>
-    <p>The current save format is one raw memory dump: it has no field
-    encoding, so almost every major update has broken it, and one old
-    version's file can crash the game from the load screen itself. The
-    replacement is a clean-sheet design, not another patch: a file of
-    named, individually versioned sections, each written field by
-    field; a loader that cannot crash — a damaged section resets with
-    a warning and the rest of the save loads; and exactly one one-way
-    importer that converts old saves (versions 4–13) a single time,
-    after which the old format is retired. <strong>It landed on
-    2026-11-07 as HL-SAVE 1, as designed here.</strong> After it came real
-    airport layouts (landed 2026-11-09); collision physics is the current
-    work.</p>
-    <p><span class="pill done">Done</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Queued — behind the world update</p>
-    <h3>The visuals pass</h3>
-    <p>The draw-order fix FND-012 designed — one unified back-to-front drawing
-    stream, so buildings occlude aircraft correctly instead of aircraft
-    painting over terminal roofs — and jet-bridge readability (FND-013: the
-    bridges engage at all 135 Detroit gate stands; they need to be seen to
-    engage). <em>Update, 2026-11-10:</em> the diagnosis widened — draw order
-    is one of three stacked causes (stand geometry and the 1.4× sprite scale
-    are the others) — and the work now runs as the collision item at the head
-    of the queue; this stage's drawing fix is one of its four parts.</p>
-    <p><span class="pill queue">Queued</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Planned — chosen by the reckoning, queued behind the world update</p>
-    <h3>The main big updates</h3>
-    <p>The reckoning's weakest points become the work: passenger demand that
-    answers to price, time, and reputation instead of a dice roll; money that
-    reconciles — one movement of money, one record of it; and staff whose
-    departments change outcomes, not just rosters. Each update is designed
-    against the audit's record before it is built.</p>
-    <p><span class="pill queue">Queued</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage gate">
-    <p class="st">Decision gate — the owner's</p>
-    <h3>The Beta gates, then the release path</h3>
-    <p>Two of the three Beta gates were satisfied in their era: native Windows
-    verification (the rig's native battery, on every merge — the gate itself
-    was retired on 2026-11-10, when the owner made the game Linux-only) and
-    the save/reload fix (FND-002). The third — the full 14-scenario × 3-seed
-    end-to-end matrix rerun — is deliberately the last step, run immediately
-    before the Beta decision, which is the owner's. Beyond it, the
-    release path (conditional on the game genuinely being ready): the
-    next major milestone is a closed dev beta, 7.0 “Latitude” — a
-    private test build for the owner's hands-on, internal testing only,
-    now in development. The game is not planned for public sale or
-    release; any copy that leaves the studio is a private one. Public builds will ship
-    with copy protection, in packages containing compiled binaries and game
-    data only — no source code — with the contents verified before anything
-    goes out (the owner's policy, 2026-11-03).</p>
-    <p><span class="pill done">Gate 1 · Windows (retired 2026-11-10)</span> <span class="pill done">Gate 2 · Save/reload</span> <span class="pill queue">Gate 3 · Full matrix</span> <span class="pill intent">Beta decision · owner</span></p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage done">
-    <p class="st">Completed 2026-11-02 — FND-002 solved (PR #24; issue #15 closed)</p>
-    <h3>The save/reload continuation investigation (issue #15)</h3>
-    <p>A reloaded game continued <em>slightly differently</em> from one that was
-    never interrupted. The divergence was measured, not anecdotal: it began at the
-    first step after reload, and the first differing byte sat in the economy's
-    double-precision region. One suspect — a private random stream — was
-    eliminated experimentally as the sole cause; the cause was then attributed:
-    a minute's weather was being computed from the fractional clock, so the
-    moment of a reload shifted the weather the game continued under. The fix
-    evaluates each minute's weather at the minute's start, and a reloaded game
-    now continues byte-identically to one that never stopped. The owner
-    unparked this investigation on 2026-11-02, rated it a crucial fix, and
-    placed it first after the integration — which completed the same day.
-    After it came the Windows verification work (stage below) and then WP-09
-    (see the WP-09 stage above).</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Phase 0 · Route decided 2026-11-02</p>
-    <h3>M2 — Windows verification path</h3>
-    <p>The route is decided: <strong>(a)</strong> — the GitHub-hosted Windows runners
-    already used by CI — extended into a scripted native test harness: build,
-    launch, scripted scenarios, a save/load round-trip in the real save location,
-    and automated frame capture with blank/size checks. The owner's own PC stays
-    out until release. Cross-compilation alone will never be called verification.</p>
-    <p><strong>Interim evidence (2026-11-02):</strong> the owner played a
-    pre-adoption Windows build (0.5.4, built by the original author) for about an
-    hour at Detroit — it launched and played correctly; its graphics looked
-    somewhat low-resolution (presentation only). A first comparison since
-    (2026-11-03) checked the current build's captured frames pixel-by-pixel across
-    platforms: static screens are byte-identical on Windows and Linux, and all
-    other differences sit inside live content — so the renderer is exonerated.
-    A follow-up code check (2026-11-03) then closed the display-scaling half of
-    the question: the current build already carries the full high-DPI setup
-    (per-monitor DPI awareness, the SDL hint, and the high-DPI window flag), so
-    Windows display scaling is exonerated too. What remains open is the game's
-    own presentation — at interface scales above 100% the world view is drawn
-    on a logical canvas and stretched, while the interface stays crisp — to be
-    judged at the owner's hands-on with the private test build. Saves were
-    not tested, and the current code's Windows build has never run natively — so
-    this is provisional demonstration for an older build, not verification of the
-    current one.</p>
-    <p><strong>Update (2026-11-02/03):</strong> the harness was built, merged
-    (PR #25), and demonstrated — the current code runs natively on Windows under
-    the scripted battery, save/load round-trip included. The route then changed
-    on the owner's instruction: all checks moved to a self-hosted rig on the
-    owner's PC (PR #29) and the GitHub-hosted runners were removed; the native
-    battery's home is now that rig, where the full six-job battery — the native
-    session included — runs for every pull request.</p>
-    <p><strong>Gate:</strong> a recorded Windows session of the current code —
-    launch, data and layouts found, gameplay, save/load — at a real airport layout.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Phase 1 · Planned</p>
-    <h3>A game a new player can enter</h3>
-    <p>Tutorial, a second UI pass, and better onboarding/discoverability. Exact scope
-    gets defined against the existing code and design documents before work starts —
-    the simulation is deep, and today nothing teaches it.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Phase 2 · Planned</p>
-    <h3>Depth of the living world</h3>
-    <p>ATC final speed control (K7), parallel-runway operations, additional airport
-    layouts together with the map-data decision (baked-in vs runtime fetching), and
-    data-table/mod foundation work. These items are interdependent; their internal
-    order gets set by evidence when the phase opens, not assumed now.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage">
-    <p class="st">Phase 3 · Planned</p>
-    <h3>The business game deepens</h3>
-    <p>Contract terms, the staff interface, rival entities — and the own-airline
-    feature (implemented today, never yet played through) earning its demonstrated
-    grade. Each item is revalidated against the code and the intended gameplay before
-    implementation.</p>
-  </div>
-  <div class="arrow">↓</div>
-
-  <div class="stage gate">
-    <p class="st">Phase 4 · Final gate</p>
-    <h3>Polish and release readiness</h3>
-    <p>Performance evidence (including the largest hubs, unmeasured today), stability
-    and usability, a proven release pipeline, Windows release verification, and
-    packaging. A release itself additionally requires the project owner's explicit
-    approval — no approval, no release. Current builds are development builds; none
-    is published.</p>
-  </div>
-
-  <h2>Rules this map follows</h2>
-  <ul>
-    <li>Every milestone gets its own acceptance criteria <em>before</em> work starts;
-      a milestone is complete only when its criteria pass with evidence.</li>
-    <li>Criteria are never weakened to obtain a pass; a blocked gate is documented,
-      not walked around.</li>
-    <li>Nothing that already works gets rebuilt; nothing new is stacked on a known
-      weak point until the weak point is fixed.</li>
-    <li>No delivery dates are invented; the milestone order is not silently changed.</li>
-    <li>Statuses update at milestone closeouts, from the development record.</li>
-  </ul>
-
-  <footer>
-    <p>AirportSim is a Section Zero project. This page reflects the adoption
-    roadmap; the repository's roadmap document is authoritative if they ever differ.</p>
-  </footer>
-  <script>
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('svg.skybg').forEach(function (s) { if (s.pauseAnimations) { s.pauseAnimations(); } });
-  }
-  </script>
+  <section class="act">
+    <div class="card">
+      <h3>Back to the hall</h3>
+      <p>The airfield itself — diagram, airlines, photographs and one small landing strip — waits on the main page of this hall.</p>
+      <p><a class="btn white" href="index.html">Return to the airfield</a></p>
+    </div>
+  </section>
 </main>
-<script src="../../90s.js?v=98" defer></script>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+        <li><a href="../longshot/">Longshot</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
 </body>
 </html>
