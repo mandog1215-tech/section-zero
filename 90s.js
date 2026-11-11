@@ -130,13 +130,13 @@
     var motifs = MOTIFS[game];
     var COUNT = 12;
     for (var i = 0; i < COUNT; i++) {
-      var size = 14 + Math.floor(rand() * 19);            /* 14–32 px */
+      var size = 18 + Math.floor(rand() * 22);            /* 18–40 px */
       var drop = document.createElement("span");
       drop.className = "sz-drop";
       drop.style.left = (1 + rand() * 95).toFixed(1) + "%";
       drop.style.top = (-size - 6) + "px";
-      drop.style.opacity = (0.13 + rand() * 0.17).toFixed(2);
-      drop.style.animationDuration = (11 + rand() * 15).toFixed(1) + "s";
+      drop.style.opacity = (0.34 + rand() * 0.24).toFixed(2);
+      drop.style.animationDuration = (8 + rand() * 10).toFixed(1) + "s";
       drop.style.animationDelay = (-rand() * 26).toFixed(1) + "s";
       var inner = document.createElement("span");
       inner.className = "sz-drop-in";

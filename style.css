@@ -209,7 +209,7 @@ nav.sub .sect { font-family: var(--disp); font-size: 0.6rem; color: #ffffff; bac
 /* Project bands on the homepage — chunky beveled panels, one per
    game, each with a rainbow crown and its accent voice inside. */
 .band {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: start;
   border: 4px outset #8f8ff0; background: var(--panel);
   box-shadow: var(--bevel), 8px 8px 0 rgba(0,0,25,0.45);
   padding: 1.5rem; margin: 1.4rem 0; position: relative; overflow: hidden;
