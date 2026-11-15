@@ -1,9 +1,8 @@
 /* ============================================================
    SECTION ZERO — shared behaviour for the ground-up site.
-   One job lives here: the starfield screensaver, reachable
-   from the button in every header and footer, and drifting
-   in on its own when a page sits idle. Any key or click
-   brings the lights back up.
+   Two jobs live here: the starfield screensaver, reachable
+   from the button in every header and drifting in on its own
+   when a page sits idle; and the motif rain (second IIFE).
    ============================================================ */
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -100,4 +99,80 @@
   /* Footer year, where a slot exists. */
   var y = document.getElementById("foot-year");
   if (y) y.textContent = new Date().getFullYear();
+})();
+
+/* ============================================================
+   MOTIF RAIN — the owner's idea, restored and turned up:
+   little glyphs from each game's world drift down the page
+   in two depths, behind the content. The set is chosen by
+   the page's <body data-rain="..."> attribute. Never runs
+   under prefers-reduced-motion; pauses in a hidden tab.
+   ============================================================ */
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var SETS = {
+    forge:    { g: ["♜", "★", "▲", "✦"], c: ["#B07D2B", "#7A5A21", "#2FA84F", "#EE3A24"] },
+    airfield: { g: ["✈", "★", "●", "◆"], c: ["#2456E6", "#EE3A24", "#E8A90C", "#0E9594"] },
+    vault:    { g: ["◎", "★", "♦", "✚"], c: ["#EE3A24", "#1D2440", "#FF7BAC", "#3A4266"] },
+    voyage:   { g: ["★", "●", "◆", "▲"], c: ["#6C4BD8", "#5B83F0", "#E8A90C", "#EE3A24"] },
+    mix:      { g: ["★", "♜", "✈", "●", "▲", "◆"], c: ["#E8A90C", "#EE3A24", "#2456E6", "#0E9594", "#B07D2B", "#6C4BD8"] }
+  };
+  var set = SETS[document.body.getAttribute("data-rain")] || SETS.mix;
+  var cv = document.createElement("canvas");
+  cv.id = "rain";
+  cv.setAttribute("aria-hidden", "true");
+  document.body.appendChild(cv);
+  var ctx = cv.getContext("2d");
+  var W = 0, H = 0, pieces = [], raf = null, t = 0;
+
+  function make(near, first) {
+    return {
+      x: Math.random() * W,
+      y: first ? Math.random() * H : -40 - Math.random() * 80,
+      s: near ? 20 + Math.random() * 12 : 11 + Math.random() * 6,
+      v: near ? 34 + Math.random() * 26 : 15 + Math.random() * 13,
+      a: near ? 0.5 : 0.32,
+      ph: Math.random() * Math.PI * 2,
+      sw: 6 + Math.random() * 10,
+      rot: (Math.random() - 0.5) * 0.6,
+      rs: (Math.random() - 0.5) * 0.35,
+      g: set.g[Math.floor(Math.random() * set.g.length)],
+      c: set.c[Math.floor(Math.random() * set.c.length)]
+    };
+  }
+  function build(first) {
+    W = cv.width = Math.floor(window.innerWidth);
+    H = cv.height = Math.floor(window.innerHeight);
+    pieces = [];
+    var i;
+    for (i = 0; i < 16; i++) pieces.push(make(false, first));
+    for (i = 0; i < 10; i++) pieces.push(make(true, first));
+  }
+  function frame() {
+    t += 1 / 60;
+    ctx.clearRect(0, 0, W, H);
+    pieces.forEach(function (p, i) {
+      p.y += p.v / 60;
+      p.rot += p.rs / 60;
+      if (p.y > H + 46) pieces[i] = make(p.s > 17, false);
+      var x = p.x + Math.sin(t * 0.9 + p.ph) * p.sw;
+      ctx.save();
+      ctx.translate(x, p.y);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = p.a;
+      ctx.fillStyle = p.c;
+      ctx.font = p.s + 'px "Segoe UI Symbol","Noto Sans Symbols 2","Apple Symbols",sans-serif';
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText(p.g, 0, 0);
+      ctx.restore();
+    });
+    raf = requestAnimationFrame(frame);
+  }
+  build(true);
+  frame();
+  window.addEventListener("resize", function () { build(true); });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { if (raf) cancelAnimationFrame(raf); raf = null; }
+    else if (!raf) frame();
+  });
 })();

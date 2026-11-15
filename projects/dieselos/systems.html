@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Machine — DieselOS — Section Zero Interactive</title>
+<meta name="description" content="Inside DieselOS: the guest profile, the tool batch (djob, dsnap, ccache), the snapshot discipline, and its job as the studio's development home and test route.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=20261114">
+</head>
+<body data-rain="mix">
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../index.html">
+      <img class="mark" src="../../favicon.svg" alt="" width="46" height="46">
+      <span class="word">SECTION ZERO<small>INTERACTIVE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="../../index.html">Front Door</a>
+      <a href="../../studio.html">The Studio</a>
+      <a href="../airportsim/">AirportSim</a>
+      <a href="../blacksite/">Blacksite</a>
+      <a href="../worldforge/">WorldForge</a>
+      <a href="../dieselos/" aria-current="page">DieselOS</a>
+      <a href="../../development/">Development</a>
+      <a href="../../engine-lab/">Engine Lab</a>
+      <a href="../../desktop.html">Desktop</a>
+      <button class="saver-btn" type="button">★ After Dark</button>
+    </nav>
+  </div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>FROM THE MACHINE ROOM <b>★</b> UNDER THE CASE <b>★</b> SNAPSHOT BEFORE YOU TOUCH ANYTHING <b>★</b> VERDICTS ARE FILES, NOT MEMORIES <b>★</b></span>
+  <span>FROM THE MACHINE ROOM <b>★</b> UNDER THE CASE <b>★</b> SNAPSHOT BEFORE YOU TOUCH ANYTHING <b>★</b> VERDICTS ARE FILES, NOT MEMORIES <b>★</b></span>
+</div></div>
+
+<main class="wrap">
+
+  <section class="hero-world">
+    <div class="hw-top">
+      <p class="mono" style="font-weight:700;letter-spacing:.24em;color:#2E6E6A">THE MACHINE ROOM — UNDER THE CASE</p>
+      <h1>The Machine</h1>
+      <p class="hw-sub">What's inside DieselOS, and the discipline that keeps it honest: snapshot before big work, every long job writes a verdict file, and nothing is "done" until the file says so.</p>
+      <div class="fieldrow">
+        <span class="tag ink">UBUNTU 24.04 · KERNEL 6.8</span>
+        <span class="tag sun">SDL3 3.2.22 INSIDE</span>
+        <span class="tag pink">GUEST ON THE STUDIO HOST</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="act" style="margin-top:44px" aria-labelledby="profile-h">
+    <div class="act-head">
+      <span class="kicker">THE PROFILE</span>
+      <h2 id="profile-h">A guest that earns its keep</h2>
+    </div>
+    <div class="grid two">
+      <div class="manuscript">
+        <h3>The image</h3>
+        <p>One disk image, built from a recipe the studio keeps: Ubuntu 24.04 with the development manifest baked in — 377 packages at first proof, including the SDL3 stack the games build against. The image is the machine; lose the host and the image is reborn from the recipe, not from memory.</p>
+      </div>
+      <div class="manuscript">
+        <h3>The snapshots</h3>
+        <p>Before any big change, the machine takes a named snapshot (the current working one is the second dev-home snapshot). A failed experiment is a rollback, not a rescue mission — which is how the OS stays a safe place to try things at 3 AM.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="act" aria-labelledby="tools-h">
+    <div class="act-head">
+      <span class="kicker">THE TOOL BATCH</span>
+      <h2 id="tools-h">Small tools, sharp edges</h2>
+    </div>
+    <div class="grid four">
+      <div class="card"><h3>djob</h3><p>Long builds and test batteries run detached and leave a verdict file when they finish — pass or fail, in writing, whether anyone was watching or not.</p></div>
+      <div class="card"><h3>dsnap</h3><p>One command to snapshot the whole machine before risky work, and one to roll back. Cowardice, automated.</p></div>
+      <div class="card"><h3>ccache</h3><p>A compiler cache, because a full rebuild of a big game inside a guest is slow enough the first time.</p></div>
+      <div class="card"><h3>The canary</h3><p>An uptime watcher that notices when the host floor disappears from under the guest — so a vanished machine is a known event, not a mystery.</p></div>
+    </div>
+    <blockquote class="pull">The studio's rule, built into the machine: a test that leaves no file never happened.</blockquote>
+  </section>
+
+  <section class="act" aria-labelledby="route-h">
+    <div class="act-head">
+      <span class="kicker">THE TEST ROUTE</span>
+      <h2 id="route-h">Where verdicts come from</h2>
+    </div>
+    <div class="grid two">
+      <div class="manuscript">
+        <h3>AirportSim lives here at work</h3>
+        <p>The game's working clone sits inside DieselOS, and its full test batteries — tens of thousands of checks — run in this guest. Cold builds are slow here and the records say so plainly; the trade is a machine whose whole existence is the work, isolated from everything else.</p>
+      </div>
+      <div class="manuscript">
+        <h3>Honest limits</h3>
+        <p>The host environment restarts the guest every couple of hours — the cause sits outside the machine room, so the page doesn't invent one. The design answers it instead: snapshots, detached jobs with verdict files, and work that resumes where it stopped.</p>
+      </div>
+    </div>
+    <p style="margin-top:18px"><a class="btn white" href="index.html">Back to the machine room</a> <a class="btn white" href="history.html">Trace the lineage</a></p>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h3>SECTION ZERO INTERACTIVE</h3>
+      <p>Two chairs, one desk. Andrew points at the horizon and settles every argument; Diesel draws the map, writes the code and keeps the receipts. The games on this site were begun by Grok Bot and are carried on from there.</p>
+      <p class="fine">© <span id="foot-year">2026</span> Section Zero Interactive. Set in Bungee, Archivo and Space Mono. Facts here trace to the studio's project records — and where a claim could not be checked, the page says that instead.</p>
+    </div>
+    <div>
+      <h3>WORLDS</h3>
+      <ul>
+        <li><a href="../airportsim/">AirportSim</a></li>
+        <li><a href="../blacksite/">Blacksite</a></li>
+        <li><a href="../worldforge/">WorldForge</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>THE HOUSE</h3>
+      <ul>
+        <li><a href="../../studio.html">The Studio Exhibit</a></li>
+        <li><a href="../../development/">Development</a></li>
+        <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../dieselos/">DieselOS</a></li>
+        <li><a href="../../desktop.html">Studio Desktop</a></li>
+        <li><a href="../../index.html">Front Door</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="../../site.js?v=20261114"></script>
+</body>
+</html>

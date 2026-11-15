@@ -8,38 +8,40 @@
 
 const PULSE = {
   /* Date this pulse was set, ISO format. */
-  updated: "2026-11-11",
+  updated: "2026-11-15",
 
   /* The small line over the console headline. */
-  onAir: "ON AIR — THE LONG NIGHT SHIFT",
+  onAir: "ON AIR — ALL EFFORT ON THE AIRFIELD",
 
   /* What the studio is doing right now. */
-  focusTitle: "An airport game is being carried across the line into a game",
+  focusTitle: "AirportSim is the one game on the bench",
   focusBody:
-    "AirportSim spent a long while as a workshop full of clever systems that were " +
-    "hard to actually play. Tonight it is being rebuilt, piece by proven piece, " +
-    "into something a person can sit down with: clearer clicks, honest signs, " +
-    "cargo that finally shows up, and airlines that remember how you treated " +
-    "them. Underneath the paint, its engine is being swapped from SDL2 to SDL3 " +
-    "so it stands on the same foundation as LONGSHOT.",
+    "Every other programme is parked. On the field: ground markings and the " +
+    "collision programme are closed, the baked-ground renderer is merged, " +
+    "and a brand-new interface — designed from a blank page and approved " +
+    "by the owner — is being built and proven slice by slice. After a " +
+    "little more interface work comes the deepening phase: deeper roles, " +
+    "deeper random generation, deeper sandbox and god-game play, then the " +
+    "airline signature. Blacksite is unfinished, stalled indefinitely. " +
+    "WorldForge is unfinished and parked.",
 
   /* The run clock counts up from this moment (ISO, with offset). */
-  runStarted: "2026-11-11T01:09:00-05:00",
-  runLabel: "ELAPSED ON THE TRANSFORMATION RUN",
+  runStarted: "2026-11-14T07:28:00-05:00",
+  runLabel: "ELAPSED SINCE THE AIRFIELD REOPENED",
 
   /* Up to four headline results. k = label, v = the number, n = the gloss. */
   stats: [
-    { k: "Stands repaired", v: "2,252", n: "Parking spots shifted across 26 airport layouts so no aircraft nose rests against a terminal wall." },
-    { k: "Airport catalogue", v: "253", n: "Real-world layouts in the pack, with 58 aircraft types on the flight roster." },
-    { k: "Engine swap", v: "SDL3", n: "AirportSim is moving off SDL2 tonight to share LONGSHOT's newer foundation." },
-    { k: "Proof standard", v: "4 lanes", n: "Every change runs the full public test battery and gets photographed before it counts." }
+    { k: "Ground bake", v: "MERGED", n: "The static ground now renders from baked chunks; the Detroit proof frame runs at roughly half the old frame time." },
+    { k: "New interface", v: "IN BUILD", n: "Designed from a blank page, approved by the owner, and being proven slice by slice; the inspector is next." },
+    { k: "WorldForge", v: "PARKED", n: "Not finished: the 0.5.0-dev line rests with its history phase closed green — 1,283 checks, zero failures — and a living-world plan on file." },
+    { k: "Active games", v: "1", n: "One game on the bench: AirportSim. Blacksite is unfinished and stalled indefinitely; everything else is parked with its work banked." }
   ],
 
   /* The freshest frame off the line. Path is relative to the site root. */
   shot: {
-    src: "projects/airportsim/img/field-day.jpg",
-    alt: "Wide aerial view of an AirportSim airfield from directly above: two runways crossing green fields, the taxiway web, a small terminal, and one jet taxiing out",
-    caption: "Fresh off the proof camera: the whole field from above — runways crossing in the green, taxiways picked out in yellow, and one jet taxiing out."
+    src: "projects/airportsim/img/field-detroit-detail.jpg",
+    alt: "Detroit Metro in AirportSim, close in: runways, taxiways and the terminal at work",
+    caption: "Detroit Metro, close in — the field the markings and ground-bake proofs were shot on."
   }
 };
 

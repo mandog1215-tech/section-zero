@@ -232,6 +232,20 @@ blockquote.pull{font-family:"Bungee",cursive;font-size:clamp(1.2rem,2.6vw,1.7rem
 .site-foot li{margin:4px 0}
 .site-foot .fine{font-size:.82rem;color:#B9B294}
 
+/* ---------- motif rain (the owner's idea, restored & turned up) ---------- */
+#rain{position:fixed;inset:0;z-index:0;pointer-events:none}
+main,.site-foot,.ticker{position:relative;z-index:1}
+
+/* ---------- the crown: rainbow bar for the one active game ---------- */
+.crown{height:14px;flex:none;
+  background:repeating-linear-gradient(90deg,var(--red) 0 64px,#FF8A3D 64px 128px,var(--sun) 128px 192px,var(--leaf) 192px 256px,var(--cobalt) 256px 320px,var(--violet) 320px 384px);
+  animation:crownmove 14s linear infinite}
+@keyframes crownmove{to{background-position:384px 0}}
+
+/* ---------- live dot on active tags ---------- */
+.livedot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);
+  margin-right:6px;vertical-align:1px;animation:blink 1.2s steps(2) infinite}
+
 /* ---------- screensaver ---------- */
 #saver{position:fixed;inset:0;background:#05070F;z-index:200;display:none}
 #saver.on{display:block}
@@ -242,6 +256,8 @@ blockquote.pull{font-family:"Bungee",cursive;font-size:clamp(1.2rem,2.6vw,1.7rem
 @media (prefers-reduced-motion: reduce){
   .ticker .track{animation:none}
   .pulse .dot{animation:none}
+  .crown{animation:none}
+  .livedot{animation:none}
   html{scroll-behavior:auto}
   *{transition:none!important}
 }

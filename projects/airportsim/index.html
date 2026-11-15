@@ -11,9 +11,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../style.css?v=20261114">
 </head>
-<body>
+<body data-rain="airfield">
 
 <header class="site-head">
   <div class="wrap">
@@ -27,7 +27,7 @@
       <a href="../airportsim/" aria-current="page">AirportSim</a>
       <a href="../blacksite/">Blacksite</a>
       <a href="../worldforge/">WorldForge</a>
-      <a href="../longshot/">Longshot</a>
+      <a href="../dieselos/">DieselOS</a>
       <a href="../../development/">Development</a>
       <a href="../../engine-lab/">Engine Lab</a>
       <a href="../../desktop.html">Desktop</a>
@@ -36,8 +36,8 @@
   </div>
 </header>
 <div class="ticker" aria-hidden="true"><div class="track">
-  <span>GATE ANNOUNCEMENT <b>★</b> NOWHERE ELSE DO THE AIRLINES PLAY BACK <b>★</b> 253 AIRPORTS <b>★</b> 58 AIRCRAFT TYPES <b>★</b> MIND THE JET BRIDGE <b>★</b></span>
-  <span>GATE ANNOUNCEMENT <b>★</b> NOWHERE ELSE DO THE AIRLINES PLAY BACK <b>★</b> 253 AIRPORTS <b>★</b> 58 AIRCRAFT TYPES <b>★</b> MIND THE JET BRIDGE <b>★</b></span>
+  <span>GATE ANNOUNCEMENT <b>★</b> NOWHERE ELSE DO THE AIRLINES PLAY BACK <b>★</b> 253 AIRPORTS <b>★</b> 58 AIRCRAFT TYPES <b>★</b> ON THE BENCH — THE OVERHAUL IS UNDER WAY <b>★</b></span>
+  <span>GATE ANNOUNCEMENT <b>★</b> NOWHERE ELSE DO THE AIRLINES PLAY BACK <b>★</b> 253 AIRPORTS <b>★</b> 58 AIRCRAFT TYPES <b>★</b> ON THE BENCH — THE OVERHAUL IS UNDER WAY <b>★</b></span>
 </div></div>
 
 <main class="wrap">
@@ -49,7 +49,7 @@
       <p class="hw-sub">An airport sandbox with the heart of a tycoon game and the reach of a god game. Run the tower like a professional, run the books like a magnate, or reach in and move the weather — the field absorbs all of it and keeps its own honest score.</p>
       <div class="fieldrow">
         <span class="tag sun">VERSION 0.6.0-ALPHA.2</span>
-        <span class="tag cobalt">IN ACTIVE DEVELOPMENT</span>
+        <span class="tag cobalt"><span class="livedot"></span>ON THE BENCH — ACTIVE</span>
         <span class="tag ink">HAND-ROLLED C ENGINE</span>
         <span class="tag teal">LINUX</span>
         <span class="tag pink">CREATED BY GROK BOT</span>
@@ -113,7 +113,7 @@
       <div class="card"><h3><span class="tag red">2</span> The taxiways</h3><p>The airport's patience, painted in yellow. Route aircraft well and the whole field breathes; bottle them up and you will watch a rush hour invent itself out of your own shortcuts.</p></div>
       <div class="card"><h3><span class="tag red">3</span> The stands</h3><p>Every parking spot is measured geometry, not decoration. In the great stand repair, 2,252 of them across 26 layouts were picked up and set down again so no parked giant rests its nose against a wall — and a placement law now refuses any spot where a fuselage would touch a building.</p></div>
       <div class="card"><h3><span class="tag red">4</span> The jet bridges</h3><p>The handshake between terminal and aircraft. They were always simulated; now they are drawn boldly enough that you can watch the handshake land — or spot the gate where it didn't.</p></div>
-      <div class="card"><h3><span class="tag red">5</span> The cargo apron</h3><p>Freight used to haunt the edges of the schedule. Contracts now arrive for freighters in their own right, and the heavy metal parks where heavy metal belongs.</p></div>
+      <div class="card"><h3><span class="tag red">5</span> The cargo apron</h3><p>Freight used to haunt the edges of the schedule. Contracts now arrive for freighters in their own right, and the heavy metal parks where heavy metal belongs. A correction is in proof to make the shipper and freight names on the board fictional throughout — no real-world brands.</p></div>
       <div class="card"><h3><span class="tag red">6</span> The tower</h3><p>Your chair, should you want it. Work the field by hand like a controller, or climb upstairs to the money and the strategy while the airport runs itself underneath you.</p></div>
     </div>
   </section>
@@ -123,7 +123,7 @@
       <span class="kicker">THE SIGNATURE</span>
       <h2 id="players-h">The airlines are the other players</h2>
     </div>
-    <p class="lede">In most management games the customers are weather — they blow in, they blow out. Here the airlines are opponents and partners with memories. Each one keeps a private ledger of its life at your airport, and acts on it.</p>
+    <p class="lede">In most management games the customers are weather — they blow in, they blow out. AirportSim is being built so the airlines are opponents and partners with memories. Each one keeps a private ledger of its life at your airport, and acts on it.</p>
     <div class="grid three chars">
       <div class="card">
         <p class="face" aria-hidden="true">🛬</p>
@@ -201,7 +201,7 @@
     <div class="grid three">
       <div class="card"><h3>The Road</h3><p>What stands between this alpha and the finished article, item by item.</p><p><a class="btn white" href="roadmap.html">Walk the road</a></p></div>
       <div class="card"><h3>Systems at Play</h3><p>Contracts, cargo, the chronicle and the placement law, explained as gameplay.</p><p><a class="btn white" href="systems.html">See the systems</a></p></div>
-      <div class="card"><h3>The Engine Room</h3><p>A hand-rolled C engine, and why it is changing foundations to SDL3 tonight.</p><p><a class="btn white" href="engine.html">Visit the engine room</a></p></div>
+      <div class="card"><h3>The Engine Room</h3><p>A hand-rolled C engine on its SDL3 foundation, with the ground now baked into chunks for speed.</p><p><a class="btn white" href="engine.html">Visit the engine room</a></p></div>
       <div class="card"><h3>The Mathematics</h3><p>Deterministic worlds, measured geometry, and arithmetic that keeps its promises.</p><p><a class="btn white" href="mathematics.html">Check the sums</a></p></div>
       <div class="card"><h3>The Proving</h3><p>Four public test lanes and a camera that never blinks kindly.</p><p><a class="btn white" href="testing.html">Watch it prove</a></p></div>
       <div class="card"><h3>Versions</h3><p>Where 0.6.0-alpha.2 stands, and what the road to the finished game is called.</p><p><a class="btn white" href="versions.html">Read the ledger</a></p></div>
@@ -223,7 +223,6 @@
         <li><a href="../airportsim/">AirportSim</a></li>
         <li><a href="../blacksite/">Blacksite</a></li>
         <li><a href="../worldforge/">WorldForge</a></li>
-        <li><a href="../longshot/">Longshot</a></li>
       </ul>
     </div>
     <div>
@@ -232,6 +231,7 @@
         <li><a href="../../studio.html">The Studio Exhibit</a></li>
         <li><a href="../../development/">Development</a></li>
         <li><a href="../../engine-lab/">Engine Lab</a></li>
+        <li><a href="../dieselos/">DieselOS</a></li>
         <li><a href="../../desktop.html">Studio Desktop</a></li>
         <li><a href="../../index.html">Front Door</a></li>
       </ul>
@@ -325,6 +325,6 @@
   read.textContent = "RUNWAY 09 IN SIGHT. PRESS THE BUTTON WHEN READY.";
 })();
 </script>
-<script src="../../site.js"></script>
+<script src="../../site.js?v=20261114"></script>
 </body>
 </html>
