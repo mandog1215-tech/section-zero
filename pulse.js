@@ -11,12 +11,12 @@ const PULSE = {
   updated: "2026-11-26",
 
   /* The small line over the console headline. */
-  onAir: "ON AIR — ALL EFFORT ON THE LIVING WORLD",
+  onAir: "ON AIR — 0.6.3 PROVEN, REBUILD PAUSED",
 
   /* What the studio is doing right now. */
-  focusTitle: "WildGenesis 3D is the one game on the bench",
+  focusTitle: "WildGenesis 3D rests at 0.6.3, proven",
   focusBody:
-    "Every other programme is parked. On the bench: a 3D god-game evolution sandbox in Unity — creatures with inherited body-plan genes live, breed and crossbreed on a spherical world, and their random statistics decide who survives. The studio took the game over from its first builder on 26 November 2026 and is restructuring it — the same game, the same systems, rebuilt cleanly. The new structure and the bug-catching gate are done and proven, 48 checks to 0 failures, and the pure core is being extracted next. God powers are free and unlimited — that is the point of the game. AirportSim's 7.0 'Latitude' test copy sits with the owner, awaiting his verdict. Blacksite is unfinished, shelved for good. WorldForge is unfinished and parked.",
+    "The rebuild is paused. Two slices are done and proven — the new structure and the bug-catching gate, 48 checks to 0 failures — and the next slice's work is banked, unproven, until the owner calls for it. WildGenesis 3D remains the studio's current game: a 3D god-game evolution sandbox in Unity, a restructure of the game its first builder made — the same game, the same systems, rebuilt cleanly. God powers are free and unlimited. AirportSim's 7.0 'Latitude' test copy sits with the owner, awaiting his verdict. Blacksite is unfinished, shelved for good. WorldForge is unfinished and parked.",
 
   /* The run clock counts up from this moment (ISO, with offset). */
   runStarted: "2026-11-26T17:52:00-05:00",
@@ -26,7 +26,7 @@ const PULSE = {
   stats: [
     { k: "Rebuild — structure", v: "DONE", n: "All 45 scripts moved into the new layout with no code changed; the dead code is deleted. Proven 48 checks to 0 failures on the same seed." },
     { k: "Bug-catching gate", v: "DONE", n: "Static analysis checks every change against a 215-warning baseline and fails on any new one. Proven in 26 seconds." },
-    { k: "Core extraction", v: "IN BUILD", n: "The terrain, chemistry, genetics and save rules are being pulled into clean, testable code — the slice that makes fast tests real." },
+    { k: "Core extraction", v: "PAUSED", n: "The next slice's work is banked, unproven, until the owner calls for it. Nothing lands without proof." },
     { k: "AirportSim", v: "TEST COPY", n: "7.0 'Latitude' sits with the owner, awaiting his verdict. The deepening list is halted." }
   ],
 
