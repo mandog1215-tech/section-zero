@@ -8,40 +8,33 @@
 
 const PULSE = {
   /* Date this pulse was set, ISO format. */
-  updated: "2026-11-15",
+  updated: "2026-11-26",
 
   /* The small line over the console headline. */
-  onAir: "ON AIR — ALL EFFORT ON THE AIRFIELD",
+  onAir: "ON AIR — ALL EFFORT ON THE LIVING WORLD",
 
   /* What the studio is doing right now. */
-  focusTitle: "AirportSim is the one game on the bench",
+  focusTitle: "WildGenesis 3D is the one game on the bench",
   focusBody:
-    "Every other programme is parked. On the field: ground markings and the " +
-    "collision programme are closed, the baked-ground renderer is merged, " +
-    "and a brand-new interface — designed from a blank page and approved " +
-    "by the owner — is being built and proven slice by slice. After a " +
-    "little more interface work comes the deepening phase: deeper roles, " +
-    "deeper random generation, deeper sandbox and god-game play, then the " +
-    "airline signature. Blacksite is unfinished, stalled indefinitely. " +
-    "WorldForge is unfinished and parked.",
+    "Every other programme is parked. On the bench: a 3D god-game evolution sandbox in Unity — creatures with inherited body-plan genes live, breed and crossbreed on a spherical world, and their random statistics decide who survives. The studio took the game over from its first builder on 26 November 2026 and is restructuring it — the same game, the same systems, rebuilt cleanly. The new structure and the bug-catching gate are done and proven, 48 checks to 0 failures, and the pure core is being extracted next. God powers are free and unlimited — that is the point of the game. AirportSim's 7.0 'Latitude' test copy sits with the owner, awaiting his verdict. Blacksite is unfinished, shelved for good. WorldForge is unfinished and parked.",
 
   /* The run clock counts up from this moment (ISO, with offset). */
-  runStarted: "2026-11-14T07:28:00-05:00",
-  runLabel: "ELAPSED SINCE THE AIRFIELD REOPENED",
+  runStarted: "2026-11-26T17:52:00-05:00",
+  runLabel: "ELAPSED SINCE THE REBUILD BEGAN",
 
   /* Up to four headline results. k = label, v = the number, n = the gloss. */
   stats: [
-    { k: "Ground bake", v: "MERGED", n: "The static ground now renders from baked chunks; the Detroit proof frame runs at roughly half the old frame time." },
-    { k: "New interface", v: "IN BUILD", n: "Designed from a blank page, approved by the owner, and being proven slice by slice; the inspector is next." },
-    { k: "WorldForge", v: "PARKED", n: "Not finished: the 0.5.0-dev line rests with its history phase closed green — 1,283 checks, zero failures — and a living-world plan on file." },
-    { k: "Active games", v: "1", n: "One game on the bench: AirportSim. Blacksite is unfinished and stalled indefinitely; everything else is parked with its work banked." }
+    { k: "Rebuild — structure", v: "DONE", n: "All 45 scripts moved into the new layout with no code changed; the dead code is deleted. Proven 48 checks to 0 failures on the same seed." },
+    { k: "Bug-catching gate", v: "DONE", n: "Static analysis checks every change against a 215-warning baseline and fails on any new one. Proven in 26 seconds." },
+    { k: "Core extraction", v: "IN BUILD", n: "The terrain, chemistry, genetics and save rules are being pulled into clean, testable code — the slice that makes fast tests real." },
+    { k: "AirportSim", v: "TEST COPY", n: "7.0 'Latitude' sits with the owner, awaiting his verdict. The deepening list is halted." }
   ],
 
   /* The freshest frame off the line. Path is relative to the site root. */
   shot: {
-    src: "projects/airportsim/img/field-detroit-detail.jpg",
-    alt: "Detroit Metro in AirportSim, close in: runways, taxiways and the terminal at work",
-    caption: "Detroit Metro, close in — the field the markings and ground-bake proofs were shot on."
+    src: "projects/wildgenesis/img/world-overview.png",
+    alt: "WildGenesis 3D, the living world from above: continents, oceans and creatures on a spherical planet",
+    caption: "The living world, from above — the frame the 0.6.3 proofs were shot on."
   }
 };
 
