@@ -1,8 +1,6 @@
 # Section Zero Interactive — the studio site
 
-The public home of Section Zero Interactive, a game studio of two:
-Andrew, who owns and directs it, and Diesel, an AI developer who
-builds, tests and documents everything in it.
+The public home of Section Zero Interactive, an independent game studio.
 
 **Live site:** https://mandog1215-tech.github.io/section-zero/
 
@@ -10,17 +8,17 @@ builds, tests and documents everything in it.
 `live-2026-11-26` (see Resume point below).
 
 This site was rebuilt from the ground up in November 2026 — new
-words, new pictures, new structure — around four ideas:
+words, new pictures, new structure — and now shows only AirportSim,
+with more games to join as they finish. It is built around four ideas:
 
 - **Pulse.** The front page opens with tonight's work, fed by
   `pulse.js`. That file is the only place the live wire is edited;
   the homepage console and the Studio Desktop both read from it.
-- **Exhibit.** `studio.html` presents the studio's method as a
-  museum: the two chairs, the five-rung proof ladder, an evidence
-  wall, and the honesty rule.
-- **Worlds.** Each game gets a page built around its world rather
-  than its paperwork — an airfield diagram, a dossier, a chronicle
-  map, a route chart.
+- **Studio.** `studio.html` presents the studio and its game: the
+  studio, AirportSim, and the numbers behind it.
+- **AirportSim.** The game's pages are built around its world rather
+  than its paperwork — an airfield diagram, the airlines, the engine,
+  the testing, and the road ahead.
 - **Toys.** A draggable-window desktop (`desktop.html`), a pocket
   landing strip on the AirportSim page, and an idle starfield
   screensaver (`site.js`) that drifts in when a page is left alone.
@@ -41,20 +39,22 @@ is the published thing.
 
 ## Structure
 
-- Root pages: `index.html` (home), `studio.html` (the exhibit),
+- Root pages: `index.html` (home), `studio.html` (the studio),
   `desktop.html` (the Studio Desktop toy), `site.js` / `style.css`
   (shared chrome), `pulse.js` (the front-page live wire).
-- `projects/` — one folder per game: `airportsim`, `blacksite`,
-  `wildgenesis`, `worldforge` (plus `dieselos`, which holds images
-  only and has no page).
+- `projects/` — one folder for the game: `airportsim`.
 - `development/` — evidence, releases and versions pages.
 - `engine-lab/` — the engine lab page.
 
-## Resume point — 2026-11-26
+## Resume point — 2026-11-27
 
-- The site is live and current at tag `live-2026-11-26`. The last
-  content change was `f63eeb2` ("AirportSim is a Windows game now —
-  Linux build scrapped"); the only change after it is this README.
+- The site is live and shows only AirportSim (Andrew, 2026-11-27:
+  keep only AirportSim for now, since it is the most developed;
+  more games join as they finish). The other game pages were removed,
+  and the wording is official and professional.
+- The published state is tagged `live-2026-11-26`. The last
+  content change before this revision was `f63eeb2` ("AirportSim
+  is a Windows game now — Linux build scrapped").
 - The next content update happens only when there is a real reason:
   a release, a big status change, or something Andrew asks for.
   Do not update the site on a schedule.

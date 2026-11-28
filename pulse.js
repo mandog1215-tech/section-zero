@@ -1,40 +1,40 @@
 /* ============================================================
    PULSE — the studio's live wire.
-   Diesel edits THIS FILE ONLY at each close-out and the whole
+   The studio edits THIS FILE ONLY at each close-out and the whole
    site picks up the new heartbeat: the homepage console and
    the Studio Desktop's "Tonight" window both read from here.
-   Keep every line true, dated, and traceable to a record.
+   Keep every line true and dated.
    ============================================================ */
 
 const PULSE = {
   /* Date this pulse was set, ISO format. */
-  updated: "2026-11-26",
+  updated: "2026-11-27",
 
   /* The small line over the console headline. */
-  onAir: "ON AIR — 0.6.3 PROVEN, REBUILD PAUSED",
+  onAir: "ON AIR — 7.0 'LATITUDE', IN CLOSED TESTING",
 
   /* What the studio is doing right now. */
-  focusTitle: "WildGenesis 3D rests at 0.6.3, proven",
+  focusTitle: "AirportSim 7.0 'Latitude' — the Windows port",
   focusBody:
-    "The rebuild is paused. Two slices are done and proven — the new structure and the bug-catching gate, 48 checks to 0 failures — and the next slice's work is banked, unproven, until the owner calls for it. WildGenesis 3D remains the studio's current game: a 3D god-game evolution sandbox in Unity, a restructure of the game its first builder made — the same game, the same systems, rebuilt cleanly. God powers are free and unlimited. AirportSim's 7.0 'Latitude' test copy sits with the owner, awaiting his verdict. Blacksite is unfinished, shelved for good. WorldForge is unfinished and parked.",
+    "The port is under way. The game is moving fully to Windows — the Linux build is scrapped — and four stages are done: the build, the full test suite, the gate, and the memory and static checks. The fourth stage fixed four real defects and the suite still passes 233,014 checks to 0 failures. The next stage is the package: the release, rebuilt for Windows only. The 7.0 'Latitude' test copy is in closed testing.",
 
   /* The run clock counts up from this moment (ISO, with offset). */
-  runStarted: "2026-11-26T17:52:00-05:00",
-  runLabel: "ELAPSED SINCE THE REBUILD BEGAN",
+  runStarted: "2026-11-26T19:23:00-05:00",
+  runLabel: "ELAPSED SINCE THE PORT BEGAN",
 
   /* Up to four headline results. k = label, v = the number, n = the gloss. */
   stats: [
-    { k: "Rebuild — structure", v: "DONE", n: "All 45 scripts moved into the new layout with no code changed; the dead code is deleted. Proven 48 checks to 0 failures on the same seed." },
-    { k: "Bug-catching gate", v: "DONE", n: "Static analysis checks every change against a 215-warning baseline and fails on any new one. Proven in 26 seconds." },
-    { k: "Core extraction", v: "PAUSED", n: "The next slice's work is banked, unproven, until the owner calls for it. Nothing lands without proof." },
-    { k: "AirportSim", v: "TEST COPY", n: "7.0 'Latitude' sits with the owner, awaiting his verdict. The deepening list is halted." }
+    { k: "Test suite", v: "233,014 / 0", n: "The full suite passes on Windows: 233,014 checks, 0 failures." },
+    { k: "Interface test", v: "15,524 / 0", n: "The interface test passes: 15,524 checks, 0 failures." },
+    { k: "Memory checks", v: "233,013 / 0", n: "The memory checker ran all 117 test groups with 0 failures and 0 memory errors." },
+    { k: "Defects fixed", v: "4", n: "The static analysis found and fixed four real defects in the crash handler, file reading, saving and the interface." }
   ],
 
   /* The freshest frame off the line. Path is relative to the site root. */
   shot: {
-    src: "projects/wildgenesis/img/world-overview.png",
-    alt: "WildGenesis 3D, the living world from above: continents, oceans and creatures on a spherical planet",
-    caption: "The living world, from above — the frame the 0.6.3 proofs were shot on."
+    src: "projects/airportsim/img/field-day.jpg",
+    alt: "Wide aerial view of an AirportSim airfield from directly above: two runways crossing green fields, the taxiway web, a small terminal, and one jet taxiing out",
+    caption: "The airfield from above — the 7.0 'Latitude' build, running on Windows."
   }
 };
 
