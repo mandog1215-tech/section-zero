@@ -14,17 +14,17 @@ const PULSE = {
   onAir: "ON AIR — 7.0 'LATITUDE', IN CLOSED TESTING",
 
   /* What the studio is doing right now. */
-  focusTitle: "AirportSim 7.0 'Latitude' — the Windows port",
+  focusTitle: "AirportSim 7.0 'Latitude' — Windows native",
   focusBody:
-    "The port is under way. The game is moving fully to Windows — the Linux build is scrapped — and four stages are done: the build, the full test suite, the gate, and the memory and static checks. The fourth stage fixed four real defects and the suite still passes 233,014 checks to 0 failures. The next stage is the package: the release, rebuilt for Windows only. The 7.0 'Latitude' test copy is in closed testing.",
+    "The port is done. The game is Windows native — the Linux build is scrapped — and the Windows test copy is live in the private v7.0 prerelease. The full suite passes 233,016 checks to 0 failures, and the memory and static checks fixed four real defects along the way. The 7.0 'Latitude' test copy is in closed testing.",
 
   /* The run clock counts up from this moment (ISO, with offset). */
-  runStarted: "2026-11-26T19:23:00-05:00",
-  runLabel: "ELAPSED SINCE THE PORT BEGAN",
+  runStarted: "2026-11-27T22:56:00-05:00",
+  runLabel: "ELAPSED SINCE THE WINDOWS TEST COPY LANDED",
 
   /* Up to four headline results. k = label, v = the number, n = the gloss. */
   stats: [
-    { k: "Test suite", v: "233,014 / 0", n: "The full suite passes on Windows: 233,014 checks, 0 failures." },
+    { k: "Test suite", v: "233,016 / 0", n: "The full suite passes on Windows: 233,016 checks, 0 failures." },
     { k: "Interface test", v: "15,524 / 0", n: "The interface test passes: 15,524 checks, 0 failures." },
     { k: "Memory checks", v: "233,013 / 0", n: "The memory checker ran all 117 test groups with 0 failures and 0 memory errors." },
     { k: "Defects fixed", v: "4", n: "The static analysis found and fixed four real defects in the crash handler, file reading, saving and the interface." }
